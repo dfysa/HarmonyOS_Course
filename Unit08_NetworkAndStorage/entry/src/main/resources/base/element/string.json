@@ -1,0 +1,105 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "module description"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "description"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "bird"
+    },
+    {
+      "name": "Space",
+      "value": "8"
+    },
+    {
+      "name": "Font_size_big",
+      "value": "24"
+    },
+    {
+      "name": "Font_size_media",
+      "value": "14"
+    },
+
+    {
+      "name": "network_reason",
+      "value": "需要网络权限来加载头像图片"
+    },
+    {
+      "name": "loading",
+      "value": "加载中..."
+    },
+    {
+      "name": "no_data",
+      "value": "暂无数据"
+    },
+    {
+      "name": "network_error",
+      "value": "网络连接失败"
+    },
+    {
+      "name": "retry",
+      "value": "重试"
+    },
+    {
+      "name": "confirm",
+      "value": "确定"
+    },
+    {
+      "name": "cancel",
+      "value": "取消"
+    },
+    {
+      "name": "permission_denied",
+      "value": "权限被拒绝"
+    },
+    {
+      "name": "go_to_settings",
+      "value": "去设置"
+    },
+    {
+      "name": "camera_permission_desc",
+      "value": "需要相机权限以使用拍照功能"
+    },
+    {
+      "name": "storage_permission_desc",
+      "value": "需要存储权限以保存文件"
+    },
+    {
+      "name": "home_title",
+      "value": "首页"
+    },
+    {
+      "name": "profile_title",
+      "value": "我的"
+    },
+    {
+      "name": "settings_title",
+      "value": "设置"
+    },
+    {
+      "name": "input_required",
+      "value": "请输入内容"
+    },
+    {
+      "name": "input_invalid",
+      "value": "输入内容无效"
+    },
+    {
+      "name": "submit",
+      "value": "提交"
+    },
+    {
+      "name": "version_name",
+      "value": "版本号"
+    },
+    {
+      "name": "version_code",
+      "value": "1.0.0"
+    }
+  ]
+}

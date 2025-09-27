@@ -1,0 +1,116 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "flex_font_color",
+      "value": "#53A500"
+    },
+    {
+      "name": "flex_background_color",
+      "value": "#2B2B2B"
+    },
+
+    {
+      "name": "blue_50",
+      "value": "#E6F7FF"
+    },
+    {
+      "name": "blue_100",
+      "value": "#BAE7FF"
+    },
+    {
+      "name": "blue_200",
+      "value": "#91D5FF"
+    },
+    {
+      "name": "blue_primary",
+      "value": "#1890FF"
+    },
+    {
+      "name": "blue_400",
+      "value": "#096DD9"
+    },
+    {
+      "name": "blue_500",
+      "value": "#0050B3"
+    },
+
+
+    {
+      "name": "gray_50",
+      "value": "#FAFAFA"
+    },
+    {
+      "name": "gray_100",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "gray_200",
+      "value": "#EEEEEE"
+    },
+    {
+      "name": "gray_300",
+      "value": "#E0E0E0"
+    },
+    {
+      "name": "gray_500",
+      "value": "#9E9E9E"
+    },
+    {
+      "name": "gray_700",
+      "value": "#616161"
+    },
+    {
+      "name": "gray_900",
+      "value": "#212121"
+    },
+
+
+    {
+      "name": "success",
+      "value": "#52C41A"
+    },
+    {
+      "name": "warning",
+      "value": "#FAAD14"
+    },
+    {
+      "name": "error",
+      "value": "#FF4D4F"
+    },
+    {
+      "name": "link",
+      "value": "#1890FF"
+    },
+
+
+    {
+      "name": "bg_primary",
+      "value": "#F5F7FA"
+    },
+    {
+      "name": "bg_container",
+      "value": "#FFFFFF"
+    },
+
+
+    {
+      "name": "text_primary",
+      "value": "#333333"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#666666"
+    },
+    {
+      "name": "text_disabled",
+      "value": "#BFBFBF"
+    }
+
+
+
+  ]
+}

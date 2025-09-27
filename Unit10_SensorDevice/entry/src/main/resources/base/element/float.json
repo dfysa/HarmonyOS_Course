@@ -1,0 +1,91 @@
+{
+  "float": [
+    {
+      "name": "page_text_font_size",
+      "value": "50fp"
+    },
+    {
+      "name": "padding_medium",
+      "value": "8vp"
+    },
+    {
+      "name": "font_xs",
+      "value": "10fp"
+    },
+    {
+      "name": "font_sm",
+      "value": "12fp"
+    },
+    {
+      "name": "font_md",
+      "value": "14fp"
+    },
+    {
+      "name": "font_lg",
+      "value": "16fp"
+    },
+    {
+      "name": "font_xl",
+      "value": "20fp"
+    },
+    {
+      "name": "font_xxl",
+      "value": "24fp"
+    },
+
+
+    {
+      "name": "space_xxs",
+      "value": "2vp"
+    },
+    {
+      "name": "space_xs",
+      "value": "4vp"
+    },
+    {
+      "name": "space_sm",
+      "value": "8vp"
+    },
+    {
+      "name": "space_md",
+      "value": "16vp"
+    },
+    {
+      "name": "space_lg",
+      "value": "24vp"
+    },
+    {
+      "name": "space_xl",
+      "value": "32vp"
+    },
+
+
+    {
+      "name": "radius_sm",
+      "value": "4vp"
+    },
+    {
+      "name": "radius_md",
+      "value": "8vp"
+    },
+    {
+      "name": "radius_lg",
+      "value": "12vp"
+    },
+    {
+      "name": "radius_circle",
+      "value": "999vp"
+    },
+
+
+    {
+      "name": "border_width",
+      "value": "1vp"
+    },
+    {
+      "name": "border_width_thick",
+      "value": "2vp"
+    }
+
+  ]
+}
