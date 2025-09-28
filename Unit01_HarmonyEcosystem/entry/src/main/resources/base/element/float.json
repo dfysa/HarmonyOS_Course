@@ -32,8 +32,6 @@
       "name": "font_xxl",
       "value": "24fp"
     },
-
-
     {
       "name": "space_xxs",
       "value": "2vp"
@@ -58,8 +56,6 @@
       "name": "space_xl",
       "value": "32vp"
     },
-
-
     {
       "name": "radius_sm",
       "value": "4vp"
@@ -76,8 +72,6 @@
       "name": "radius_circle",
       "value": "999vp"
     },
-
-
     {
       "name": "border_width",
       "value": "1vp"
@@ -85,7 +79,328 @@
     {
       "name": "border_width_thick",
       "value": "2vp"
+    },
+    {
+      "name": "w_1",
+      "value": "1vp"
+    },
+    {
+      "name": "w_2",
+      "value": "2vp"
+    },
+    {
+      "name": "w_4",
+      "value": "4vp"
+    },
+    {
+      "name": "w_8",
+      "value": "8vp"
+    },
+    {
+      "name": "w_10",
+      "value": "10vp"
+    },
+    {
+      "name": "w_12",
+      "value": "12vp"
+    },
+    {
+      "name": "w_14",
+      "value": "14vp"
+    },
+    {
+      "name": "w_16",
+      "value": "16vp"
+    },
+    {
+      "name": "w_20",
+      "value": "20vp"
+    },
+    {
+      "name": "w_24",
+      "value": "24vp"
+    },
+    {
+      "name": "w_32",
+      "value": "32vp"
+    },
+    {
+      "name": "w_50",
+      "value": "50vp"
+    },
+    {
+      "name": "p_1",
+      "value": "1vp"
+    },
+    {
+      "name": "p_2",
+      "value": "2vp"
+    },
+    {
+      "name": "p_4",
+      "value": "4vp"
+    },
+    {
+      "name": "p_6",
+      "value": "6vp"
+    },
+    {
+      "name": "p_8",
+      "value": "8vp"
+    },
+    {
+      "name": "p_12",
+      "value": "12vp"
+    },
+    {
+      "name": "p_16",
+      "value": "16vp"
+    },
+    {
+      "name": "p_20",
+      "value": "20vp"
+    },
+    {
+      "name": "p_24",
+      "value": "24vp"
+    },
+    {
+      "name": "p_32",
+      "value": "32vp"
+    },
+    {
+      "name": "m_1",
+      "value": "1vp"
+    },
+    {
+      "name": "m_2",
+      "value": "2vp"
+    },
+    {
+      "name": "m_4",
+      "value": "4vp"
+    },
+    {
+      "name": "m_6",
+      "value": "6vp"
+    },
+    {
+      "name": "m_8",
+      "value": "8vp"
+    },
+    {
+      "name": "m_12",
+      "value": "12vp"
+    },
+    {
+      "name": "m_16",
+      "value": "16vp"
+    },
+    {
+      "name": "m_20",
+      "value": "20vp"
+    },
+    {
+      "name": "m_24",
+      "value": "24vp"
+    },
+    {
+      "name": "m_32",
+      "value": "32vp"
+    },
+    {
+      "name": "pt_2",
+      "value": "2vp"
+    },
+    {
+      "name": "pt_4",
+      "value": "4vp"
+    },
+    {
+      "name": "pt_8",
+      "value": "8vp"
+    },
+    {
+      "name": "pt_16",
+      "value": "16vp"
+    },
+    {
+      "name": "pr_2",
+      "value": "2vp"
+    },
+    {
+      "name": "pr_4",
+      "value": "4vp"
+    },
+    {
+      "name": "pr_8",
+      "value": "8vp"
+    },
+    {
+      "name": "pr_16",
+      "value": "16vp"
+    },
+    {
+      "name": "pb_2",
+      "value": "2vp"
+    },
+    {
+      "name": "pb_4",
+      "value": "4vp"
+    },
+    {
+      "name": "pb_8",
+      "value": "8vp"
+    },
+    {
+      "name": "pb_16",
+      "value": "16vp"
+    },
+    {
+      "name": "pl_2",
+      "value": "2vp"
+    },
+    {
+      "name": "pl_4",
+      "value": "4vp"
+    },
+    {
+      "name": "pl_8",
+      "value": "8vp"
+    },
+    {
+      "name": "pl_16",
+      "value": "16vp"
+    },
+    {
+      "name": "mt_2",
+      "value": "2vp"
+    },
+    {
+      "name": "mt_4",
+      "value": "4vp"
+    },
+    {
+      "name": "mt_8",
+      "value": "8vp"
+    },
+    {
+      "name": "mt_16",
+      "value": "16vp"
+    },
+    {
+      "name": "mr_2",
+      "value": "2vp"
+    },
+    {
+      "name": "mr_4",
+      "value": "4vp"
+    },
+    {
+      "name": "mr_8",
+      "value": "8vp"
+    },
+    {
+      "name": "mr_16",
+      "value": "16vp"
+    },
+    {
+      "name": "mb_2",
+      "value": "2vp"
+    },
+    {
+      "name": "mb_4",
+      "value": "4vp"
+    },
+    {
+      "name": "mb_8",
+      "value": "8vp"
+    },
+    {
+      "name": "mb_16",
+      "value": "16vp"
+    },
+    {
+      "name": "ml_2",
+      "value": "2vp"
+    },
+    {
+      "name": "ml_4",
+      "value": "4vp"
+    },
+    {
+      "name": "ml_8",
+      "value": "8vp"
+    },
+    {
+      "name": "ml_16",
+      "value": "16vp"
+    },
+    {
+      "name": "px_2",
+      "value": "2vp"
+    },
+    {
+      "name": "px_4",
+      "value": "4vp"
+    },
+    {
+      "name": "px_8",
+      "value": "8vp"
+    },
+    {
+      "name": "px_16",
+      "value": "16vp"
+    },
+    {
+      "name": "py_2",
+      "value": "2vp"
+    },
+    {
+      "name": "py_4",
+      "value": "4vp"
+    },
+    {
+      "name": "py_8",
+      "value": "8vp"
+    },
+    {
+      "name": "py_16",
+      "value": "16vp"
+    },
+    {
+      "name": "mx_2",
+      "value": "2vp"
+    },
+    {
+      "name": "mx_4",
+      "value": "4vp"
+    },
+    {
+      "name": "mx_8",
+      "value": "8vp"
+    },
+    {
+      "name": "mx_16",
+      "value": "16vp"
+    },
+    {
+      "name": "my_2",
+      "value": "2vp"
+    },
+    {
+      "name": "my_4",
+      "value": "4vp"
+    },
+    {
+      "name": "my_8",
+      "value": "8vp"
+    },
+    {
+      "name": "my_16",
+      "value": "16vp"
     }
+
 
   ]
 }

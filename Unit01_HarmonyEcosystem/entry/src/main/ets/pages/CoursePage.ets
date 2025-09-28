@@ -43,6 +43,7 @@ export struct CoursePage {
         Text('我的课程表')
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
+          .fontColor(Color.White)
           .layoutWeight(1)
           .textAlign(TextAlign.Start)
 
@@ -50,6 +51,7 @@ export struct CoursePage {
           .fontSize(20)
           .fontWeight(FontWeight.Bold)
           .textAlign(TextAlign.End)
+          .fontColor(Color.White)
       }
       .padding(16)
       .width('100%')

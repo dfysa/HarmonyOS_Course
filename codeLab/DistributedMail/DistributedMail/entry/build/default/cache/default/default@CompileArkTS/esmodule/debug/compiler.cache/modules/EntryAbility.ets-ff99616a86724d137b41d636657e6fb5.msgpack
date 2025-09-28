@@ -1,0 +1,609 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ1Ÿ/*
+* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import abilityAccessCtrl from "@ohos.abilityAccessCtrl";
+/*
+* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import AbilityConstant from "@ohos.app.ability.AbilityConstant";
+/*
+* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import ConfigurationConstant from "@ohos.app.ability.ConfigurationConstant";
+/*
+* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+import UIAbility from "@ohos.app.ability.UIAbility";
+import distributedDataObject from "@ohos.data.distributedDataObject";
+import fileIo from "@ohos.file.fs";
+import fileUri from "@ohos.file.fileuri";
+import JSON from "@ohos.util.json";
+import hilog from "@ohos.hilog";
+import { MailInfoManager } from '../utils/MailInfoManager';
+import CommonConstants from '../common/CommonConstants';
+const DOMAIN = 0x0000;
+let uiContext = undefined;
+export default class EntryAbility extends UIAbility {
+    constructor() {
+        super(...arguments);
+        this.distributedObject = undefined;
+    }
+    onCreate(want, launchParam) {
+        this.permissions();
+        try {
+            this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+            hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+            this.restoreDistributedObject(want, launchParam);
+        }
+        catch (error) {
+            hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+            return error.code;
+        }
+    }
+    onNewWant(want, launchParam) {
+        this.permissions();
+        hilog.info(0x0000, 'hilog', `Ability onNewWant`);
+        this.restoreDistributedObject(want, launchParam);
+    }
+    /**
+     * The peer device receives data.
+     * @param want
+     * @param launchParam
+     * @returns
+     */
+    async restoreDistributedObject(want, launchParam) {
+        this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result) => {
+            hilog.info(0x0000, 'hilog', `setMissionContinueState: ${JSON.stringify(result)}`);
+        });
+        if (launchParam.launchReason !== AbilityConstant.LaunchReason.CONTINUATION) {
+            return;
+        }
+        AppStorage.setOrCreate('isContinuation', CommonConstants.CAN_CONTINUATION);
+        AppStorage.setOrCreate('appendix', JSON.parse(want.parameters?.appendix));
+        // Obtain the session ID of a distributed data object.
+        let mailInfoManager = new MailInfoManager(undefined, undefined, undefined, undefined, undefined);
+        this.distributedObject = distributedDataObject.create(this.context, mailInfoManager);
+        // Add a data restored listener.
+        try {
+            this.distributedObject.on('status', (sessionId, networkId, status) => {
+                hilog.info(0x0000, 'hilog', 'EntryAbility', 'status changed ' + sessionId + ' ' + status + ' ' + networkId);
+                if (status === 'restored') {
+                    if (!this.distributedObject) {
+                        return;
+                    }
+                    AppStorage.setOrCreate('recipient', this.distributedObject['recipient']);
+                    AppStorage.setOrCreate('sender', this.distributedObject['sender']);
+                    AppStorage.setOrCreate('subject', this.distributedObject['subject']);
+                    AppStorage.setOrCreate('emailContent', this.distributedObject['emailContent']);
+                    AppStorage.setOrCreate('attachments', this.distributedObject['attachments']);
+                    let attachments = this.distributedObject['attachments'];
+                    hilog.info(0x0000, 'hilog', 'this.distributedObject[attachments] ' + JSON.stringify(this.distributedObject['attachments']));
+                    for (const attachment of attachments) {
+                        this.fileCopy(attachment);
+                    }
+                }
+            });
+            let sessionId = want.parameters?.distributedSessionId;
+            hilog.info(0x0000, 'hilog', 'sessionId' + sessionId);
+            this.distributedObject.setSessionId(sessionId);
+            this.context.restoreWindowStage(new LocalStorage());
+        }
+        catch (error) {
+            hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+        }
+    }
+    onWindowStageRestore(windowStage) {
+        hilog.info(0x0000, 'hilog', 'EntryAbility', 'Ability onWindowStageRestore');
+        windowStage.loadContent('pages/MailHomePage', (err, data) => {
+            if (err.code) {
+                hilog.error(0x0000, 'EntryAbility', 'Failed to load the content, ', `Catch err: ${err.code},msg:${err.message}`);
+                return;
+            }
+            hilog.info(0x0000, 'EntryAbility', 'Succeeded in loading the content, ', `Data: ${data}`);
+        });
+    }
+    async onContinue(wantParam) {
+        wantParam.appendix = JSON.stringify(AppStorage.get('appendix'));
+        try {
+            // Generate the session ID of the distributed data object.
+            let sessionId = distributedDataObject.genSessionId();
+            wantParam.distributedSessionId = sessionId;
+            let appendix = AppStorage.get('appendix');
+            let assets = [];
+            if (appendix) {
+                for (let i = 0; i < appendix.length; i++) {
+                    let append = appendix[i];
+                    let attachment = this.getAssetInfo(append);
+                    assets.push(attachment);
+                }
+            }
+            let mailInfoManager = new MailInfoManager(AppStorage.get('recipient'), AppStorage.get('sender'), AppStorage.get('subject'), AppStorage.get('emailContent'), assets);
+            let source = mailInfoManager.flatAssets();
+            this.distributedObject = distributedDataObject.create(this.context, source);
+            this.distributedObject.setSessionId(sessionId);
+            await this.distributedObject.save(wantParam.targetDevice).then(() => {
+                hilog.info(0x0000, 'hilog', 'onContinue distributedObject save success');
+            }).catch((err) => {
+                hilog.error(0x0000, 'hilog', `Failed to save. Code:${err.code},message:${err.message}`);
+            });
+        }
+        catch (error) {
+            hilog.error(0x0000, 'hilog', 'distributedDataObject failed', `code ${error.code}`);
+        }
+        return AbilityConstant.OnContinueResult.AGREE;
+    }
+    /**
+     * Copy distributed files.
+     * @param attachmentRecord
+     * @param key
+     */
+    fileCopy(attachment) {
+        let filePath = this.context.distributedFilesDir + '/' + attachment.name;
+        let savePath = this.context.filesDir + '/' + attachment.name;
+        try {
+            if (fileIo.accessSync(filePath)) {
+                let saveFile = fileIo.openSync(savePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+                let buf = new ArrayBuffer(CommonConstants.FILE_BUFFER_SIZE);
+                let readSize = 0;
+                let readLen = fileIo.readSync(file.fd, buf, {
+                    offset: readSize
+                });
+                while (readLen > 0) {
+                    readSize += readLen;
+                    fileIo.writeSync(saveFile.fd, buf);
+                    readLen = fileIo.readSync(file.fd, buf, {
+                        offset: readSize
+                    });
+                }
+                fileIo.closeSync(file);
+                fileIo.closeSync(saveFile);
+                hilog.info(0x0000, 'EntryAbility', attachment.name + 'synchronized successfully.');
+            }
+        }
+        catch (error) {
+            hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+        }
+    }
+    /**
+     * Obtain distributed file asset information.
+     * @param append
+     * @returns
+     */
+    getAssetInfo(append) {
+        try {
+            let filePath = uiContext.getHostContext().distributedFilesDir + '/' + append.fileName;
+            fileIo.statSync(filePath);
+            let uri = fileUri.getUriFromPath(filePath);
+            let stat = fileIo.statSync(filePath);
+            let attachment = {
+                name: append.fileName,
+                uri: uri,
+                path: filePath,
+                createTime: stat.ctime.toString(),
+                modifyTime: stat.ctime.toString(),
+                size: stat.size.toString()
+            };
+            return attachment;
+        }
+        catch (error) {
+            hilog.error(0x0000, 'statSync', `statSync error: ${error.code}  msg:${error.message}`);
+            return null;
+        }
+    }
+    onWindowStageCreate(windowStage) {
+        // Main window is created, set main page for this ability.
+        hilog.info(0x0000, 'EntryAbility', 'Ability onWindowStageCreate');
+        windowStage.loadContent('pages/MailHomePage', (err, data) => {
+            if (err.code) {
+                hilog.error(0x0000, 'EntryAbility', 'Failed to load the content, ', `Catch err: ${err}`);
+                return;
+            }
+            hilog.info(0x0000, 'EntryAbility', 'Succeeded in loading the content, ', `Data: ${data}`);
+            uiContext = windowStage.getMainWindowSync().getUIContext();
+        });
+    }
+    onWindowStageDestroy() {
+        hilog.info(DOMAIN, 'EntryAbility', 'Ability onWindowStageDestroy');
+    }
+    onForeground() {
+        hilog.info(DOMAIN, 'EntryAbility', 'Ability onForeground');
+    }
+    onBackground() {
+        hilog.info(DOMAIN, 'EntryAbility', 'Ability onBackground');
+    }
+    onDestroy() {
+        hilog.info(DOMAIN, 'EntryAbility', 'Ability onDestroy');
+    }
+    /**
+     * Apply for the permission to exchange data between different devices.
+     */
+    permissions() {
+        let atManager = abilityAccessCtrl.createAtManager();
+        try {
+            atManager.requestPermissionsFromUser(this.context, ['ohos.permission.DISTRIBUTED_DATASYNC']).then((data) => {
+                hilog.info(0x0000, 'hilog', `Data permissions:${data.permissions}`);
+            });
+        }
+        catch (err) {
+            hilog.info(0x0000, 'hilog', `Catch err: ${err}`);
+        }
+    }
+}
+//# sourceMappingURL=EntryAbility.js.mapÂ›Ùj hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.abilityAccessCtrl.d.tsÙt hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsÙz hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.ConfigurationConstant.d.tsÙn hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.UIAbility.d.tsÙs hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.data.distributedDataObject.d.tsÙ` hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fs.d.tsÙe hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fileuri.d.tsÙb hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.util.json.d.tsÙ^ hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsÙnE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\utils\MailInfoManager.etsÙoE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\common\CommonConstants.etsÙrE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\entryability\EntryAbility.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙGE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entryÙAE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail¥entry¥1.0.0Ô  ÙGE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entryÃÃÚ(A/*
+* Copyright (c) 2025 Huawei Device Co., Ltd.
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+import { abilityAccessCtrl, AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { commonType, distributedDataObject } from '@kit.ArkData';
+import { window } from '@kit.ArkUI';
+import { AppendixBean } from '../viewmodel/MailViewModel';
+import { fileIo, fileUri } from '@kit.CoreFileKit';
+import { JSON } from '@kit.ArkTS';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { MailInfoManager } from '../utils/MailInfoManager';
+import CommonConstants from '../common/CommonConstants';
+
+const DOMAIN = 0x0000;
+let uiContext: UIContext | undefined = undefined;
+
+export default class EntryAbility extends UIAbility {
+  private distributedObject: distributedDataObject.DataObject | undefined = undefined;
+
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.permissions();
+    try {
+      this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
+      hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
+      this.restoreDistributedObject(want, launchParam);
+    } catch (error) {
+      hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+      return error.code;
+    }
+  }
+
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.permissions();
+    hilog.info(0x0000, 'hilog', `Ability onNewWant`);
+    this.restoreDistributedObject(want, launchParam);
+  }
+
+  /**
+   * The peer device receives data.
+   * @param want
+   * @param launchParam
+   * @returns
+   */
+  async restoreDistributedObject(want: Want, launchParam: AbilityConstant.LaunchParam): Promise<void> {
+    this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result) => {
+      hilog.info(0x0000, 'hilog', `setMissionContinueState: ${JSON.stringify(result)}`);
+    });
+    if (launchParam.launchReason !== AbilityConstant.LaunchReason.CONTINUATION) {
+      return;
+    }
+    AppStorage.setOrCreate<string>('isContinuation', CommonConstants.CAN_CONTINUATION);
+    AppStorage.setOrCreate<Array<AppendixBean>>('appendix',
+      JSON.parse(want.parameters?.appendix as string) as Array<AppendixBean>);
+    // Obtain the session ID of a distributed data object.
+
+    let mailInfoManager: MailInfoManager = new MailInfoManager(undefined, undefined, undefined, undefined, undefined);
+    this.distributedObject = distributedDataObject.create(this.context, mailInfoManager);
+    // Add a data restored listener.
+    try {
+      this.distributedObject.on('status',
+        (sessionId: string, networkId: string, status: 'online' | 'offline' | 'restored') => {
+          hilog.info(0x0000, 'hilog', 'EntryAbility', 'status changed ' + sessionId + ' ' + status + ' ' + networkId);
+          if (status === 'restored') {
+            if (!this.distributedObject) {
+              return;
+            }
+            AppStorage.setOrCreate('recipient', this.distributedObject['recipient']);
+            AppStorage.setOrCreate('sender', this.distributedObject['sender']);
+            AppStorage.setOrCreate('subject', this.distributedObject['subject']);
+            AppStorage.setOrCreate('emailContent', this.distributedObject['emailContent']);
+            AppStorage.setOrCreate('attachments', this.distributedObject['attachments']);
+            let attachments = this.distributedObject['attachments'] as commonType.Assets;
+            hilog.info(0x0000, 'hilog',
+              'this.distributedObject[attachments] ' + JSON.stringify(this.distributedObject['attachments']));
+            for (const attachment of attachments) {
+              this.fileCopy(attachment);
+            }
+          }
+        });
+      let sessionId: string = want.parameters?.distributedSessionId as string;
+      hilog.info(0x0000, 'hilog', 'sessionId' + sessionId);
+      this.distributedObject.setSessionId(sessionId);
+      this.context.restoreWindowStage(new LocalStorage());
+    } catch (error) {
+      hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+    }
+  }
+
+  onWindowStageRestore(windowStage: window.WindowStage): void {
+    hilog.info(0x0000, 'hilog', 'EntryAbility', 'Ability onWindowStageRestore');
+
+    windowStage.loadContent('pages/MailHomePage', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'EntryAbility', 'Failed to load the content, ',
+          `Catch err: ${err.code},msg:${err.message}`);
+        return;
+      }
+      hilog.info(0x0000, 'EntryAbility', 'Succeeded in loading the content, ', `Data: ${data}`);
+    });
+  }
+
+  async onContinue(wantParam: Record<string, Object | undefined>): Promise<AbilityConstant.OnContinueResult> {
+    wantParam.appendix = JSON.stringify(AppStorage.get<Array<AppendixBean>>('appendix'));
+    try {
+      // Generate the session ID of the distributed data object.
+      let sessionId: string = distributedDataObject.genSessionId();
+      wantParam.distributedSessionId = sessionId;
+
+      let appendix = AppStorage.get<Array<AppendixBean>>('appendix');
+      let assets: commonType.Assets = [];
+      if (appendix) {
+        for (let i = 0; i < appendix.length; i++) {
+          let append = appendix[i];
+          let attachment: commonType.Asset = this.getAssetInfo(append)!;
+          assets.push(attachment);
+        }
+      }
+
+      let mailInfoManager: MailInfoManager = new MailInfoManager(AppStorage.get('recipient'), AppStorage.get('sender'),
+        AppStorage.get('subject'), AppStorage.get('emailContent'), assets);
+      let source = mailInfoManager.flatAssets();
+      this.distributedObject = distributedDataObject.create(this.context, source);
+      this.distributedObject.setSessionId(sessionId);
+      await this.distributedObject.save(wantParam.targetDevice as string).then(() => {
+        hilog.info(0x0000, 'hilog', 'onContinue distributedObject save success');
+      }).catch((err: BusinessError) => {
+        hilog.error(0x0000, 'hilog', `Failed to save. Code:${err.code},message:${err.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'hilog', 'distributedDataObject failed', `code ${(error as BusinessError).code}`);
+    }
+    return AbilityConstant.OnContinueResult.AGREE;
+  }
+
+  /**
+   * Copy distributed files.
+   * @param attachmentRecord
+   * @param key
+   */
+  private fileCopy(attachment: commonType.Asset) {
+    let filePath: string = this.context.distributedFilesDir + '/' + attachment.name;
+    let savePath: string = this.context.filesDir + '/' + attachment.name;
+    try {
+      if (fileIo.accessSync(filePath)) {
+        let saveFile = fileIo.openSync(savePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+        let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE);
+        let buf: ArrayBuffer = new ArrayBuffer(CommonConstants.FILE_BUFFER_SIZE);
+        let readSize = 0;
+        let readLen = fileIo.readSync(file.fd, buf, {
+          offset: readSize
+        });
+        while (readLen > 0) {
+          readSize += readLen;
+          fileIo.writeSync(saveFile.fd, buf);
+          readLen = fileIo.readSync(file.fd, buf, {
+            offset: readSize
+          });
+        }
+        fileIo.closeSync(file);
+        fileIo.closeSync(saveFile);
+        hilog.info(0x0000, 'EntryAbility', attachment.name + 'synchronized successfully.');
+      }
+    } catch (error) {
+      hilog.error(0x0000, 'EntryAbility', `have error .Code:${error.code},message: ${error.message}`);
+    }
+  }
+
+  /**
+   * Obtain distributed file asset information.
+   * @param append
+   * @returns
+   */
+  private getAssetInfo(append: AppendixBean) {
+    try {
+      let filePath = uiContext!.getHostContext()!.distributedFilesDir + '/' + append.fileName;
+      fileIo.statSync(filePath);
+      let uri: string = fileUri.getUriFromPath(filePath);
+      let stat = fileIo.statSync(filePath);
+
+      let attachment: commonType.Asset = {
+        name: append.fileName,
+        uri: uri,
+        path: filePath,
+        createTime: stat.ctime.toString(),
+        modifyTime: stat.ctime.toString(),
+        size: stat.size.toString()
+      };
+      return attachment;
+    } catch (error) {
+      hilog.error(0x0000, 'statSync', `statSync error: ${error.code}  msg:${error.message}`);
+      return null;
+    }
+  }
+
+  onWindowStageCreate(windowStage: window.WindowStage) {
+    // Main window is created, set main page for this ability.
+    hilog.info(0x0000, 'EntryAbility', 'Ability onWindowStageCreate');
+
+    windowStage.loadContent('pages/MailHomePage', (err, data) => {
+      if (err.code) {
+        hilog.error(0x0000, 'EntryAbility', 'Failed to load the content, ', `Catch err: ${err}`);
+        return;
+      }
+      hilog.info(0x0000, 'EntryAbility', 'Succeeded in loading the content, ', `Data: ${data}`);
+      uiContext = windowStage.getMainWindowSync().getUIContext();
+    });
+  }
+
+  onWindowStageDestroy() {
+    hilog.info(DOMAIN, 'EntryAbility', 'Ability onWindowStageDestroy');
+  }
+
+  onForeground() {
+    hilog.info(DOMAIN, 'EntryAbility', 'Ability onForeground');
+  }
+
+  onBackground() {
+    hilog.info(DOMAIN, 'EntryAbility', 'Ability onBackground');
+  }
+
+  onDestroy() {
+    hilog.info(DOMAIN, 'EntryAbility', 'Ability onDestroy');
+  }
+
+  /**
+   * Apply for the permission to exchange data between different devices.
+   */
+  permissions(): void {
+    let atManager = abilityAccessCtrl.createAtManager();
+    try {
+      atManager.requestPermissionsFromUser(this.context, ['ohos.permission.DISTRIBUTED_DATASYNC']).then((data) => {
+        hilog.info(0x0000, 'hilog', `Data permissions:${data.permissions}`);
+      });
+    } catch (err) {
+      hilog.info(0x0000, 'hilog', `Catch err: ${err}`);
+    }
+  }
+}
+ÀÔrC›·@ohos.abilityAccessCtrlÙ!@ohos.app.ability.AbilityConstantÙ'@ohos.app.ability.ConfigurationConstant»@ohos.app.ability.UIAbilityÙ @ohos.data.distributedDataObject­@ohos.file.fs²@ohos.file.fileuri¯@ohos.util.json«@ohos.hilog¹../common/CommonConstants¸../utils/MailInfoManagerÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙj hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.abilityAccessCtrl.d.tsÔrE‘¯hostModulesInfo‘ÔrF’²hostDependencyName®hostModuleName·@ohos.abilityAccessCtrl¥entryÃªoh-resolveÂDAÃÙt hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsE’FÙ!@ohos.app.ability.AbilityConstant¥entryFÙ!@ohos.app.ability.AbilityConstant¥entryÃªoh-resolveÂDAÃÙz hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.ConfigurationConstant.d.tsE‘FÙ'@ohos.app.ability.ConfigurationConstant¥entryÃªoh-resolveÂDAÃÙn hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.UIAbility.d.tsE‘F»@ohos.app.ability.UIAbility¥entryÃªoh-resolveÂDAÃÙs hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.data.distributedDataObject.d.tsE‘FÙ @ohos.data.distributedDataObject¥entryÃªoh-resolveÂDAÃÙ` hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fs.d.tsE’F­@ohos.file.fs¥entryF­@ohos.file.fs¥entryÃªoh-resolveÂDAÃÙe hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fileuri.d.tsE‘F²@ohos.file.fileuri¥entryÃªoh-resolveÂDAÃÙb hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.util.json.d.tsE‘F¯@ohos.util.json¥entryÃªoh-resolveÂDAÃÙ^ hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsE’F«@ohos.hilog¥entryF«@ohos.hilog¥entryÃªoh-resolveÂDAÂÙoE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\common\CommonConstants.etsAÃªoh-resolveÂDAÂÙnE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\utils\MailInfoManager.etsAÃªoh-resolveÂ“ÔrG–§version¤fileªsourceRoot§sources¥names¨mappings¯EntryAbility.js ‘°EntryAbility.etsÜ‘”    ‘” –”   ” 	” ” Ì[”7 Ìl”8 Ìm‘”    ‘” –”   ” ” +” Ì[”? Ìl”Ì@ Ìm‘”    ‘” –”   ” -” ÌB”" Ì[”ÌK Ìl”ÌL Ìm‘”    ‘” –”   ” ÌD” ÌM” Ì[”3 Ìl”4 Ìm–”   ” ” *”" 2”ÌD Ì@”ÌE ÌA–”   ” 	” ”  ”" 2”# 3–”   ” ” ”  ”( 2”) 3–”   ” 	” ” ”" !”# "–”   ” 	” ” ” 3”  4˜”   ” ”	 	” ” ”   ”: :”; ;–”   ” ” ” ”7 7”8 8–”   ” ” ” ” ” –”   ” ” ” '” 0” 1˜”   ” ” ” ” ”! "”* *”3 3‘”  •” 
+” ”! ÌL”* ÌU”+ ÌV’” Ìú ” Ìú–”  ”  
+”  ”  ”  ”  ?–” !” !” !	” !” !” !’” "” "Ü ” #” #
+” #” #” #”. #(”0 #*”1 #+”= #7”> #8”ÌS #ÌM”ÌT #ÌN”Ì] #ÌW”Ì^ #ÌX”Ìp #Ìj”Ìq #Ìk”Ìr #Ìl” $” $” $” $” $” $” $”( $"”* $$”6 $0”8 $2”ÌJ $ÌD”ÌK $ÌE”ÌL $ÌFš” %” %
+” %”) %#”* %$”. %(”0 %*”; %5”< %6”= %7‘”	 &”” &” &” &” &Ü ” '” '” '” '” '” '”  '”. '(”0 '*”ÌD '>”ÌI 'ÌC”ÌJ 'ÌD”ÌN 'ÌH”Ì[ 'ÌU”Ì` 'ÌZ”Ìa 'Ì[”Ìh 'Ìb”Ìj 'Ìd”Ìk 'Ìe”Ìl 'Ìf–” (” (” (” (” (” (‘”	 )’” *” *–” ,” ,” ,” ,” ,” ,Ì@–” -” -” -	” -” -” -œ” .” .	” .
+” .” .” .” .”" .”$ . ”7 .3”8 .4”9 .5š” /” /” /	”% /!”& /"”* /&”, /(”7 /3”8 /4”9 /5’” 0” 0‘” 2‘” 7˜” 8”	 8”
+ 8”" 8 ”# 8!”' 8+”) 8-”4 8ÌUÜ ” 9” 9” 9	” 9” 9”, 9(”- 9)”< 98”= 99”ÌJ 9ÌF”ÌK 9ÌG”ÌS 9ÌO”ÌU 9ÌQ”ÌV 9ÌR”Ì\ 9ÌX”Ì^ 9ÌZ”Ì` 9Ì\Ü ” :” :” :” :” :” :” :”& : ”( :"”ÌD :>”ÌH :ÌB”ÌI :ÌC”ÌR :ÌL”ÌS :ÌM”ÌY :ÌS”ÌZ :ÌT”Ì\ :ÌV”Ì] :ÌW”Ì^ :ÌX”” ;”	 ;”
+ ;” ;œ” <” <” <” <”$ < ”) <%”8 <4”9 <5”ÌE <ÌA”ÌF <ÌB”ÌR <ÌN”ÌT <ÌP’” =” =‘”	 >œ” ?” ?” ?” ?” ?#”/ ?3”1 ?5”Ì@ ?ÌD”ÌA ?ÌE”ÌQ ?ÌU”ÌR ?ÌV”ÌS ?ÌWÜ ” Ì@” Ì@” Ì@” Ì@” Ì@0”) Ì@:”+ ÌA”/ ÌA
+”0 ÌA”5 ÌA”6 ÌA”: ÌA”; ÌA”ÌE ÌA ”ÌG ÌA"”ÌO ÌA4”ÌP ÌAÌL”ÌQ ÌAÌM”ÌR ÌAÌN’” ÌB”> ÌB:Ü ” ÌD” ÌD” ÌD” ÌD+”" ÌD/”1 ÌD>”2 ÌD?”; ÌDÌH”= ÌDÌJ”ÌF ÌDÌS”ÌH ÌDÌU”ÌQ ÌDÌ^”ÌS ÌDÌ`”Ì\ ÌDÌi”Ì^ ÌDÌk”Ìg ÌDÌt”Ìh ÌDÌu”Ìi ÌDÌvÜ ” ÌE” ÌE” ÌE	” ÌE”! ÌE”6 ÌE2”7 ÌE3”= ÌE9”> ÌE:”ÌB ÌE>”ÌC ÌE?”ÌJ ÌEÌF”ÌL ÌEÌH”Ì[ ÌEÌW”Ì\ ÌEÌX”Ì] ÌEÌY’” ÌF”( ÌF$’” ÌG” ÌGÜ ” ÌH” ÌH
+” ÌH”" ÌH”# ÌH”% ÌH”& ÌH ”. ÌH(”0 ÌI”1 ÌI	”: ÌI”< ÌI”ÌE ÌI-”ÌG ÌI/”ÌM ÌIÌX”ÌO ÌIÌZ”ÌQ ÌIÌ\Ü ” ÌJ
+” ÌJ” ÌJ” ÌJ” ÌJ”! ÌJ”# ÌJ”* ÌJ$”, ÌJ&”: ÌJ4”< ÌJ6”ÌM ÌJÌG”ÌP ÌJÌJ”ÌY ÌJÌS”Ì\ ÌJÌV”Ì_ ÌJÌY”Ìb ÌJÌ\”Ìh ÌJÌb”Ìk ÌJÌe”Ìn ÌJÌh”Ìq ÌJÌk”Ìz ÌJÌt”Ì{ ÌJÌu”Ì| ÌJÌv–” ÌK
+” ÌK” ÌK” ÌK”) ÌK#”+ ÌK%—” ÌL” ÌL” ÌL” ÌL” ÌL”/ ÌL'”1 ÌL)’” ÌM” ÌM‘” ÌNŸ” ÌO” ÌO” ÌO”* ÌO"”+ ÌO#”6 ÌO.”8 ÌO0”< ÌO4”= ÌO5”ÌN ÌOÌF”ÌO ÌOÌG”ÌZ ÌOÌR”Ì[ ÌOÌS”Ì\ ÌOÌT”Ì] ÌOÌUŸ” ÌP” ÌP” ÌP”* ÌP"”+ ÌP#”3 ÌP+”5 ÌP-”9 ÌP1”: ÌP2”ÌK ÌPÌC”ÌL ÌPÌD”ÌT ÌPÌL”ÌU ÌPÌM”ÌV ÌPÌN”ÌW ÌPÌOŸ” ÌQ” ÌQ” ÌQ”* ÌQ"”+ ÌQ#”4 ÌQ,”6 ÌQ.”: ÌQ2”; ÌQ3”ÌL ÌQÌD”ÌM ÌQÌE”ÌV ÌQÌN”ÌW ÌQÌO”ÌX ÌQÌP”ÌY ÌQÌQŸ” ÌR” ÌR” ÌR”* ÌR"”+ ÌR#”9 ÌR1”; ÌR3”? ÌR7”Ì@ ÌR8”ÌQ ÌRÌI”ÌR ÌRÌJ”Ì` ÌRÌX”Ìa ÌRÌY”Ìb ÌRÌZ”Ìc ÌRÌ[Ÿ” ÌS” ÌS” ÌS”* ÌS"”+ ÌS#”8 ÌS0”: ÌS2”> ÌS6”? ÌS7”ÌP ÌSÌH”ÌQ ÌSÌI”Ì^ ÌSÌV”Ì_ ÌSÌW”Ì` ÌSÌX”Ìa ÌSÌY›” ÌT” ÌT”# ÌT”& ÌT”* ÌT"”+ ÌT#”< ÌT4”= ÌT5”ÌJ ÌTÌB”ÌK ÌTÌX”ÌL ÌTÌYÜ ” ÌU” ÌU” ÌU” ÌU” ÌU”% ÌU”' ÌU”. ÌU&”0 ÌV”ÌV ÌV4”ÌY ÌV7”Ì] ÌV;”Ì^ ÌV<”Ìg ÌVÌE”Ìh ÌVÌF”Ìl ÌVÌJ”Ìm ÌVÌK”Ì~ ÌVÌ\”Ì ÌVÌ]”ÌŒ ÌVÌj”Ì ÌVÌk”Ì ÌVÌl”Ì ÌVÌm”Ì ÌVÌn—” ÌW” ÌW” ÌW”) ÌW!”- ÌW%”8 ÌW0”: ÌW2˜” ÌX” ÌX” ÌX”% ÌX”& ÌX”0 ÌX&”1 ÌX'”2 ÌX(‘” ÌY‘” ÌZ”” Ì[” Ì[	” Ì[
+” Ì[š” Ì\” Ì\
+” Ì\” Ì\”  Ì\"”! Ì\#”+ Ì\-”- Ì\/”ÌA Ì\ÌM”ÌB Ì\ÌN” Ì]” Ì]” Ì]” Ì]” Ì]” Ì]” Ì]”& Ì] ”( Ì]"”3 Ì]-”6 Ì]0”? Ì]9”Ì@ Ì]:”ÌA Ì];š” Ì^” Ì^
+” Ì^”" Ì^”# Ì^”/ Ì^)”0 Ì^*”9 Ì^3”: Ì^4”; Ì^5œ” Ì_” Ì_
+” Ì_” Ì_” Ì_”+ Ì_%”, Ì_&”0 Ì_*”< Ì_6”> Ì_8”? Ì_9”Ì@ Ì_:‘”	 Ì`”” Ì`” Ì`” Ì`” Ì`Ü ” Ìa” Ìa” Ìa” Ìa” Ìa” Ìa”  Ìa”. Ìa(”0 Ìa*”ÌD Ìa>”ÌI ÌaÌC”ÌJ ÌaÌD”ÌN ÌaÌH”Ì[ ÌaÌU”Ì` ÌaÌZ”Ìa ÌaÌ[”Ìh ÌaÌb”Ìj ÌaÌd”Ìk ÌaÌe”Ìl ÌaÌf‘”	 Ìb’” Ìc” Ìc”” Ìe” Ìe” Ìe”$ Ìe6” Ìf” Ìf	” Ìf
+” Ìf” Ìf” Ìf” Ìf”" Ìf”$ Ìf ”2 Ìf.”4 Ìf0”ÌR ÌfÌN”ÌS ÌfÌO”ÌT ÌfÌP” Ìh” Ìh” Ìh” Ìh”  Ìh”4 Ìh0”6 Ìh2”7 Ìh3”: Ìh6”< Ìh8”Ì@ Ìh<”ÌB Ìh>”ÌD ÌhÌ@–” Ìi” Ìi
+” Ìi” Ìi” Ìi” ÌiÜ ” Ìj” Ìj” Ìj” Ìj” Ìj”" Ìj”$ Ìj”2 Ìj*”4 Ìj,”ÌR ÌjÌJ”ÌT Ìk
+”Ìb Ìk”Ìe Ìk”Ìf Ìk”Ìj Ìk ”Ìr Ìk(”Ìu Ìk+”Ìv Ìk,”Ì} Ìk3”Ì Ìk5”Ì€ Ìk6”Ì Ìk7’” Ìl” Ìl‘” ÌmÜ ” Ìn” Ìn” Ìn” Ìn” Ìn” Ìn” Ìn”- Ìn'”/ Ìn)”ÌS ÌnÌM”ÌU ÌnÌO”Ì^ ÌnÌX”Ìb ÌnÌ\”Ìd ÌnÌ^”Ìe ÌnÌ_”Ìf ÌnÌ`”” Ìo”	 Ìo”
+ Ìo” Ìo’” Ìp” Ìp–” Ìr”	 Ìr”
+ Ìr” Ìr” Ìr” ÌrÌ@Ü ” Ìs” Ìs” Ìs” Ìs” Ìs”! Ìs”" Ìs”+ Ìs'”, Ìs(”6 Ìs2”7 Ìs3”: Ìs6”; ÌsÌL”ÌE ÌsÌV”ÌF ÌsÌW”ÌG ÌsÌX”ÌH ÌsÌY’” Ìt” Ìt’” Ìu”ÌF ÌuÌ@™” Ìv” Ìv
+” Ìv” Ìv”1 Ìv3”2 Ìv4”> ÌvÌ@”Ì@ ÌvÌB”ÌA ÌvÌC—” Ìw” Ìw” Ìw”* Ìw$”- Ìw'”6 Ìw0”7 Ìw1›” Ìy” Ìy
+” Ìy” Ìy”% Ìy”& Ìy ”) Ìy#”* Ìy9”4 ÌyÌC”5 ÌyÌD”6 ÌyÌE–” Ìz” Ìz
+” Ìz” Ìz&” Ìz(” Ìz)”” Ì{” Ì{
+” Ì{” Ì{Ü ” Ì|” Ì|” Ì|” Ì|” Ì|” Ì|”  Ì|”! Ì|”$ Ì|”, Ì|$”- Ì|%”3 Ì|+”5 Ì|-”6 Ì|.”8 Ì|0”: Ì|2™” Ì}
+” Ì}” Ì}”! Ì}”) Ì}”* Ì} ”+ Ì}!”, Ì}"”- Ì}#›” Ì~
+” Ì~”" Ì~”% Ì~-”) Ì~1”* Ì~2”6 Ì~>”7 Ì~?”= Ì~ÌE”> Ì~ÌG”? Ì~ÌH˜” Ì
+” Ì” Ì” Ì”  Ì”* Ì ”+ Ì!”, Ì"‘” Ì€	‘” ÌÜ &” Ìƒ” Ìƒ
+” Ìƒ”" Ìƒ-”& Ìƒ1”5 ÌƒÌ@”6 ÌƒÌA”Ì@ ÌƒÌK”ÌA ÌƒÌL”ÌD ÌƒÌO”ÌE ÌƒÌP”ÌP ÌƒÌ[”ÌQ ÌƒÌ\”ÌS ÌƒÌ^”Ì] ÌƒÌh”Ì^ ÌƒÌi”Ìa ÌƒÌl”Ìb ÌƒÌm”Ìj ÌƒÌu”Ìk ÌƒÌv”Ìm Ì„”Ìw Ì„”Ìx Ì„”Ì{ Ì„”Ì| Ì„”Ì… Ì„ ”Ì† Ì„!”Ìˆ Ì„#”Ì’ Ì„-”Ì“ Ì„.”Ì– Ì„1”Ì— Ì„2”Ì¥ Ì„Ì@”Ì¦ Ì„ÌA”Ì¨ Ì„ÌC”Ì® Ì„ÌI”Ì¯ Ì„ÌJ”Ì° Ì„ÌK™” Ì…” Ì…
+” Ì…” Ì…”( Ì…"”) Ì…#”3 Ì…-”5 Ì…/”6 Ì…0Ü ” Ì†” Ì†
+” Ì†”" Ì†”% Ì†”: Ì†4”; Ì†5”ÌA Ì†;”ÌB Ì†<”ÌF Ì†Ì@”ÌG Ì†ÌA”ÌN Ì†ÌH”ÌP Ì†ÌJ”ÌV Ì†ÌP”ÌW Ì†ÌQ”ÌX Ì†ÌRš” Ì‡” Ì‡
+” Ì‡”" Ì‡”# Ì‡”/ Ì‡)”0 Ì‡*”9 Ì‡3”: Ì‡4”; Ì‡5Ü ” Ìˆ” Ìˆ” Ìˆ” Ìˆ”( Ìˆ"”) Ìˆ#”- Ìˆ'”. Ìˆ(”7 Ìˆ1”8 Ìˆ2”ÌD ÌˆÌH”ÌE ÌˆÌI”ÌF ÌˆÌJ”ÌJ ÌˆÌN”ÌK ÌˆÌO”ÌN ÌˆÌR”ÌP ÌˆÌTœ” Ì‰” Ì‰” Ì‰” Ì‰” Ì‰”! Ì‰”# Ì‰”* Ì‰"”, Ì‰$”ÌW Ì‰ÌO”ÌX Ì‰ÌP”ÌY Ì‰ÌQš” ÌŠ” ÌŠ” ÌŠ” ÌŠ	” ÌŠ” ÌŠ” ÌŠ” ÌŠ"” ÌŠ$” ÌŠ&Ü ” Ì‹” Ì‹” Ì‹” Ì‹” Ì‹”" Ì‹”$ Ì‹”+ Ì‹#”- Ì‹%”ÌE Ì‹=”ÌH Ì‹Ì@”ÌI Ì‹ÌA”ÌM Ì‹ÌE”ÌY Ì‹ÌQ”Ì\ Ì‹ÌT”Ì] Ì‹ÌU”Ìd Ì‹Ì\”Ìf Ì‹Ì^”Ìg Ì‹Ì_”Ìh Ì‹Ì`”” ÌŒ” ÌŒ” ÌŒ” ÌŒ	‘”	 Ì”” Ì” Ì” Ì” ÌÜ ” Ì” Ì” Ì” Ì” Ì” Ì”  Ì”' Ì!”) Ì#”ÌG ÌÌA”ÌI ÌÌC”ÌQ ÌÌL”ÌV ÌÌc”ÌW ÌÌd”Ì[ ÌÌh”Ì] ÌÌj”Ì^ ÌÌk”Ì_ ÌÌl‘”	 Ì˜” Ì” Ì” Ì” Ì”/ Ì+”0 Ì,”5 Ì1”6 Ì2’” Ì‘” Ì‘‘” Ì“‘” Ì—”” Ì˜
+” Ì˜” Ì˜” Ì˜/Ü ” Ì™” Ì™” Ì™” Ì™” Ì™” Ì™ ”# Ì™'”$ Ì™(”7 Ì™;”: Ì™>”= Ì™ÌA”Ì@ Ì™ÌD”ÌJ Ì™ÌN”ÌK Ì™ÌO”ÌO Ì™ÌS”ÌP Ì™ÌTÜ ” Ìš” Ìš” Ìš” Ìš” Ìš” Ìš ”# Ìš'”$ Ìš(”, Ìš0”/ Ìš3”2 Ìš6”5 Ìš9”? ÌšÌC”Ì@ ÌšÌD”ÌD ÌšÌH”ÌE ÌšÌI’” Ì›” Ì›™” Ìœ” Ìœ
+” Ìœ” Ìœ”! Ìœ”" Ìœ”* Ìœ$”+ Ìœ%”- Ìœ'Ü ” Ì” Ì” Ì” Ì”% Ì”& Ì”. Ì&”/ Ì'”7 Ì/”9 Ì1”? Ì7”Ì@ Ì8”ÌH ÌÌ@”ÌI ÌÌA”ÌS ÌÌK”ÌV ÌÌN”Ì\ ÌÌT”Ì] ÌÌU”Ìe ÌÌ]”Ìf ÌÌ^”Ìl ÌÌd”Ìm ÌÌe”Ìn ÌÌfÜ ” Ì” Ì” Ì” Ì”! Ì”" Ì”* Ì"”+ Ì#”3 Ì+”5 Ì-”; Ì3”< Ì4”ÌD Ì<”ÌE Ì=”ÌO ÌÌG”ÌP ÌÌH”ÌQ ÌÌIœ” ÌŸ” ÌŸ” ÌŸ” ÌŸ” ÌŸ#”) ÌŸ.”* ÌŸ/”9 ÌŸ>”: ÌŸ?”ÌJ ÌŸÌO”ÌK ÌŸÌP”ÌL ÌŸÌQ–” Ì ” Ì ” Ì ” Ì ”  Ì ”! Ì ” Ì¡” Ì¡” Ì¡” Ì¡”$ Ì¡”% Ì¡”- Ì¡%”. Ì¡&”2 Ì¡*”3 Ì¡+”5 Ì¡-”7 Ì¡/”: Ì¡2”< Ì¡4”” Ì¢
+” Ì¢” Ì¢”$ Ì¢“” Ì£	” Ì£
+” Ì£–” Ì¤” Ì¤” Ì¤”! Ì¤”" Ì¤”$ Ì¤•” Ì¥
+” Ì¥”  Ì¥”' Ì¥”( Ì¥œ” Ì¦
+” Ì¦” Ì¦”$ Ì¦”% Ì¦”- Ì¦#”. Ì¦$”0 Ì¦&”2 Ì¦(”5 Ì¦+”6 Ì¦,”7 Ì¦-” Ì§
+” Ì§” Ì§”$ Ì§”% Ì§”- Ì§#”. Ì§$”2 Ì§(”3 Ì§)”5 Ì§+”7 Ì§-”: Ì§0”< Ì§2”” Ì¨” Ì¨”  Ì¨”( Ì¨“” Ì©” Ì©” Ì©‘” Ìª	˜” Ì«” Ì«” Ì«”  Ì«”! Ì«”% Ì«”& Ì«”' Ì«˜” Ì¬” Ì¬” Ì¬”  Ì¬”! Ì¬”) Ì¬!”* Ì¬"”+ Ì¬#Ü ” Ì­” Ì­” Ì­” Ì­” Ì­”! Ì­”# Ì­”1 Ì­)”3 Ì­+”= Ì­5”> Ì­6”ÌB Ì­:”ÌE Ì­=”Ìa Ì­ÌY”Ìb Ì­ÌZ”Ìc Ì­Ì[‘” Ì®‘”	 Ì¯”” Ì¯” Ì¯” Ì¯” Ì¯Ü ” Ì°” Ì°” Ì°” Ì°” Ì°” Ì°”  Ì°”. Ì°(”0 Ì°*”ÌD Ì°>”ÌI Ì°ÌC”ÌJ Ì°ÌD”ÌN Ì°ÌH”Ì[ Ì°ÌU”Ì` Ì°ÌZ”Ìa Ì°Ì[”Ìh Ì°Ìb”Ìj Ì°Ìd”Ìk Ì°Ìe”Ìl Ì°Ìf‘”	 Ì±’” Ì²” Ì²‘” Ì´‘” Ì¸”” Ì¹
+” Ì¹” Ì¹” Ì¹+’” Ìº” ÌºÜ ” Ì»” Ì»
+” Ì»” Ì»”$ Ì»”% Ì» ”3 Ì».”5 Ì»1”6 Ì»2”ÌI Ì»ÌE”ÌL Ì»ÌH”ÌO Ì»ÌK”ÌR Ì»ÌN”ÌX Ì»ÌT”ÌY Ì»ÌU”Ìa Ì»Ì]”Ìb Ì»Ì^˜” Ì¼” Ì¼” Ì¼” Ì¼” Ì¼”$ Ì¼”% Ì¼”& Ì¼ ›” Ì½” Ì½
+” Ì½” Ì½” Ì½” Ì½ ”, Ì½.”- Ì½/”5 Ì½7”6 Ì½8”7 Ì½9›” Ì¾” Ì¾
+” Ì¾” Ì¾” Ì¾” Ì¾”& Ì¾ ”' Ì¾!”/ Ì¾)”0 Ì¾*”1 Ì¾+”” ÌÀ” ÌÀ
+” ÌÀ” ÌÀ)–” ÌÁ” ÌÁ” ÌÁ” ÌÁ” ÌÁ”% ÌÁ”” ÌÂ” ÌÂ” ÌÂ” ÌÂ”” ÌÃ” ÌÃ” ÌÃ” ÌÃ™” ÌÄ” ÌÄ” ÌÄ”  ÌÄ”! ÌÄ”& ÌÄ”' ÌÄ”/ ÌÄ'”1 ÌÄ)™” ÌÅ” ÌÅ” ÌÅ”  ÌÅ”! ÌÅ”& ÌÅ”' ÌÅ”/ ÌÅ'”1 ÌÅ)™” ÌÆ” ÌÆ” ÌÆ” ÌÆ” ÌÆ” ÌÆ”  ÌÆ”( ÌÆ ”* ÌÆ"’” ÌÇ” ÌÇ”” ÌÈ” ÌÈ” ÌÈ” ÌÈ‘”	 ÌÉ”” ÌÉ” ÌÉ” ÌÉ” ÌÉÜ ” ÌÊ” ÌÊ” ÌÊ” ÌÊ” ÌÊ” ÌÊ”  ÌÊ”* ÌÊ$”, ÌÊ&”? ÌÊ9”ÌD ÌÊ>”ÌE ÌÊ?”ÌI ÌÊÌC”ÌR ÌÊÌL”ÌW ÌÊÌQ”ÌX ÌÊÌR”Ì_ ÌÊÌY”Ìa ÌÊÌ[”Ìb ÌÊÌ\”Ìc ÌÊÌ]”” ÌË” ÌË” ÌË” ÌË‘”	 ÌÌ’” ÌÍ” ÌÍ”” ÌÏ” ÌÏ” ÌÏ”# ÌÏ5’” ÌĞ”ÌB ÌĞ>œ” ÌÑ” ÌÑ	” ÌÑ
+” ÌÑ” ÌÑ” ÌÑ” ÌÑ”) ÌÑ%”+ ÌÑ'”ÌH ÌÑÌD”ÌI ÌÑÌE”ÌJ ÌÑÌF” ÌÓ” ÌÓ” ÌÓ” ÌÓ”  ÌÓ”4 ÌÓ0”6 ÌÓ2”7 ÌÓ3”: ÌÓ6”< ÌÓ8”Ì@ ÌÓ<”ÌB ÌÓ>”ÌD ÌÓÌ@–” ÌÔ” ÌÔ
+” ÌÔ” ÌÔ” ÌÔ” ÌÔÜ ” ÌÕ” ÌÕ” ÌÕ” ÌÕ” ÌÕ”" ÌÕ”$ ÌÕ”2 ÌÕ*”4 ÌÕ,”ÌR ÌÕÌJ”ÌT ÌÕÌL”Ìb ÌÕÌZ”Ìe ÌÕÌ]”Ìg ÌÕÌ_”Ìh ÌÕÌ`”Ìi ÌÕÌa’” ÌÖ” ÌÖ‘” Ì×Ü ” ÌØ” ÌØ” ÌØ” ÌØ” ÌØ” ÌØ” ÌØ”- ÌØ'”/ ÌØ)”ÌS ÌØÌM”ÌU ÌØÌO”Ì^ ÌØÌX”Ìb ÌØÌ\”Ìd ÌØÌ^”Ìe ÌØÌ_”Ìf ÌØÌ`›” ÌÙ” ÌÙ” ÌÙ”# ÌÙ”$ ÌÙ”5 ÌÙ/”7 ÌÙ1”8 ÌÙ2”ÌD ÌÙ>”ÌF ÌÙÌ@”ÌG ÌÙÌA”” ÌÚ”	 ÌÚ”
+ ÌÚ” ÌÚ’” ÌÛ” ÌÛ’” Ìİ” Ìİœ” ÌŞ” ÌŞ	” ÌŞ
+” ÌŞ” ÌŞ” ÌŞ” ÌŞ”) ÌŞ%”+ ÌŞ'”ÌI ÌŞÌE”ÌJ ÌŞÌF”ÌK ÌŞÌG’” Ìß” Ìß’” Ìá” Ìáœ” Ìâ” Ìâ	” Ìâ
+” Ìâ” Ìâ” Ìâ” Ìâ”) Ìâ%”+ Ìâ'”ÌA Ìâ=”ÌB Ìâ>”ÌC Ìâ?’” Ìã” Ìã’” Ìå” Ìåœ” Ìæ” Ìæ	” Ìæ
+” Ìæ” Ìæ” Ìæ” Ìæ”) Ìæ%”+ Ìæ'”ÌA Ìæ=”ÌB Ìæ>”ÌC Ìæ?’” Ìç” Ìç’” Ìé” Ìéœ” Ìê” Ìê	” Ìê
+” Ìê” Ìê” Ìê” Ìê”) Ìê%”+ Ìê'”> Ìê:”? Ìê;”Ì@ Ìê<’” Ìë” Ìë‘” Ìí‘” Ìï’” Ìğ” Ìğ™” Ìñ” Ìñ” Ìñ” Ìñ”) Ìñ%”* Ìñ&”9 Ìñ5”; Ìñ7”< Ìñ8’” Ìò” ÌòÜ ” Ìó” Ìó” Ìó”0 Ìó*”1 Ìó+”5 Ìó/”6 Ìó0”= Ìó7”? Ìó9”Ì@ Ìó:”Ìf ÌóÌ`”Ìg ÌóÌa”Ìh ÌóÌb”Ìi ÌóÌc”Ìm ÌóÌg”Ìn ÌóÌh”Ìo ÌóÌi”Ìs ÌóÌm”Ìu ÌóÌo”Ìw ÌóÌqÜ ” Ìô” Ìô” Ìô” Ìô” Ìô”! Ìô”# Ìô”* Ìô"”, Ìô$”Ì@ Ìô8”ÌD Ìô<”ÌE Ìô=”ÌP ÌôÌH”ÌR ÌôÌJ”ÌS ÌôÌK”ÌT ÌôÌL”” Ìõ” Ìõ” Ìõ” Ìõ	‘”	 Ìö”” Ìö” Ìö” Ìö” Ìö” Ì÷” Ì÷” Ì÷” Ì÷” Ì÷” Ì÷” Ì÷”& Ì÷ ”( Ì÷"”6 Ì÷0”9 Ì÷3”; Ì÷5”< Ì÷6”= Ì÷7‘”	 Ìø’” Ìù” Ìù‘” ÌúÔrH–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìı ‘”  Ìş ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ÔrI’§missing¦pluginÃ¦genAbcÂÔ  ÔrJ”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache›ÔrK•¤type¥start£endªspecifiers¦source±ImportDeclarationÍaÍ™‘ÔrL”¤type¥start£end¥local¶ImportDefaultSpecifierÍhÍyÔrM”¤type¥start£end¤nameªIdentifierÍhÍy±abilityAccessCtrlÔrN•¤type¥start£end¥value£raw§LiteralÍÍ˜·@ohos.abilityAccessCtrl¹"@ohos.abilityAccessCtrl"K±ImportDeclarationÍüÍ<‘L¶ImportDefaultSpecifierÍÍMªIdentifierÍÍ¯AbilityConstantN§LiteralÍÍ;Ù!@ohos.app.ability.AbilityConstantÙ#"@ohos.app.ability.AbilityConstant"K±ImportDeclarationÍŸÍë‘L¶ImportDefaultSpecifierÍ¦Í»MªIdentifierÍ¦Í»µConfigurationConstantN§LiteralÍÁÍêÙ'@ohos.app.ability.ConfigurationConstantÙ)"@ohos.app.ability.ConfigurationConstant"K±ImportDeclarationÍ
+NÍ
+‚‘L¶ImportDefaultSpecifierÍ
+UÍ
+^MªIdentifierÍ
+UÍ
+^©UIAbilityN§LiteralÍ
+dÍ
+»@ohos.app.ability.UIAbility½"@ohos.app.ability.UIAbility"K±ImportDeclarationÍ
+„Í
+É‘L¶ImportDefaultSpecifierÍ
+‹Í
+ MªIdentifierÍ
+‹Í
+ µdistributedDataObjectN§LiteralÍ
+¦Í
+ÈÙ @ohos.data.distributedDataObjectÙ""@ohos.data.distributedDataObject"K±ImportDeclarationÍ
+ËÍ
+î‘L¶ImportDefaultSpecifierÍ
+ÒÍ
+ØMªIdentifierÍ
+ÒÍ
+Ø¦fileIoN§LiteralÍ
+ŞÍ
+í­@ohos.file.fs¯"@ohos.file.fs"K±ImportDeclarationÍ
+ğÍ‘L¶ImportDefaultSpecifierÍ
+÷Í
+şMªIdentifierÍ
+÷Í
+ş§fileUriN§LiteralÍÍ²@ohos.file.fileuri´"@ohos.file.fileuri"K±ImportDeclarationÍÍ>‘L¶ImportDefaultSpecifierÍ"Í&MªIdentifierÍ"Í&¤JSONN§LiteralÍ,Í=¯@ohos.util.json±"@ohos.util.json"K±ImportDeclarationÍ@Í`‘L¶ImportDefaultSpecifierÍGÍLMªIdentifierÍGÍL¥hilogN§LiteralÍRÍ_«@ohos.hilog­"@ohos.hilog"K±ImportDeclarationÍbÍ‘ÔrO•¤type¥start£end¨imported¥local¯ImportSpecifierÍkÍzMªIdentifierÍkÍz¯MailInfoManagerMªIdentifierÍkÍz¯MailInfoManagerN§LiteralÍ‚Íœ¸../utils/MailInfoManagerº'../utils/MailInfoManager'K±ImportDeclarationÍŸÍ×‘L¶ImportDefaultSpecifierÍ¦ÍµMªIdentifierÍ¦Íµ¯CommonConstantsN§LiteralÍ»ÍÖ¹../common/CommonConstants»'../common/CommonConstants'

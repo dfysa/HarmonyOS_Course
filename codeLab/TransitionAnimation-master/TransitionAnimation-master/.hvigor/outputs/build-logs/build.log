@@ -1,0 +1,929 @@
+[2025-09-28T14:38:49.138] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T14:38:49.648] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T14:38:51.599] [DEBUG] debug-file - hvigorfile, require result:  { appTasks: [Getter] }
+[2025-09-28T14:38:51.794] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T14:38:51.798] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T14:38:51.841] [DEBUG] debug-file - Project task initialization takes 4 ms 
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T14:38:51.811] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T14:38:51.864] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T14:38:51.874] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:38:51.882] [DEBUG] debug-file - entry : clean cost memory 0.11655426025390625
+[2025-09-28T14:38:49.141] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.5', dependencies: {} }
+[2025-09-28T14:38:51.906] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T14:38:49.649] [DEBUG] debug-file - Since current hvigor version 5.19.6 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2025-09-28T14:38:51.599] [DEBUG] debug-file - hvigorfile, binding system plugins { appTasks: [Getter] }
+[2025-09-28T14:38:51.795] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T14:38:51.800] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T14:38:51.841] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:38:51.836] [DEBUG] debug-file - Sdk init in 35 ms 
+[2025-09-28T14:38:51.865] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T14:38:51.876] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T14:38:51.883] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 242 ms 
+[2025-09-28T14:38:49.144] [DEBUG] debug-file - env: daemon=false
+[2025-09-28T14:38:51.908] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T14:38:49.649] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T14:38:51.795] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:38:51.842] [DEBUG] debug-file - hvigorfile, resolving C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T14:38:51.802] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T14:38:51.869] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T14:38:51.876] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T14:38:51.883] [INFO] debug-file - Finished :entry:clean... after 2 ms 
+[2025-09-28T14:38:49.144] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-09-28T14:38:49.651] [DEBUG] debug-file - hvigorfile, resolving C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T14:38:51.795] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:38:51.847] [DEBUG] debug-file - hvigorfile, require result:  { hapTasks: [Getter] }
+[2025-09-28T14:38:51.870] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:38:51.807] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T14:38:51.879] [DEBUG] debug-file - Configuration phase cost:2 s 230 ms 
+[2025-09-28T14:38:51.884] [DEBUG] debug-file - Executing task ::clean
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Clear worker 0.
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:38:51.847] [DEBUG] debug-file - hvigorfile, binding system plugins { hapTasks: [Getter] }
+[2025-09-28T14:38:51.872] [DEBUG] debug-file - Module TransitionAnimation-master Collected Dependency: 
+[2025-09-28T14:38:51.880] [DEBUG] debug-file - Configuration task cost before running: 2 s 240 ms 
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-09-28T14:38:51.884] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T14:38:51.859] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:38:51.848] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\cli\main\cli.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\bin\hvigor.js
+[2025-09-28T14:38:51.872] [DEBUG] debug-file - Module TransitionAnimation-master's total dependency: 0
+[2025-09-28T14:38:51.881] [DEBUG] debug-file - Executing task :entry:clean
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T14:38:51.884] [DEBUG] debug-file - TransitionAnimation-master : clean cost memory 0.02069854736328125
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T14:38:51.881] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T14:38:51.884] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 243 ms 
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Clear worker 1.
+[2025-09-28T14:38:51.884] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-09-28T14:38:51.884] [DEBUG] debug-file - Executing task :entry:init
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-09-28T14:38:51.885] [DEBUG] debug-file - entry : init cost memory 0.0126953125
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:38:51.910] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T14:38:51.885] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 244 ms 
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:38:51.911] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T14:38:51.885] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-09-28T14:38:51.860] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:38:51.914] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-09-28T14:38:51.885] [DEBUG] debug-file - Executing task ::init
+[2025-09-28T14:38:51.863] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2025-09-28T14:38:51.914] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-09-28T14:38:51.885] [DEBUG] debug-file - TransitionAnimation-master : init cost memory 0.01149749755859375
+[2025-09-28T14:38:51.863] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T14:38:51.917] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-09-28T14:38:51.885] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 245 ms 
+[2025-09-28T14:38:51.885] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-09-28T14:38:51.893] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:38:51.903] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T14:38:51.903] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T14:39:45.054] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T14:39:45.253] [DEBUG] debug-file - env: daemon=true
+[2025-09-28T14:39:45.063] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.5', dependencies: {} }
+[2025-09-28T14:39:46.982] [DEBUG] debug-file - java daemon tryConnect failed Error: connect ECONNREFUSED 127.0.0.1:45050
+[2025-09-28T14:39:47.615] [DEBUG] debug-file - java daemon started at port 45050 pid 15276
+[2025-09-28T14:39:47.663] [DEBUG] debug-file - session manager: set active socket. socketId=uCZJ0C6dAcbQSQJpAAAB
+[2025-09-28T14:39:48.791] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:39:48.807] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T14:39:48.809] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T14:39:48.812] [DEBUG] debug-file - hvigorfile, resolving C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T14:39:51.521] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T14:39:51.521] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T14:39:51.688] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T14:39:51.688] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T14:39:51.689] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T14:39:51.689] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T14:39:51.690] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T14:39:51.692] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T14:39:51.694] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T14:39:51.697] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T14:39:51.700] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T14:39:51.724] [DEBUG] debug-file - Sdk init in 31 ms 
+[2025-09-28T14:39:51.730] [DEBUG] debug-file - Project task initialization takes 5 ms 
+[2025-09-28T14:39:51.730] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+[2025-09-28T14:39:51.731] [DEBUG] debug-file - hvigorfile, resolving C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T14:39:51.737] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T14:39:51.737] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T14:39:51.738] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigorfile.ts
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-09-28T14:39:51.749] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T14:39:51.749] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:39:51.750] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:39:51.751] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:39:51.755] [DEBUG] debug-file - Module entry task initialization takes 4 ms 
+[2025-09-28T14:39:51.755] [DEBUG] debug-file - hvigorfile, resolve finished C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\hvigorfile.ts
+[2025-09-28T14:39:51.769] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 14 ms 
+[2025-09-28T14:39:51.769] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T14:39:51.771] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T14:39:51.779] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T14:39:51.780] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:39:51.782] [DEBUG] debug-file - Module TransitionAnimation-master Collected Dependency: 
+[2025-09-28T14:39:51.782] [DEBUG] debug-file - Module TransitionAnimation-master's total dependency: 0
+[2025-09-28T14:39:51.783] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:39:51.785] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T14:39:51.785] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T14:39:51.788] [DEBUG] debug-file - Configuration phase cost:2 s 979 ms 
+[2025-09-28T14:39:51.791] [DEBUG] debug-file - Configuration task cost before running: 2 s 994 ms 
+[2025-09-28T14:39:51.792] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.793] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.793] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.796] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-09-28T14:39:51.801] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.801] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.801] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.915] [DEBUG] debug-file - current product is not Atomic service.
+[2025-09-28T14:39:51.916] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'E:\\DevEco-Studio\\DevEco Studio\\jbr' },
+  { CLASSPATH: undefined }
+]
+[2025-09-28T14:39:51.916] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [ { NODE_HOME: 'E:\\DevEco-Studio\\DevEco Studio\\tools\\node' } ]
+[2025-09-28T14:39:51.918] [DEBUG] debug-file - entry : default@PreBuild cost memory -2.5978927612304688
+[2025-09-28T14:39:51.918] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 121 ms 
+[2025-09-28T14:39:51.920] [INFO] debug-file - Finished :entry:default@PreBuild... after 122 ms 
+[2025-09-28T14:39:51.921] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.921] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.921] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.921] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-09-28T14:39:51.922] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:51.922] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.042877197265625
+[2025-09-28T14:39:51.922] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 125 ms 
+[2025-09-28T14:39:51.922] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-09-28T14:39:51.923] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.923] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.923] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.923] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2025-09-28T14:39:51.924] [DEBUG] debug-file - Task 'entry:default@GenerateMetadata' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:51.924] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.924] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.924] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.927] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.108062744140625
+[2025-09-28T14:39:51.927] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 130 ms 
+[2025-09-28T14:39:51.927] [INFO] debug-file - Finished :entry:default@GenerateMetadata... after 4 ms 
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.049957275390625
+[2025-09-28T14:39:51.928] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 132 ms 
+[2025-09-28T14:39:51.929] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2025-09-28T14:39:51.929] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.930] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.930] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.930] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-09-28T14:39:51.931] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.931] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.931] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.931] [DEBUG] debug-file - Change app api release type with 'Release'
+[2025-09-28T14:39:51.932] [DEBUG] debug-file - Change app compile API version with '5.1.1.208'
+[2025-09-28T14:39:51.932] [DEBUG] debug-file - Change app target API version with '50005017'
+[2025-09-28T14:39:51.932] [DEBUG] debug-file - Change app minimum API version with '50005017'
+[2025-09-28T14:39:51.932] [DEBUG] debug-file - Use cli appEnvironment
+[2025-09-28T14:39:51.934] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.1810302734375
+[2025-09-28T14:39:51.934] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 137 ms 
+[2025-09-28T14:39:51.934] [INFO] debug-file - Finished :entry:default@MergeProfile... after 4 ms 
+[2025-09-28T14:39:51.935] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.935] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.935] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.936] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-09-28T14:39:51.936] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:51.937] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.937] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.937] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.938] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.1115264892578125
+[2025-09-28T14:39:51.938] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 141 ms 
+[2025-09-28T14:39:51.938] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 3 ms 
+[2025-09-28T14:39:51.939] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.939] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.939] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.05027008056640625
+[2025-09-28T14:39:51.940] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 143 ms 
+[2025-09-28T14:39:51.940] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-09-28T14:39:51.941] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.941] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.941] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.942] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-09-28T14:39:51.952] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:51.952] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.496368408203125
+[2025-09-28T14:39:51.952] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 155 ms 
+[2025-09-28T14:39:51.952] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 11 ms 
+[2025-09-28T14:39:51.953] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.953] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.953] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.956] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2025-09-28T14:39:51.956] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.957] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.957] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.957] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.06815338134765625
+[2025-09-28T14:39:51.957] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 160 ms 
+[2025-09-28T14:39:51.957] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 2 ms 
+[2025-09-28T14:39:51.958] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.958] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.05139923095703125
+[2025-09-28T14:39:51.959] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 163 ms 
+[2025-09-28T14:39:51.960] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2025-09-28T14:39:51.961] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.961] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.961] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.962] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2025-09-28T14:39:51.963] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.963] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.963] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.964] [DEBUG] debug-file - Module Pack Info:  {
+  summary: {
+    app: { bundleName: 'c***n', bundleType: 'app', version: [Object] },
+    modules: [ [Object] ]
+  },
+  packages: [
+    {
+      deviceType: [Array],
+      moduleType: 'entry',
+      deliveryWithInstall: true,
+      name: 'entry-default'
+    }
+  ]
+}
+[2025-09-28T14:39:51.965] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.14281463623046875
+[2025-09-28T14:39:51.965] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 169 ms 
+[2025-09-28T14:39:51.966] [INFO] debug-file - Finished :entry:default@MakePackInfo... after 4 ms 
+[2025-09-28T14:39:51.967] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.967] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.967] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.967] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2025-09-28T14:39:51.968] [DEBUG] debug-file - File: 'C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\syscap.json' from 'sysCapJsonPath' is not exists, just ignore.
+[2025-09-28T14:39:51.968] [DEBUG] debug-file - Task 'entry:default@SyscapTransform' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:51.969] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.969] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.969] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.969] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.09592437744140625
+[2025-09-28T14:39:51.969] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 173 ms 
+[2025-09-28T14:39:51.970] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 3 ms 
+[2025-09-28T14:39:51.971] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.971] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.971] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.971] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-09-28T14:39:51.972] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.972] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:51.972] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:51.973] [DEBUG] debug-file - [
+  'E:\\DevEco-Studio\\DevEco Studio\\tools\\node\\node.exe',
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '17'
+]
+[2025-09-28T14:39:52.455] [DEBUG] debug-file - 12.0.6.0
+[2025-09-28T14:39:52.458] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.4333572387695312
+[2025-09-28T14:39:52.458] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 661 ms 
+[2025-09-28T14:39:52.458] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 487 ms 
+[2025-09-28T14:39:52.460] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.460] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.460] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.461] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-09-28T14:39:52.462] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.462] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.462] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.466] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.12862396240234375
+[2025-09-28T14:39:52.466] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 669 ms 
+[2025-09-28T14:39:52.468] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 6 ms 
+[2025-09-28T14:39:52.469] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.469] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.469] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.470] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-09-28T14:39:52.470] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:52.471] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.471] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.471] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.471] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.10711669921875
+[2025-09-28T14:39:52.471] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 674 ms 
+[2025-09-28T14:39:52.471] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 2 ms 
+[2025-09-28T14:39:52.472] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.472] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.472] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.473] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2025-09-28T14:39:52.473] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.473] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.473] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.475] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.0656890869140625
+[2025-09-28T14:39:52.475] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 679 ms 
+[2025-09-28T14:39:52.477] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 3 ms 
+[2025-09-28T14:39:52.479] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.479] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.479] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.480] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2025-09-28T14:39:52.485] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2025-09-28T14:39:52.486] [DEBUG] debug-file - Task 'entry:default@ProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:52.487] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.487] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.487] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.489] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.17023468017578125
+[2025-09-28T14:39:52.490] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 694 ms 
+[2025-09-28T14:39:52.492] [INFO] debug-file - Finished :entry:default@ProcessResource... after 8 ms 
+[2025-09-28T14:39:52.494] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.495] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.495] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.498] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-09-28T14:39:52.499] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:52.517] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.8262557983398438
+[2025-09-28T14:39:52.517] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 720 ms 
+[2025-09-28T14:39:52.523] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 20 ms 
+[2025-09-28T14:39:52.524] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.524] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.524] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.525] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2025-09-28T14:39:52.528] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.528] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.528] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.534] [DEBUG] debug-file - Worker dispatch failed, running processLibs on main thread.
+[2025-09-28T14:39:52.536] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 0.33586883544921875
+[2025-09-28T14:39:52.536] [DEBUG] debug-file - runTaskFromQueue task cost before running: 3 s 739 ms 
+[2025-09-28T14:39:52.537] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 12 ms 
+[2025-09-28T14:39:52.539] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.539] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:52.539] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:52.539] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2025-09-28T14:39:52.541] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2025-09-28T14:39:52.560] [DEBUG] debug-file - Use tool [E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-l',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resConfig.json'
+]
+[2025-09-28T14:39:52.562] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 197820416,
+  heapTotal: 157708288,
+  heapUsed: 124078056,
+  external: 3074318,
+  arrayBuffers: 97276
+} os memoryUsage :12.511146545410156
+[2025-09-28T14:39:53.003] [DEBUG] debug-file - Info: Pack: normal pack mode
+
+[2025-09-28T14:39:53.088] [DEBUG] debug-file - Info: hardware concurrency count is : 16
+Info: thread count is : 16
+
+[2025-09-28T14:39:53.089] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-09-28T14:39:53.092] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:39:53.111] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:39:53.127] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:39:53.138] [DEBUG] debug-file - 09-28 14:39:53.138 31972 21328 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 14:39:53.138 31972 21328 E C01400/ImageTranscoderUtils: ImageFilter IN C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T14:39:53.140] [DEBUG] debug-file - 09-28 14:39:53.140 31972 21328 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T14:39:53.140] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T14:39:53.142] [DEBUG] debug-file - 09-28 14:39:53.143 31972 21328 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+
+[2025-09-28T14:39:53.143] [DEBUG] debug-file - 09-28 14:39:53.143 31972 21328 E C01400/ImageTranscoderUtils: ImageFilter IN C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+
+[2025-09-28T14:39:53.146] [DEBUG] debug-file - 09-28 14:39:53.146 31972 21328 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T14:39:53.147] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+
+[2025-09-28T14:39:53.149] [DEBUG] debug-file - 09-28 14:39:53.150 31972 21328 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 14:39:53.150 31972 21328 E C01400/ImageTranscoderUtils: ImageFilter IN C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+
+[2025-09-28T14:39:53.151] [DEBUG] debug-file - 09-28 14:39:53.151 31972 21328 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T14:39:53.151] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+
+[2025-09-28T14:39:53.153] [DEBUG] debug-file - Info: can't scale media json file.
+
+[2025-09-28T14:39:53.154] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\resources\base\media\app_icon.png
+Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\background.png
+Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\foreground.png
+Warning: C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\media\layered_image.json is not png format
+
+[2025-09-28T14:39:53.158] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-09-28T14:39:53.159] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-09-28T14:39:53.227] [DEBUG] debug-file - entry : default@CompileResource cost memory -11.598831176757812
+[2025-09-28T14:39:53.227] [DEBUG] debug-file - runTaskFromQueue task cost before running: 4 s 430 ms 
+[2025-09-28T14:39:53.228] [INFO] debug-file - Finished :entry:default@CompileResource... after 687 ms 
+[2025-09-28T14:39:53.229] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.229] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.229] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.230] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2025-09-28T14:39:53.231] [DEBUG] debug-file - Task 'entry:default@DoNativeStrip' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:53.231] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.231] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.231] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.236] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 0.100738525390625
+[2025-09-28T14:39:53.236] [DEBUG] debug-file - runTaskFromQueue task cost before running: 4 s 439 ms 
+[2025-09-28T14:39:53.236] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 6 ms 
+[2025-09-28T14:39:53.237] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.237] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.237] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.238] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2025-09-28T14:39:53.239] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-09-28T14:39:53.257] [DEBUG] debug-file - build config:
+[2025-09-28T14:39:53.257] [DEBUG] debug-file - {
+  moduleType: 'entry',
+  perf: 0,
+  targetName: '.default',
+  packageManagerType: 'ohpm',
+  localPropertiesPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\local.properties',
+  isPreview: false,
+  isOhosTest: false,
+  isLocalTest: false,
+  buildMode: 'Debug',
+  hotReloadBuild: undefined,
+  watchMode: 'false',
+  aceProfilePath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile',
+  etsLoaderPath: 'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader',
+  modulePath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry',
+  testFrameworkPar: {
+    testMode: undefined,
+    coveragePathFilter: undefined,
+    coverageMode: undefined
+  },
+  needCoverageInsert: false,
+  debugLine: false,
+  projectTopDir: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master',
+  compileSdkVersion: 19,
+  compatibleSdkVersion: 17,
+  compatibleSdkVersionStage: undefined,
+  bundleName: 'c***n',
+  etsLoaderVersion: '5.1.1.208',
+  etsLoaderReleaseType: 'Release',
+  aotCompileMode: 'type',
+  apPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\modules.ap',
+  entryModuleName: 'entry',
+  entryModuleVersion: '1.0.0',
+  entryPackageName: 'entry',
+  allModuleNameHash: '38eebcd0193774a5e9c4e3f9b3809eac',
+  externalApiPaths: [ 'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\hms\\ets' ],
+  compilerTypes: undefined,
+  isCrossplatform: false,
+  hvigorPluginFile: undefined,
+  compilePluginPath: undefined,
+  buildGeneratedProfilePath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\generated\\profile\\default',
+  bundleType: 'app',
+  arkTSVersion: undefined,
+  apiVersion: 19,
+  needCompleteSourcesMap: false,
+  isFaMode: false,
+  strictMode: undefined,
+  buildDir: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build',
+  deviceTypes: [ 'phone' ],
+  useNormalizedOHMUrl: false,
+  pkgContextInfo: undefined,
+  ohPackagePathMap: {},
+  dependencyAliasMap: {},
+  permission: { requestPermissions: undefined, definePermissions: undefined },
+  integratedHsp: false,
+  projectArkOption: undefined,
+  sourceMapDir: undefined,
+  branchElimination: false,
+  transformLib: undefined,
+  caseSensitiveCheck: false,
+  tsImportSendable: false,
+  resolveConflictMode: true,
+  depName2RootPath: {},
+  depName2DepInfo: {},
+  rootPathSet: [
+    'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master'
+  ],
+  useNativeResolver: true,
+  shouldEmitJs: true,
+  useTscResolve: false,
+  singleFileEmit: false,
+  userProjectConfig: {
+    autoLazyImport: false,
+    allowEmptyBundleName: false,
+    reExportCheckMode: 'noCheck',
+    executionMode: 'memory'
+  },
+  executionMode: 'memory',
+  autoLazyImport: false,
+  allowEmptyBundleName: false,
+  reExportCheckMode: 'noCheck',
+  arkCompileCachePath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule',
+  aceModuleJsonPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\ark_module.json',
+  appResource: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\ResourceTable.txt',
+  rawFileResource: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  resourceTableHash: '5679b331fed45840f2835ddc1408702f',
+  runtimeOS: 'HarmonyOS',
+  sdkInfo: 'false:19:5.1.1.208:Release',
+  aceModuleRoot: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\src\\main\\ets',
+  compileMode: 'esmodule',
+  aceSuperVisualPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\src\\main\\supervisual',
+  aceBuildJson: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader\\default\\loader.json',
+  cachePath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule\\debug',
+  aceModuleBuild: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader_out\\default\\ets',
+  supportChunks: true,
+  declaredFilesPath: undefined,
+  shouldCollectDirectImportees: false,
+  isByteCodeHarOptimize: false,
+  pkgNameToPkgBriefInfo: {
+    entry: {
+      pkgRoot: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry',
+      originalSourceRoots: undefined,
+      sourceRoots: [Array],
+      pkgName: 'entry'
+    }
+  },
+  projectModel: {
+    'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\src\\main': {
+      moduleName: 'entry',
+      modulePkgPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry',
+      belongProjectPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master'
+    },
+    'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry': {
+      moduleName: 'entry',
+      modulePkgPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry',
+      belongProjectPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master'
+    },
+    'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master': {
+      moduleName: 'TransitionAnimation-master',
+      modulePkgPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master',
+      belongProjectPath: 'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master'
+    }
+  },
+  pkgJsonFileHash: '172beb4545b6b99fb4e8f4dca3554044',
+  allModulePaths: [
+    'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry'
+  ],
+  routerMap: {},
+  obfuscationOptions: undefined,
+  compileBlockPkg: [],
+  mockParams: {
+    decorator: '@MockSetup',
+    packageName: '@ohos/hamock',
+    etsSourceRootPath: 'src/main/ets',
+    mockConfigPath: undefined,
+    mockConfigKey2ModuleInfo: {},
+    source2ModuleIdMap: {}
+  },
+  copyCodeResourceEnable: true,
+  copyCodeResourceExcludes: [],
+  uiTransformOptimization: false,
+  otherPaths: {
+    'entry/*': [
+      '..\\*',
+      '..\\..\\..\\build\\default\\generated\\profile\\default\\*'
+    ]
+  },
+  collectImportersConfig: undefined
+}
+[2025-09-28T14:39:53.257] [DEBUG] debug-file - Compile arkts with external api path: E:\DevEco-Studio\DevEco Studio\sdk\default\hms\ets
+[2025-09-28T14:39:53.260] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T14:39:53.260] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T14:39:53.261] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T14:39:53.267] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T14:39:53.272] [DEBUG] debug-file - default@CompileArkTS work[0] is submitted.
+[2025-09-28T14:39:53.274] [DEBUG] debug-file - default@CompileArkTS work[0] is pushed to ready queue.
+[2025-09-28T14:39:53.274] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.275] [DEBUG] debug-file - Create  resident worker with id: 4.
+[2025-09-28T14:39:53.279] [DEBUG] debug-file - default@CompileArkTS work[0] has been dispatched to worker[4].
+[2025-09-28T14:39:53.279] [DEBUG] debug-file - default@CompileArkTS work[0] is dispatched.
+[2025-09-28T14:39:53.280] [DEBUG] debug-file - CopyResources startTime: 397973307300
+[2025-09-28T14:39:53.280] [DEBUG] debug-file - default@CompileArkTS work[1] is submitted.
+[2025-09-28T14:39:53.280] [DEBUG] debug-file - default@CompileArkTS work[1] is pushed to ready queue.
+[2025-09-28T14:39:53.281] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.281] [DEBUG] debug-file - Create  resident worker with id: 14.
+[2025-09-28T14:39:53.283] [DEBUG] debug-file - default@CompileArkTS work[1] has been dispatched to worker[14].
+[2025-09-28T14:39:53.284] [DEBUG] debug-file - default@CompileArkTS work[1] is dispatched.
+[2025-09-28T14:39:53.284] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 2.359039306640625
+[2025-09-28T14:39:53.286] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.287] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.287] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.288] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2025-09-28T14:39:53.295] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.12631988525390625
+[2025-09-28T14:39:53.295] [DEBUG] debug-file - runTaskFromQueue task cost before running: 4 s 498 ms 
+[2025-09-28T14:39:53.296] [INFO] debug-file - Finished :entry:default@BuildJS... after 7 ms 
+[2025-09-28T14:39:53.301] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.302] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.302] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.303] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2025-09-28T14:39:53.304] [DEBUG] debug-file - Task 'entry:default@CacheNativeLibs' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:39:53.305] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.305] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:39:53.306] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:39:53.307] [DEBUG] debug-file - default@CacheNativeLibs work[2] is submitted.
+[2025-09-28T14:39:53.307] [DEBUG] debug-file - default@CacheNativeLibs work[2] is pushed to ready queue.
+[2025-09-28T14:39:53.308] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:39:53.308] [DEBUG] debug-file - A work dispatched to worker[14] failed because of worker busy.
+[2025-09-28T14:39:53.309] [DEBUG] debug-file - Create  resident worker with id: 13.
+[2025-09-28T14:39:53.311] [DEBUG] debug-file - default@CacheNativeLibs work[2] has been dispatched to worker[13].
+[2025-09-28T14:39:53.311] [DEBUG] debug-file - default@CacheNativeLibs work[2] is dispatched.
+[2025-09-28T14:39:53.312] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.25170135498046875
+[2025-09-28T14:39:54.850] [DEBUG] debug-file - worker[13] has one work done.
+[2025-09-28T14:39:54.851] [DEBUG] debug-file - default@CacheNativeLibs work[2] done.
+[2025-09-28T14:39:54.852] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 17 ms 
+[2025-09-28T14:39:54.895] [DEBUG] debug-file - worker[14] has one work done.
+[2025-09-28T14:39:54.895] [DEBUG] debug-file - CopyResources is end, endTime: 399588850900
+[2025-09-28T14:39:54.895] [DEBUG] debug-file - default@CompileArkTS work[1] done.
+[2025-09-28T14:39:54.960] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T14:39:55.008] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T14:40:04.748] [DEBUG] debug-file - worker[4] has one work done.
+[2025-09-28T14:40:04.749] [DEBUG] debug-file - Ark compile task finished.finished time is 409441900800
+[2025-09-28T14:40:04.751] [DEBUG] debug-file - default@CompileArkTS work[0] done.
+[2025-09-28T14:40:04.751] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2025-09-28T14:40:04.753] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 7 s 798 ms 
+[2025-09-28T14:40:04.754] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.754] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.754] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:04.754] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2025-09-28T14:40:04.755] [DEBUG] debug-file - Task 'entry:default@GeneratePkgModuleJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:40:04.755] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.755] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.755] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:04.757] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.09340667724609375
+[2025-09-28T14:40:04.757] [DEBUG] debug-file - runTaskFromQueue task cost before running: 15 s 960 ms 
+[2025-09-28T14:40:04.757] [INFO] debug-file - Finished :entry:default@GeneratePkgModuleJson... after 3 ms 
+[2025-09-28T14:40:04.759] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.759] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.759] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:04.760] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2025-09-28T14:40:04.762] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.762] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:04.762] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:04.764] [DEBUG] debug-file - Use tool [E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--ets-path',
+  'C:\\Users\\fly\\Downloads\\TransitionAnimation-master\\TransitionAnimation-master\\entry\\build\\default\\intermediates\\loader_out\\default\\ets'
+]
+[2025-09-28T14:40:05.264] [DEBUG] debug-file - java daemon socket received message:{"code":0,"message":"pack success"}
+[2025-09-28T14:40:05.269] [DEBUG] debug-file - entry : default@PackageHap cost memory -19.93744659423828
+[2025-09-28T14:40:05.269] [DEBUG] debug-file - runTaskFromQueue task cost before running: 16 s 472 ms 
+[2025-09-28T14:40:05.270] [INFO] debug-file - Finished :entry:default@PackageHap... after 509 ms 
+[2025-09-28T14:40:05.271] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.271] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.271] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:05.272] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2025-09-28T14:40:05.273] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5.
+[2025-09-28T14:40:05.274] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.274] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.274] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:05.275] [DEBUG] debug-file - entry : default@SignHap cost memory 0.09920501708984375
+[2025-09-28T14:40:05.275] [DEBUG] debug-file - runTaskFromQueue task cost before running: 16 s 479 ms 
+[2025-09-28T14:40:05.276] [INFO] debug-file - Finished :entry:default@SignHap... after 3 ms 
+[2025-09-28T14:40:05.277] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.277] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.277] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:05.277] [DEBUG] debug-file - Executing task :entry:default@CollectDebugSymbol
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - entry : default@CollectDebugSymbol cost memory 0.170318603515625
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - runTaskFromQueue task cost before running: 16 s 482 ms 
+[2025-09-28T14:40:05.279] [INFO] debug-file - Finished :entry:default@CollectDebugSymbol... after 2 ms 
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - entry : assembleHap cost memory 0.01450347900390625
+[2025-09-28T14:40:05.279] [DEBUG] debug-file - runTaskFromQueue task cost before running: 16 s 483 ms 
+[2025-09-28T14:40:05.280] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2025-09-28T14:40:05.291] [DEBUG] debug-file - BUILD SUCCESSFUL in 16 s 494 ms 
+[2025-09-28T14:40:05.294] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:40:05.295] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:40:05.295] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.296] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.296] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2025-09-28T14:40:05.296] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-09-28T14:40:05.297] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T14:40:05.297] [DEBUG] debug-file - Update task entry:default@PreBuild input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\oh-package.json5 cache by regenerate.
+[2025-09-28T14:40:05.297] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:5 ms .
+[2025-09-28T14:40:05.297] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-09-28T14:40:05.298] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-09-28T14:40:05.298] [DEBUG] debug-file - Update task entry:default@GenerateMetadata input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:40:05.298] [DEBUG] debug-file - Update task entry:default@GenerateMetadata output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\hap_metadata\default\output_metadata.json cache.
+[2025-09-28T14:40:05.299] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata post-execution cost:1 ms .
+[2025-09-28T14:40:05.299] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:40:05.299] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.299] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:40:05.299] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\merge_profile\default\module.json cache.
+[2025-09-28T14:40:05.300] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:2 ms .
+[2025-09-28T14:40:05.300] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:40:05.300] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.300] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache.
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:1 ms .
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:40:05.301] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.302] [DEBUG] debug-file - Update task entry:default@MakePackInfo output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\pack.info cache.
+[2025-09-28T14:40:05.302] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo post-execution cost:1 ms .
+[2025-09-28T14:40:05.302] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\syscap_tool.exe cache by regenerate.
+[2025-09-28T14:40:05.302] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\ets\api\device-define cache by regenerate.
+[2025-09-28T14:40:05.303] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2025-09-28T14:40:05.304] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:2 ms .
+[2025-09-28T14:40:05.304] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-09-28T14:40:05.304] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\process_profile\default\module.json cache.
+[2025-09-28T14:40:05.304] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2025-09-28T14:40:05.305] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T14:40:05.305] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\oh-package.json5 cache by regenerate.
+[2025-09-28T14:40:05.305] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:40:05.306] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\temp-router-map.json cache.
+[2025-09-28T14:40:05.307] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\loader-router-map.json cache.
+[2025-09-28T14:40:05.307] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:3 ms .
+[2025-09-28T14:40:05.307] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\startup\default\startup_config.json cache.
+[2025-09-28T14:40:05.307] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-09-28T14:40:05.307] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resConfig.json cache.
+[2025-09-28T14:40:05.308] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\opt-compression.json cache.
+[2025-09-28T14:40:05.308] [DEBUG] debug-file - Incremental task entry:default@ProcessResource post-execution cost:1 ms .
+[2025-09-28T14:40:05.309] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\router_map\default\temp-router-map.json cache by regenerate.
+[2025-09-28T14:40:05.310] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader\default\loader.json cache.
+[2025-09-28T14:40:05.310] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:2 ms .
+[2025-09-28T14:40:05.311] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.311] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T14:40:05.311] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache.
+[2025-09-28T14:40:05.311] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:2 ms .
+[2025-09-28T14:40:05.312] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\resources cache by regenerate.
+[2025-09-28T14:40:05.317] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\AppScope\resources cache by regenerate.
+[2025-09-28T14:40:05.318] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-09-28T14:40:05.318] [DEBUG] debug-file - Update task entry:default@CompileResource input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resConfig.json cache by regenerate.
+[2025-09-28T14:40:05.318] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default cache.
+[2025-09-28T14:40:05.323] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\r\default\ResourceTable.h cache.
+[2025-09-28T14:40:05.324] [DEBUG] debug-file - Update task entry:default@CompileResource output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\r\default cache.
+[2025-09-28T14:40:05.324] [DEBUG] debug-file - Incremental task entry:default@CompileResource post-execution cost:13 ms .
+[2025-09-28T14:40:05.324] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:40:05.325] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2025-09-28T14:40:05.325] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2025-09-28T14:40:05.326] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T14:40:05.326] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T14:40:05.327] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T14:40:05.327] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T14:40:05.327] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\src\main\ets cache by regenerate.
+[2025-09-28T14:40:05.329] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T14:40:05.330] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets cache.
+[2025-09-28T14:40:05.330] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:6 ms .
+[2025-09-28T14:40:05.331] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T14:40:05.332] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T14:40:05.332] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T14:40:05.332] [DEBUG] debug-file - Update task entry:default@BuildJS input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T14:40:05.333] [DEBUG] debug-file - Update task entry:default@BuildJS output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\js cache.
+[2025-09-28T14:40:05.333] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:3 ms .
+[2025-09-28T14:40:05.333] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T14:40:05.333] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:40:05.334] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2025-09-28T14:40:05.334] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:1 ms .
+[2025-09-28T14:40:05.334] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T14:40:05.334] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\package\default\module.json cache.
+[2025-09-28T14:40:05.334] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson post-execution cost:1 ms .
+[2025-09-28T14:40:05.335] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T14:40:05.335] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T14:40:05.335] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2025-09-28T14:40:05.338] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2025-09-28T14:40:05.338] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2025-09-28T14:40:05.339] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets cache by regenerate.
+[2025-09-28T14:40:05.339] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T14:40:05.339] [DEBUG] debug-file - Update task entry:default@PackageHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Update task entry:default@PackageHap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Update task entry:default@PackageHap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\source_map\default\sourceMaps.map cache.
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Update task entry:default@PackageHap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:6 ms .
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Update task entry:default@SignHap input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-unsigned.hap cache by regenerate.
+[2025-09-28T14:40:05.340] [DEBUG] debug-file - Update task entry:default@SignHap output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2025-09-28T14:40:05.341] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2025-09-28T14:40:05.341] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T14:40:05.341] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:40:05.342] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol output file:C:\Users\fly\Downloads\TransitionAnimation-master\TransitionAnimation-master\entry\build\default\outputs\default\symbol cache.
+[2025-09-28T14:40:05.342] [DEBUG] debug-file - Incremental task entry:default@CollectDebugSymbol post-execution cost:2 ms .
+[2025-09-28T14:40:05.365] [DEBUG] debug-file - Cleanup worker 0.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current idle worker size: 4.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Cleanup worker 1.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current idle worker size: 3.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Cleanup worker 13.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Worker 13 has been cleaned up.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current idle worker size: 2.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Cleanup worker 14.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Worker 14 has been cleaned up.
+[2025-09-28T14:40:05.366] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T14:40:05.367] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:40:05.372] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T14:40:05.373] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T14:40:05.371] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T14:40:05.372] [DEBUG] debug-file - java daemon socket close code:1000 reason:close by user
+[2025-09-28T14:40:05.374] [DEBUG] debug-file - worker[1] exits with exit code 1.
+[2025-09-28T14:40:05.374] [DEBUG] debug-file - worker[0] exits with exit code 1.
+[2025-09-28T14:40:05.375] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:40:05.375] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:40:05.376] [DEBUG] debug-file - worker[13] exits with exit code 1.
+[2025-09-28T14:40:05.377] [DEBUG] debug-file - worker[14] exits with exit code 1.

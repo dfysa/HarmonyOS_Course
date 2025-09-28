@@ -7,7 +7,7 @@ export struct LayoutStylePage {
       TabContent() {
         CoursePage()
       }
-      .tabBar('tab1')
+      .tabBar('我的课程表实践')
 
       TabContent() {
         Column(){

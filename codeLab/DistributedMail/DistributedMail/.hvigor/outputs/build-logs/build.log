@@ -1,0 +1,917 @@
+[2025-09-28T14:57:02.885] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T14:57:03.335] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T14:57:04.968] [DEBUG] debug-file - hvigorfile, require result:  { appTasks: [Getter] }
+[2025-09-28T14:57:05.118] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T14:57:05.131] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T14:57:05.162] [DEBUG] debug-file - Project task initialization takes 4 ms 
+[2025-09-28T14:57:05.193] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:57:05.121] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T14:57:05.179] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:57:05.185] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T14:57:02.886] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.0', dependencies: {} }
+[2025-09-28T14:57:05.200] [DEBUG] debug-file - entry : clean cost memory 0.3634033203125
+[2025-09-28T14:57:05.221] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T14:57:03.335] [DEBUG] debug-file - Since current hvigor version 5.19.6 differs from last hvigor version 
+      undefined, delete file-cache.json and task-cache.json.
+[2025-09-28T14:57:04.969] [DEBUG] debug-file - hvigorfile, binding system plugins { appTasks: [Getter] }
+[2025-09-28T14:57:05.118] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T14:57:05.157] [DEBUG] debug-file - Sdk init in 34 ms 
+[2025-09-28T14:57:05.163] [DEBUG] debug-file - hvigorfile, resolve finished E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+[2025-09-28T14:57:05.123] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T14:57:05.194] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:05.186] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T14:57:02.888] [DEBUG] debug-file - env: daemon=false
+[2025-09-28T14:57:05.201] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 874 ms 
+[2025-09-28T14:57:05.224] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T14:57:03.336] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T14:57:05.118] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T14:57:05.163] [DEBUG] debug-file - hvigorfile, resolving E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\hvigorfile.ts
+[2025-09-28T14:57:05.124] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:05.194] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T14:57:02.888] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2025-09-28T14:57:05.189] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T14:57:05.202] [INFO] debug-file - Finished :entry:clean... after 2 ms 
+[2025-09-28T14:57:03.339] [DEBUG] debug-file - hvigorfile, resolving E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+[2025-09-28T14:57:05.226] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2025-09-28T14:57:05.118] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T14:57:05.168] [DEBUG] debug-file - hvigorfile, require result:  { hapTasks: [Getter] }
+[2025-09-28T14:57:05.128] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:05.197] [DEBUG] debug-file - Configuration phase cost:1 s 860 ms 
+[2025-09-28T14:57:05.190] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:57:05.202] [DEBUG] debug-file - Executing task ::clean
+[2025-09-28T14:57:05.226] [DEBUG] debug-file - Clear worker 0.
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T14:57:05.168] [DEBUG] debug-file - hvigorfile, binding system plugins { hapTasks: [Getter] }
+[2025-09-28T14:57:05.199] [DEBUG] debug-file - Configuration task cost before running: 1 s 872 ms 
+[2025-09-28T14:57:05.191] [DEBUG] debug-file - Module DistributedMail Collected Dependency: 
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Worker 0 has been cleared.
+[2025-09-28T14:57:05.202] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:05.169] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\cli\main\cli.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\bin\hvigor.js
+[2025-09-28T14:57:05.199] [DEBUG] debug-file - Executing task :entry:clean
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T14:57:05.191] [DEBUG] debug-file - Module DistributedMail's total dependency: 0
+[2025-09-28T14:57:05.202] [DEBUG] debug-file - DistributedMail : clean cost memory 0.0207672119140625
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:05.199] [DEBUG] debug-file - clean: Worker pool is inactive.
+[2025-09-28T14:57:05.202] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 875 ms 
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:05.202] [INFO] debug-file - Finished ::clean... after 1 ms 
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Clear worker 1.
+[2025-09-28T14:57:05.202] [DEBUG] debug-file - Executing task :entry:init
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Worker 1 has been cleared.
+[2025-09-28T14:57:05.180] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:05.203] [DEBUG] debug-file - entry : init cost memory 0.01271820068359375
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Current idle worker size: 0.
+[2025-09-28T14:57:05.181] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:05.203] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 876 ms 
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - Current busy worker size: 0.
+[2025-09-28T14:57:05.181] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:05.203] [INFO] debug-file - Finished :entry:init... after 1 ms 
+[2025-09-28T14:57:05.181] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:57:05.227] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T14:57:05.184] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2025-09-28T14:57:05.231] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2025-09-28T14:57:05.203] [DEBUG] debug-file - Executing task ::init
+[2025-09-28T14:57:05.184] [DEBUG] debug-file - hvigorfile, resolve finished E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\hvigorfile.ts
+[2025-09-28T14:57:05.231] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2025-09-28T14:57:05.203] [DEBUG] debug-file - DistributedMail : init cost memory 0.01149749755859375
+[2025-09-28T14:57:05.232] [DEBUG] debug-file - Current worker pool is terminated.
+[2025-09-28T14:57:05.203] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 876 ms 
+[2025-09-28T14:57:05.203] [INFO] debug-file - Finished ::init... after 1 ms 
+[2025-09-28T14:57:05.211] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:57:05.219] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T14:57:05.219] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T14:57:56.009] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2025-09-28T14:57:56.074] [DEBUG] debug-file - env: daemon=true
+[2025-09-28T14:57:56.011] [DEBUG] debug-file - env: hvigor-config.json5 content = { modelVersion: '5.0.0', dependencies: {} }
+[2025-09-28T14:57:56.845] [DEBUG] debug-file - java daemon tryConnect failed Error: connect ECONNREFUSED 127.0.0.1:45050
+[2025-09-28T14:57:56.862] [DEBUG] debug-file - java daemon started at port 45050 pid 3320
+[2025-09-28T14:57:56.894] [DEBUG] debug-file - session manager: set active socket. socketId=32MDEuhMe4u6dfz5AAAB
+[2025-09-28T14:57:57.620] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:57:57.629] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: true,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined
+}
+[2025-09-28T14:57:57.630] [DEBUG] debug-file - Cache service initialization finished in 1 ms 
+[2025-09-28T14:57:57.632] [DEBUG] debug-file - hvigorfile, resolving E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+[2025-09-28T14:57:59.319] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T14:57:59.319] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T14:57:59.464] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2025-09-28T14:57:59.464] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2025-09-28T14:57:59.465] [DEBUG] debug-file - Product 'default' build option initialized
+[2025-09-28T14:57:59.465] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2025-09-28T14:57:59.466] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2025-09-28T14:57:59.468] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2025-09-28T14:57:59.470] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2025-09-28T14:57:59.472] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2025-09-28T14:57:59.474] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2025-09-28T14:57:59.497] [DEBUG] debug-file - Sdk init in 28 ms 
+[2025-09-28T14:57:59.501] [DEBUG] debug-file - Project task initialization takes 3 ms 
+[2025-09-28T14:57:59.501] [DEBUG] debug-file - hvigorfile, resolve finished E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+[2025-09-28T14:57:59.502] [DEBUG] debug-file - hvigorfile, resolving E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\hvigorfile.ts
+[2025-09-28T14:57:59.507] [DEBUG] debug-file - hvigorfile, require result:  {}
+[2025-09-28T14:57:59.507] [DEBUG] debug-file - hvigorfile, binding system plugins {}
+[2025-09-28T14:57:59.508] [DEBUG] debug-file - failed to load cangjie to dynamically generate schemas: Error: Cannot find module '@ohos/cangjie-build-support/index'
+Require stack:
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\src\plugin\factory\plugin-factory.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor-ohos-plugin\index.js
+- E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigorfile.ts
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\internal\lifecycle\configuration.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\boot\index.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\cluster\worker-process-lifecycle.js
+- E:\DevEco-Studio\DevEco Studio\tools\hvigor\hvigor\src\base\daemon\process\daemon-process-boot-script.js
+[2025-09-28T14:57:59.517] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:57:59.517] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Target 'default' config initialized
+[2025-09-28T14:57:59.518] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2025-09-28T14:57:59.519] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2025-09-28T14:57:59.519] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2025-09-28T14:57:59.522] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2025-09-28T14:57:59.523] [DEBUG] debug-file - hvigorfile, resolve finished E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\hvigorfile.ts
+[2025-09-28T14:57:59.538] [DEBUG] debug-file - hvigorfile, resolve hvigorfile dependencies in 14 ms 
+[2025-09-28T14:57:59.538] [DEBUG] debug-file - project has submodules:entry
+[2025-09-28T14:57:59.540] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2025-09-28T14:57:59.546] [DEBUG] debug-file - load to the disk finished
+[2025-09-28T14:57:59.547] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:57:59.549] [DEBUG] debug-file - Module DistributedMail Collected Dependency: 
+[2025-09-28T14:57:59.549] [DEBUG] debug-file - Module DistributedMail's total dependency: 0
+[2025-09-28T14:57:59.550] [DEBUG] debug-file - Start to initialize dependency information.
+[2025-09-28T14:57:59.552] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2025-09-28T14:57:59.552] [DEBUG] debug-file - Module entry's total dependency: 0
+[2025-09-28T14:57:59.555] [DEBUG] debug-file - Configuration phase cost:1 s 925 ms 
+[2025-09-28T14:57:59.557] [DEBUG] debug-file - Configuration task cost before running: 1 s 934 ms 
+[2025-09-28T14:57:59.559] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.559] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.559] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.562] [DEBUG] debug-file - Executing task :entry:default@PreBuild
+[2025-09-28T14:57:59.566] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.566] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.566] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.660] [DEBUG] debug-file - current product is not Atomic service.
+[2025-09-28T14:57:59.660] [DEBUG] debug-file - Use tool [win32: JAVA_HOME, CLASSPATH]
+ [
+  { JAVA_HOME: 'E:\\DevEco-Studio\\DevEco Studio\\jbr' },
+  { CLASSPATH: undefined }
+]
+[2025-09-28T14:57:59.660] [DEBUG] debug-file - Use tool [win32: NODE_HOME]
+ [ { NODE_HOME: 'E:\\DevEco-Studio\\DevEco Studio\\tools\\node' } ]
+[2025-09-28T14:57:59.661] [DEBUG] debug-file - entry : default@PreBuild cost memory 13.480377197265625
+[2025-09-28T14:57:59.663] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 39 ms 
+[2025-09-28T14:57:59.664] [INFO] debug-file - Finished :entry:default@PreBuild... after 100 ms 
+[2025-09-28T14:57:59.665] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.665] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.665] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.665] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2025-09-28T14:57:59.666] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.666] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.28094482421875
+[2025-09-28T14:57:59.666] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 44 ms 
+[2025-09-28T14:57:59.666] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2025-09-28T14:57:59.667] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.667] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.667] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.668] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2025-09-28T14:57:59.668] [DEBUG] debug-file - Task 'entry:default@GenerateMetadata' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.668] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.668] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.668] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.670] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.10860443115234375
+[2025-09-28T14:57:59.670] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 48 ms 
+[2025-09-28T14:57:59.671] [INFO] debug-file - Finished :entry:default@GenerateMetadata... after 3 ms 
+[2025-09-28T14:57:59.671] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.671] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.671] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.049957275390625
+[2025-09-28T14:57:59.672] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 50 ms 
+[2025-09-28T14:57:59.672] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2025-09-28T14:57:59.673] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.674] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.674] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.674] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - Change app api release type with 'Release'
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - Change app compile API version with '5.1.1.208'
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - Change app target API version with '50101019'
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - Change app minimum API version with '50101019'
+[2025-09-28T14:57:59.675] [DEBUG] debug-file - Use cli appEnvironment
+[2025-09-28T14:57:59.677] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.18611907958984375
+[2025-09-28T14:57:59.677] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 55 ms 
+[2025-09-28T14:57:59.678] [INFO] debug-file - Finished :entry:default@MergeProfile... after 4 ms 
+[2025-09-28T14:57:59.678] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.678] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.678] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.679] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2025-09-28T14:57:59.679] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.679] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.680] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.680] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.681] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.11103057861328125
+[2025-09-28T14:57:59.681] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 58 ms 
+[2025-09-28T14:57:59.681] [INFO] debug-file - Finished :entry:default@CreateBuildProfile... after 3 ms 
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.682] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.05017852783203125
+[2025-09-28T14:57:59.683] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 60 ms 
+[2025-09-28T14:57:59.683] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2025-09-28T14:57:59.684] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.684] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.684] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.685] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2025-09-28T14:57:59.691] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.692] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.50152587890625
+[2025-09-28T14:57:59.692] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 69 ms 
+[2025-09-28T14:57:59.692] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 8 ms 
+[2025-09-28T14:57:59.693] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.693] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.693] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.695] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2025-09-28T14:57:59.696] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.696] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.696] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.696] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.06842803955078125
+[2025-09-28T14:57:59.696] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 73 ms 
+[2025-09-28T14:57:59.696] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 1 ms 
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.697] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.698] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.05136871337890625
+[2025-09-28T14:57:59.698] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 75 ms 
+[2025-09-28T14:57:59.698] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2025-09-28T14:57:59.698] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.698] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.699] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.699] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2025-09-28T14:57:59.699] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.700] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.700] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.700] [DEBUG] debug-file - Module Pack Info:  {
+  summary: {
+    app: { bundleName: 'c***l', bundleType: 'app', version: [Object] },
+    modules: [ [Object] ]
+  },
+  packages: [
+    {
+      deviceType: [Array],
+      moduleType: 'entry',
+      deliveryWithInstall: true,
+      name: 'entry-default'
+    }
+  ]
+}
+[2025-09-28T14:57:59.701] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.14394378662109375
+[2025-09-28T14:57:59.702] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 79 ms 
+[2025-09-28T14:57:59.702] [INFO] debug-file - Finished :entry:default@MakePackInfo... after 3 ms 
+[2025-09-28T14:57:59.702] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.703] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.703] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.703] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2025-09-28T14:57:59.703] [DEBUG] debug-file - File: 'E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\syscap.json' from 'sysCapJsonPath' is not exists, just ignore.
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - Task 'entry:default@SyscapTransform' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.09588623046875
+[2025-09-28T14:57:59.704] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 82 ms 
+[2025-09-28T14:57:59.704] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 2 ms 
+[2025-09-28T14:57:59.705] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.705] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.705] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.706] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2025-09-28T14:57:59.707] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.707] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.707] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.708] [DEBUG] debug-file - [
+  'E:\\DevEco-Studio\\DevEco Studio\\tools\\node\\node.exe',
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader\\bin\\ark\\ts2abc.js',
+  '--target-api-version',
+  '19'
+]
+[2025-09-28T14:57:59.803] [DEBUG] debug-file - 13.0.1.0
+[2025-09-28T14:57:59.806] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 2.3105010986328125
+[2025-09-28T14:57:59.806] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 183 ms 
+[2025-09-28T14:57:59.806] [INFO] debug-file - Finished :entry:default@ProcessProfile... after 100 ms 
+[2025-09-28T14:57:59.807] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.807] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.807] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.807] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2025-09-28T14:57:59.808] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.808] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.808] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.810] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.129730224609375
+[2025-09-28T14:57:59.810] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 187 ms 
+[2025-09-28T14:57:59.810] [INFO] debug-file - Finished :entry:default@ProcessRouterMap... after 3 ms 
+[2025-09-28T14:57:59.811] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.811] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.811] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.811] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2025-09-28T14:57:59.811] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.812] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.812] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.812] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.812] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.107757568359375
+[2025-09-28T14:57:59.812] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 190 ms 
+[2025-09-28T14:57:59.812] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 1 ms 
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.813] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.815] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.06591033935546875
+[2025-09-28T14:57:59.815] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 193 ms 
+[2025-09-28T14:57:59.815] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 2 ms 
+[2025-09-28T14:57:59.816] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.816] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.816] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.817] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2025-09-28T14:57:59.818] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2025-09-28T14:57:59.818] [DEBUG] debug-file - Task 'entry:default@ProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.818] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.819] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.819] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.820] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.17132568359375
+[2025-09-28T14:57:59.820] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 198 ms 
+[2025-09-28T14:57:59.821] [INFO] debug-file - Finished :entry:default@ProcessResource... after 3 ms 
+[2025-09-28T14:57:59.822] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.822] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.822] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.823] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2025-09-28T14:57:59.823] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:57:59.829] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.5972213745117188
+[2025-09-28T14:57:59.829] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 207 ms 
+[2025-09-28T14:57:59.831] [INFO] debug-file - Finished :entry:default@GenerateLoaderJson... after 7 ms 
+[2025-09-28T14:57:59.831] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.831] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.831] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.832] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2025-09-28T14:57:59.833] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.833] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.833] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.836] [DEBUG] debug-file - Worker dispatch failed, running processLibs on main thread.
+[2025-09-28T14:57:59.837] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 0.3431396484375
+[2025-09-28T14:57:59.837] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 215 ms 
+[2025-09-28T14:57:59.838] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 6 ms 
+[2025-09-28T14:57:59.838] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.838] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:57:59.838] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:57:59.839] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2025-09-28T14:57:59.839] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2025-09-28T14:57:59.845] [DEBUG] debug-file - Use tool [E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\restool.exe]
+ [
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\restool.exe',
+  '-l',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\resConfig.json'
+]
+[2025-09-28T14:57:59.846] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 200851456,
+  heapTotal: 157970432,
+  heapUsed: 133337128,
+  external: 3063254,
+  arrayBuffers: 183524
+} os memoryUsage :12.799190521240234
+[2025-09-28T14:57:59.900] [DEBUG] debug-file - Info: Pack: normal pack mode
+
+[2025-09-28T14:57:59.945] [DEBUG] debug-file - Info: hardware concurrency count is : 16
+Info: thread count is : 16
+
+[2025-09-28T14:57:59.945] [DEBUG] debug-file - Info: thread pool is started
+
+[2025-09-28T14:57:59.946] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:57:59.951] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:57:59.956] [DEBUG] debug-file - Info: GenericCompiler::CompileFiles
+
+[2025-09-28T14:57:59.961] [DEBUG] debug-file - 09-28 14:57:59.962  2260 32056 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+09-28 14:57:59.962  2260 32056 E C01400/ImageTranscoderUtils: ImageFilter IN E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T14:57:59.962] [DEBUG] debug-file - 09-28 14:57:59.962  2260 32056 E C01400/ImageTranscoder: TranscodeSLR Only zoom-out is supported.
+
+[2025-09-28T14:57:59.962] [DEBUG] debug-file - Warning: ScaleImage failed, error message: INVALID_PARAMETERS, file path = E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T14:57:59.963] [DEBUG] debug-file - 09-28 14:57:59.963  2260 32056 E C01400/ImageTranscoderUtils: DecodeToRGBA IN
+
+[2025-09-28T14:57:59.963] [DEBUG] debug-file - 09-28 14:57:59.963  2260 32056 E C01400/ImageTranscoderUtils: ImageFilter IN E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources\base\media\icon.svg
+
+[2025-09-28T14:57:59.964] [DEBUG] debug-file - 09-28 14:57:59.964  2260 32056 E C01400/ImageTranscoder: TranscodeSLR DecodeToRGBA failed
+Warning: ScaleImage failed, error message: IMAGE_ERROR, file path = E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources\base\media\icon.svg
+
+[2025-09-28T14:57:59.966] [DEBUG] debug-file - Warning: The width or height of the png file referenced by the icon exceeds the limit (41 pixels)
+at E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\resources\base\media\app_icon.png
+
+[2025-09-28T14:57:59.966] [DEBUG] debug-file - Warning: E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources\base\media\icon.svg is not png format
+Warning: E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources\base\media\icon.svg is not png format
+
+[2025-09-28T14:57:59.967] [DEBUG] debug-file - Info: restool resources compile success.
+
+[2025-09-28T14:57:59.968] [DEBUG] debug-file - Info: thread pool is stopped
+
+[2025-09-28T14:58:00.027] [DEBUG] debug-file - entry : default@CompileResource cost memory 1.0013046264648438
+[2025-09-28T14:58:00.027] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 405 ms 
+[2025-09-28T14:58:00.028] [INFO] debug-file - Finished :entry:default@CompileResource... after 189 ms 
+[2025-09-28T14:58:00.029] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.029] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.029] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.029] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2025-09-28T14:58:00.029] [DEBUG] debug-file - Task 'entry:default@DoNativeStrip' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:58:00.030] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.030] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.030] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.031] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 0.10077667236328125
+[2025-09-28T14:58:00.031] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 409 ms 
+[2025-09-28T14:58:00.032] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 3 ms 
+[2025-09-28T14:58:00.032] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.032] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.032] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.033] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2025-09-28T14:58:00.033] [DEBUG] debug-file - obfuscationOptions: undefined
+[2025-09-28T14:58:00.045] [DEBUG] debug-file - build config:
+[2025-09-28T14:58:00.045] [DEBUG] debug-file - {
+  moduleType: 'entry',
+  perf: 0,
+  targetName: '.default',
+  packageManagerType: 'ohpm',
+  localPropertiesPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\local.properties',
+  isPreview: false,
+  isOhosTest: false,
+  isLocalTest: false,
+  buildMode: 'Debug',
+  hotReloadBuild: undefined,
+  watchMode: 'false',
+  aceProfilePath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\resources\\base\\profile',
+  etsLoaderPath: 'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\ets\\build-tools\\ets-loader',
+  modulePath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry',
+  testFrameworkPar: {
+    testMode: undefined,
+    coveragePathFilter: undefined,
+    coverageMode: undefined
+  },
+  needCoverageInsert: false,
+  debugLine: false,
+  projectTopDir: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail',
+  compileSdkVersion: 19,
+  compatibleSdkVersion: 19,
+  compatibleSdkVersionStage: undefined,
+  bundleName: 'c***l',
+  etsLoaderVersion: '5.1.1.208',
+  etsLoaderReleaseType: 'Release',
+  aotCompileMode: 'type',
+  apPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\modules.ap',
+  entryModuleName: 'entry',
+  entryModuleVersion: '1.0.0',
+  entryPackageName: 'entry',
+  allModuleNameHash: '126838655e5a93156e71af9f28ad29e8',
+  externalApiPaths: [ 'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\hms\\ets' ],
+  compilerTypes: undefined,
+  isCrossplatform: false,
+  hvigorPluginFile: undefined,
+  compilePluginPath: undefined,
+  buildGeneratedProfilePath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\generated\\profile\\default',
+  bundleType: 'app',
+  arkTSVersion: undefined,
+  apiVersion: 19,
+  needCompleteSourcesMap: false,
+  isFaMode: false,
+  strictMode: undefined,
+  buildDir: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build',
+  deviceTypes: [ 'phone' ],
+  useNormalizedOHMUrl: false,
+  pkgContextInfo: undefined,
+  ohPackagePathMap: {},
+  dependencyAliasMap: {},
+  permission: { requestPermissions: [ [Object] ], definePermissions: undefined },
+  integratedHsp: false,
+  projectArkOption: undefined,
+  sourceMapDir: undefined,
+  branchElimination: false,
+  transformLib: undefined,
+  caseSensitiveCheck: false,
+  tsImportSendable: false,
+  resolveConflictMode: true,
+  depName2RootPath: {},
+  depName2DepInfo: {},
+  rootPathSet: [
+    'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail'
+  ],
+  useNativeResolver: true,
+  shouldEmitJs: true,
+  useTscResolve: false,
+  singleFileEmit: false,
+  userProjectConfig: {
+    autoLazyImport: false,
+    allowEmptyBundleName: false,
+    reExportCheckMode: 'noCheck',
+    executionMode: 'memory'
+  },
+  executionMode: 'memory',
+  autoLazyImport: false,
+  allowEmptyBundleName: false,
+  reExportCheckMode: 'noCheck',
+  arkCompileCachePath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule',
+  aceModuleJsonPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\ark_module.json',
+  appResource: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\ResourceTable.txt',
+  rawFileResource: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  resourceTableHash: '11fba1314b591f61232b19f2757e4f8f',
+  runtimeOS: 'HarmonyOS',
+  sdkInfo: 'false:19:5.1.1.208:Release',
+  aceModuleRoot: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\src\\main\\ets',
+  compileMode: 'esmodule',
+  aceSuperVisualPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\src\\main\\supervisual',
+  aceBuildJson: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\loader\\default\\loader.json',
+  cachePath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\cache\\default\\default@CompileArkTS\\esmodule\\debug',
+  aceModuleBuild: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\loader_out\\default\\ets',
+  supportChunks: true,
+  declaredFilesPath: undefined,
+  shouldCollectDirectImportees: false,
+  isByteCodeHarOptimize: false,
+  pkgNameToPkgBriefInfo: {
+    entry: {
+      pkgRoot: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry',
+      originalSourceRoots: undefined,
+      sourceRoots: [Array],
+      pkgName: 'entry'
+    }
+  },
+  projectModel: {
+    'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\src\\main': {
+      moduleName: 'entry',
+      modulePkgPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry',
+      belongProjectPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail'
+    },
+    'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry': {
+      moduleName: 'entry',
+      modulePkgPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry',
+      belongProjectPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail'
+    },
+    'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail': {
+      moduleName: 'DistributedMail',
+      modulePkgPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail',
+      belongProjectPath: 'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail'
+    }
+  },
+  pkgJsonFileHash: '979bf57c9db459c21076a097fea20c13',
+  allModulePaths: [
+    'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry'
+  ],
+  routerMap: {},
+  obfuscationOptions: undefined,
+  compileBlockPkg: [],
+  mockParams: {
+    decorator: '@MockSetup',
+    packageName: '@ohos/hamock',
+    etsSourceRootPath: 'src/main/ets',
+    mockConfigPath: undefined,
+    mockConfigKey2ModuleInfo: {},
+    source2ModuleIdMap: {}
+  },
+  copyCodeResourceEnable: true,
+  copyCodeResourceExcludes: [],
+  uiTransformOptimization: false,
+  otherPaths: {
+    'entry/*': [
+      '..\\*',
+      '..\\..\\..\\build\\default\\generated\\profile\\default\\*'
+    ]
+  },
+  collectImportersConfig: undefined
+}
+[2025-09-28T14:58:00.045] [DEBUG] debug-file - Compile arkts with external api path: E:\DevEco-Studio\DevEco Studio\sdk\default\hms\ets
+[2025-09-28T14:58:00.046] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2025-09-28T14:58:00.047] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2025-09-28T14:58:00.047] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2025-09-28T14:58:00.049] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - default@CompileArkTS work[0] is submitted.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - default@CompileArkTS work[0] is pushed to ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[12] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[11] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.052] [DEBUG] debug-file - A work dispatched to worker[10] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - A work dispatched to worker[9] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - A work dispatched to worker[8] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - A work dispatched to worker[7] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - A work dispatched to worker[6] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - A work dispatched to worker[5] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.053] [DEBUG] debug-file - Create  resident worker with id: 4.
+[2025-09-28T14:58:00.054] [DEBUG] debug-file - default@CompileArkTS work[0] has been dispatched to worker[4].
+[2025-09-28T14:58:00.054] [DEBUG] debug-file - default@CompileArkTS work[0] is dispatched.
+[2025-09-28T14:58:00.054] [DEBUG] debug-file - CopyResources startTime: 1484747899100
+[2025-09-28T14:58:00.054] [DEBUG] debug-file - default@CompileArkTS work[1] is submitted.
+[2025-09-28T14:58:00.055] [DEBUG] debug-file - default@CompileArkTS work[1] is pushed to ready queue.
+[2025-09-28T14:58:00.055] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.055] [DEBUG] debug-file - Create  resident worker with id: 14.
+[2025-09-28T14:58:00.056] [DEBUG] debug-file - default@CompileArkTS work[1] has been dispatched to worker[14].
+[2025-09-28T14:58:00.057] [DEBUG] debug-file - default@CompileArkTS work[1] is dispatched.
+[2025-09-28T14:58:00.057] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 2.361480712890625
+[2025-09-28T14:58:00.058] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.058] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.058] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.059] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2025-09-28T14:58:00.062] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.12751007080078125
+[2025-09-28T14:58:00.062] [DEBUG] debug-file - runTaskFromQueue task cost before running: 2 s 439 ms 
+[2025-09-28T14:58:00.062] [INFO] debug-file - Finished :entry:default@BuildJS... after 3 ms 
+[2025-09-28T14:58:00.063] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.063] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.063] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - Task 'entry:default@CacheNativeLibs' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:00.064] [DEBUG] debug-file - default@CacheNativeLibs work[2] is submitted.
+[2025-09-28T14:58:00.065] [DEBUG] debug-file - default@CacheNativeLibs work[2] is pushed to ready queue.
+[2025-09-28T14:58:00.065] [DEBUG] debug-file - A work dispatched to worker[15] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.065] [DEBUG] debug-file - A work dispatched to worker[14] failed because of worker busy.
+[2025-09-28T14:58:00.066] [DEBUG] debug-file - Create  resident worker with id: 13.
+[2025-09-28T14:58:00.067] [DEBUG] debug-file - default@CacheNativeLibs work[2] has been dispatched to worker[13].
+[2025-09-28T14:58:00.067] [DEBUG] debug-file - default@CacheNativeLibs work[2] is dispatched.
+[2025-09-28T14:58:00.067] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.25203704833984375
+[2025-09-28T14:58:00.860] [DEBUG] debug-file - worker[14] has one work done.
+[2025-09-28T14:58:00.860] [DEBUG] debug-file - CopyResources is end, endTime: 1485553529800
+[2025-09-28T14:58:00.861] [DEBUG] debug-file - default@CompileArkTS work[1] done.
+[2025-09-28T14:58:00.861] [DEBUG] debug-file - A work dispatched to worker[14] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.891] [DEBUG] debug-file - worker[13] has one work done.
+[2025-09-28T14:58:00.891] [DEBUG] debug-file - default@CacheNativeLibs work[2] done.
+[2025-09-28T14:58:00.891] [DEBUG] debug-file - A work dispatched to worker[13] failed because unable to get work from ready queue.
+[2025-09-28T14:58:00.892] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 10 ms 
+[2025-09-28T14:58:06.779] [DEBUG] debug-file - Ark compile task finished.finished time is 1491472201100
+[2025-09-28T14:58:06.780] [DEBUG] debug-file - worker[4] has one work done.
+[2025-09-28T14:58:06.785] [DEBUG] debug-file - default@CompileArkTS work[0] done.
+[2025-09-28T14:58:06.785] [DEBUG] debug-file - A work dispatched to worker[4] failed because unable to get work from ready queue.
+[2025-09-28T14:58:06.787] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 4 s 760 ms 
+[2025-09-28T14:58:06.789] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.789] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.789] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:06.789] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2025-09-28T14:58:06.789] [DEBUG] debug-file - Task 'entry:default@GeneratePkgModuleJson' cost while wrapping incremental declarations: 1 ms 
+[2025-09-28T14:58:06.790] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.790] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.790] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:06.791] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.0933990478515625
+[2025-09-28T14:58:06.791] [DEBUG] debug-file - runTaskFromQueue task cost before running: 9 s 169 ms 
+[2025-09-28T14:58:06.792] [INFO] debug-file - Finished :entry:default@GeneratePkgModuleJson... after 3 ms 
+[2025-09-28T14:58:06.793] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.793] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.794] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:06.794] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2025-09-28T14:58:06.796] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.797] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:06.797] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:06.798] [DEBUG] debug-file - Use tool [E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'E:\\DevEco-Studio\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--ets-path',
+  'E:\\for-more\\2025late\\real\\codeLab\\DistributedMail\\DistributedMail\\entry\\build\\default\\intermediates\\loader_out\\default\\ets'
+]
+[2025-09-28T14:58:07.192] [DEBUG] debug-file - java daemon socket received message:{"code":0,"message":"pack success"}
+[2025-09-28T14:58:07.195] [DEBUG] debug-file - entry : default@PackageHap cost memory 0.49198150634765625
+[2025-09-28T14:58:07.195] [DEBUG] debug-file - runTaskFromQueue task cost before running: 9 s 573 ms 
+[2025-09-28T14:58:07.196] [INFO] debug-file - Finished :entry:default@PackageHap... after 402 ms 
+[2025-09-28T14:58:07.197] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.197] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.197] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:07.198] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2025-09-28T14:58:07.198] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5.
+[2025-09-28T14:58:07.199] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.199] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.199] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:07.199] [DEBUG] debug-file - entry : default@SignHap cost memory 0.0991058349609375
+[2025-09-28T14:58:07.200] [DEBUG] debug-file - runTaskFromQueue task cost before running: 9 s 577 ms 
+[2025-09-28T14:58:07.200] [INFO] debug-file - Finished :entry:default@SignHap... after 2 ms 
+[2025-09-28T14:58:07.201] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.201] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.201] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:07.201] [DEBUG] debug-file - Executing task :entry:default@CollectDebugSymbol
+[2025-09-28T14:58:07.202] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.202] [DEBUG] debug-file - jsonObjWithoutParam {} at undefined
+[2025-09-28T14:58:07.202] [DEBUG] debug-file - jsonObjWithoutParam {"license":"","devDependencies":{},"author":"","name":"entry","description":"Please describe the basic information.","main":"","version":"1.0.0","dependencies":{}} at undefined
+[2025-09-28T14:58:07.203] [DEBUG] debug-file - entry : default@CollectDebugSymbol cost memory 0.14356231689453125
+[2025-09-28T14:58:07.203] [DEBUG] debug-file - runTaskFromQueue task cost before running: 9 s 580 ms 
+[2025-09-28T14:58:07.203] [INFO] debug-file - Finished :entry:default@CollectDebugSymbol... after 2 ms 
+[2025-09-28T14:58:07.203] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2025-09-28T14:58:07.203] [DEBUG] debug-file - entry : assembleHap cost memory 0.01450347900390625
+[2025-09-28T14:58:07.203] [DEBUG] debug-file - runTaskFromQueue task cost before running: 9 s 581 ms 
+[2025-09-28T14:58:07.203] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2025-09-28T14:58:07.215] [DEBUG] debug-file - BUILD SUCCESSFUL in 9 s 593 ms 
+[2025-09-28T14:58:07.217] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:58:07.218] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:58:07.218] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.218] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.218] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources\base\profile\main_pages.json cache by regenerate.
+[2025-09-28T14:58:07.218] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\hvigor\hvigor-config.json5 cache by regenerate.
+[2025-09-28T14:58:07.219] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T14:58:07.219] [DEBUG] debug-file - Update task entry:default@PreBuild input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\oh-package.json5 cache by regenerate.
+[2025-09-28T14:58:07.219] [DEBUG] debug-file - Incremental task entry:default@PreBuild post-execution cost:3 ms .
+[2025-09-28T14:58:07.219] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\profile\default\ModuleInfo.ts cache.
+[2025-09-28T14:58:07.220] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2025-09-28T14:58:07.220] [DEBUG] debug-file - Update task entry:default@GenerateMetadata input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:58:07.220] [DEBUG] debug-file - Update task entry:default@GenerateMetadata output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\hap_metadata\default\output_metadata.json cache.
+[2025-09-28T14:58:07.221] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata post-execution cost:1 ms .
+[2025-09-28T14:58:07.221] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:58:07.221] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.221] [DEBUG] debug-file - Update task entry:default@MergeProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:58:07.222] [DEBUG] debug-file - Update task entry:default@MergeProfile output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\merge_profile\default\module.json cache.
+[2025-09-28T14:58:07.222] [DEBUG] debug-file - Incremental task entry:default@MergeProfile post-execution cost:2 ms .
+[2025-09-28T14:58:07.222] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:58:07.222] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Update task entry:default@CreateBuildProfile output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\profile\default\BuildProfile.ets cache.
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile post-execution cost:1 ms .
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2025-09-28T14:58:07.223] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\app.json5 cache by regenerate.
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Update task entry:default@MakePackInfo input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Update task entry:default@MakePackInfo output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\pack.info cache.
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo post-execution cost:1 ms .
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\toolchains\syscap_tool.exe cache by regenerate.
+[2025-09-28T14:58:07.224] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:E:\DevEco-Studio\DevEco Studio\sdk\default\openharmony\ets\api\device-define cache by regenerate.
+[2025-09-28T14:58:07.225] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2025-09-28T14:58:07.226] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:2 ms .
+[2025-09-28T14:58:07.226] [DEBUG] debug-file - Update task entry:default@ProcessProfile input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\merge_profile\default\module.json cache by regenerate.
+[2025-09-28T14:58:07.226] [DEBUG] debug-file - Update task entry:default@ProcessProfile output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\process_profile\default\module.json cache.
+[2025-09-28T14:58:07.226] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile post-execution cost:1 ms .
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\oh-package.json5 cache by regenerate.
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\oh-package.json5 cache by regenerate.
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\module.json5 cache by regenerate.
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\router_map\default\temp-router-map.json cache.
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Update task entry:default@ProcessRouterMap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\router_map\default\loader-router-map.json cache.
+[2025-09-28T14:58:07.227] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap post-execution cost:1 ms .
+[2025-09-28T14:58:07.228] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\startup\default\startup_config.json cache.
+[2025-09-28T14:58:07.228] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2025-09-28T14:58:07.228] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resConfig.json cache.
+[2025-09-28T14:58:07.228] [DEBUG] debug-file - Update task entry:default@ProcessResource output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\opt-compression.json cache.
+[2025-09-28T14:58:07.228] [DEBUG] debug-file - Incremental task entry:default@ProcessResource post-execution cost:1 ms .
+[2025-09-28T14:58:07.229] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\router_map\default\temp-router-map.json cache by regenerate.
+[2025-09-28T14:58:07.229] [DEBUG] debug-file - Update task entry:default@GenerateLoaderJson output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader\default\loader.json cache.
+[2025-09-28T14:58:07.229] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson post-execution cost:1 ms .
+[2025-09-28T14:58:07.229] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.230] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build-profile.json5 cache by regenerate.
+[2025-09-28T14:58:07.230] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\libs\default cache.
+[2025-09-28T14:58:07.230] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:1 ms .
+[2025-09-28T14:58:07.230] [DEBUG] debug-file - Update task entry:default@CompileResource input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\resources cache by regenerate.
+[2025-09-28T14:58:07.234] [DEBUG] debug-file - Update task entry:default@CompileResource input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\AppScope\resources cache by regenerate.
+[2025-09-28T14:58:07.235] [DEBUG] debug-file - Update task entry:default@CompileResource input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\process_profile\default\module.json cache by regenerate.
+[2025-09-28T14:58:07.235] [DEBUG] debug-file - Update task entry:default@CompileResource input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resConfig.json cache by regenerate.
+[2025-09-28T14:58:07.235] [DEBUG] debug-file - Update task entry:default@CompileResource output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default cache.
+[2025-09-28T14:58:07.239] [DEBUG] debug-file - Update task entry:default@CompileResource output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\r\default\ResourceTable.h cache.
+[2025-09-28T14:58:07.239] [DEBUG] debug-file - Update task entry:default@CompileResource output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\r\default cache.
+[2025-09-28T14:58:07.240] [DEBUG] debug-file - Incremental task entry:default@CompileResource post-execution cost:10 ms .
+[2025-09-28T14:58:07.240] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:58:07.240] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2025-09-28T14:58:07.241] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2025-09-28T14:58:07.242] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T14:58:07.242] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T14:58:07.243] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T14:58:07.243] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T14:58:07.243] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets cache by regenerate.
+[2025-09-28T14:58:07.245] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T14:58:07.245] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader_out\default\ets cache.
+[2025-09-28T14:58:07.246] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:5 ms .
+[2025-09-28T14:58:07.246] [DEBUG] debug-file - Update task entry:default@BuildJS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader\default cache by regenerate.
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Update task entry:default@BuildJS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Update task entry:default@BuildJS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Update task entry:default@BuildJS input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Update task entry:default@BuildJS output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader_out\default\js cache.
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:2 ms .
+[2025-09-28T14:58:07.247] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:1 ms .
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Update task entry:default@GeneratePkgModuleJson output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\package\default\module.json cache.
+[2025-09-28T14:58:07.248] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson post-execution cost:1 ms .
+[2025-09-28T14:58:07.249] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\stripped_native_libs\default cache by regenerate.
+[2025-09-28T14:58:07.249] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2025-09-28T14:58:07.249] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2025-09-28T14:58:07.250] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2025-09-28T14:58:07.250] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2025-09-28T14:58:07.251] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader_out\default\ets cache by regenerate.
+[2025-09-28T14:58:07.251] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T14:58:07.251] [DEBUG] debug-file - Update task entry:default@PackageHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2025-09-28T14:58:07.251] [DEBUG] debug-file - Update task entry:default@PackageHap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2025-09-28T14:58:07.251] [DEBUG] debug-file - Update task entry:default@PackageHap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\source_map\default\sourceMaps.map cache.
+[2025-09-28T14:58:07.252] [DEBUG] debug-file - Update task entry:default@PackageHap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2025-09-28T14:58:07.252] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:4 ms .
+[2025-09-28T14:58:07.252] [DEBUG] debug-file - Update task entry:default@SignHap input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\entry-default-unsigned.hap cache by regenerate.
+[2025-09-28T14:58:07.253] [DEBUG] debug-file - Update task entry:default@SignHap output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2025-09-28T14:58:07.253] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2025-09-28T14:58:07.253] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\loader_out\default\ets\sourceMaps.map cache by regenerate.
+[2025-09-28T14:58:07.254] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\intermediates\libs\default cache by regenerate.
+[2025-09-28T14:58:07.254] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol output file:E:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\build\default\outputs\default\symbol cache.
+[2025-09-28T14:58:07.254] [DEBUG] debug-file - Incremental task entry:default@CollectDebugSymbol post-execution cost:2 ms .
+[2025-09-28T14:58:07.277] [DEBUG] debug-file - Cleanup worker 0.
+[2025-09-28T14:58:07.277] [DEBUG] debug-file - Worker 0 has been cleaned up.
+[2025-09-28T14:58:07.277] [DEBUG] debug-file - Current idle worker size: 4.
+[2025-09-28T14:58:07.277] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:58:07.277] [DEBUG] debug-file - Cleanup worker 1.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Worker 1 has been cleaned up.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current idle worker size: 3.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Cleanup worker 14.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Worker 14 has been cleaned up.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current idle worker size: 2.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Cleanup worker 13.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Worker 13 has been cleaned up.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current idle worker size: 1.
+[2025-09-28T14:58:07.278] [DEBUG] debug-file - Current resident worker size: 5.
+[2025-09-28T14:58:07.279] [DEBUG] debug-file - hvigor build process will be closed.
+[2025-09-28T14:58:07.279] [DEBUG] debug-file - java daemon socket close code:1000 reason:close by user
+[2025-09-28T14:58:07.283] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T14:58:07.283] [DEBUG] debug-file - session manager: send message to worker process.
+[2025-09-28T14:58:07.283] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:58:07.283] [DEBUG] debug-file - watch worker: worker id should be larger than 0. Nothing will be sent to any worker thread.
+[2025-09-28T14:58:07.285] [DEBUG] debug-file - worker[1] exits with exit code 1.
+[2025-09-28T14:58:07.286] [DEBUG] debug-file - worker[0] exits with exit code 1.
+[2025-09-28T14:58:07.292] [DEBUG] debug-file - worker[14] exits with exit code 1.
+[2025-09-28T14:58:07.292] [DEBUG] debug-file - worker[13] exits with exit code 1.

@@ -1,0 +1,97 @@
+{
+  "modulePathMap": {
+    "entry": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry"
+  },
+  "compileMode": "esmodule",
+  "projectRootPath": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout",
+  "nodeModulesPath": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\build\\default\\intermediates\\loader_out\\default\\node_modules",
+  "byteCodeHarInfo": {},
+  "declarationEntry": [],
+  "moduleName": "entry",
+  "hspNameOhmMap": {},
+  "harNameOhmMap": {},
+  "packageManagerType": "ohpm",
+  "compileEntry": [
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TabsLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\DoubleColumnLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\GridLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\IndentedLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\ListLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\MoveLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SidebarLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SwiperLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TripleColumnLayout.ets",
+    "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\WaterFlowLayout.ets"
+  ],
+  "otherCompileFiles": [],
+  "dynamicImportLibInfo": {},
+  "routerMap": [
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/TabsLayout&",
+      "name": "Bottom/SideTabs",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TabsLayout.ets",
+      "buildFunction": "TabsBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/DoubleColumnLayout&",
+      "name": "DoubleColumn",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\DoubleColumnLayout.ets",
+      "buildFunction": "DoubleColumnBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/GridLayout&",
+      "name": "Grid",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\GridLayout.ets",
+      "buildFunction": "GridBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/IndentedLayout&",
+      "name": "IndentedLayout",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\IndentedLayout.ets",
+      "buildFunction": "IndentedBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/ListLayout&",
+      "name": "List",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\ListLayout.ets",
+      "buildFunction": "ListBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/MoveLayout&",
+      "name": "MoveLayout",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\MoveLayout.ets",
+      "buildFunction": "MoveBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/SidebarLayout&",
+      "name": "Sidebar",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SidebarLayout.ets",
+      "buildFunction": "SidebarBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/SwiperLayout&",
+      "name": "Swiper",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\SwiperLayout.ets",
+      "buildFunction": "SwiperBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/TripleColumnLayout&",
+      "name": "TripleColumn",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\TripleColumnLayout.ets",
+      "buildFunction": "TripleColumnBuilder"
+    },
+    {
+      "ohmurl": "@normalized:N&&&entry/src/main/ets/pages/WaterFlowLayout&",
+      "name": "WaterFlow",
+      "pageSourceFile": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\src\\main\\ets\\pages\\WaterFlowLayout.ets",
+      "buildFunction": "WaterFlowBuilder"
+    }
+  ],
+  "hspResourcesMap": {},
+  "updateVersionInfo": {},
+  "anBuildOutPut": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\build\\default\\intermediates\\loader_out\\default\\an\\arm64-v8a",
+  "anBuildMode": "type",
+  "patchConfig": {
+    "changedFileList": "E:\\for-more\\2025late\\real\\codeLab\\ResponsiveLayout\\entry\\build\\default\\intermediates\\patch\\default\\changedFileList.json"
+  }
+}

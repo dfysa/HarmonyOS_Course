@@ -1,0 +1,882 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ`if (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+import AbilityConstant from "@ohos.app.ability.AbilityConstant";
+import fileIo from "@ohos.file.fs";
+import picker from "@ohos.file.picker";
+import image from "@ohos.multimedia.image";
+import hilog from "@ohos.hilog";
+import CommonConstants from '../common/CommonConstants';
+import { imageIndex } from '../viewmodel/MailViewModel';
+class MailHomePage extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__crossEndPicture = new ObservedPropertyObjectPU(undefined, this, "crossEndPicture");
+        this.__uiContext = new ObservedPropertyObjectPU(AppStorage.get('uiContext'), this, "uiContext");
+        this.__recipient = this.createStorageLink('recipient', '', "recipient");
+        this.__sender = this.createStorageLink('sender', '', "sender");
+        this.__subject = this.createStorageLink('subject', '', "subject");
+        this.__emailContent = this.createStorageLink('emailContent', '', "emailContent");
+        this.__isContinuation = this.createStorageLink('isContinuation', CommonConstants.NO_CONTINUATION, "isContinuation");
+        this.__appendix = this.createStorageLink('appendix', [], "appendix");
+        this.__attachments = this.createStorageLink('attachments', [], "attachments");
+        this.context = this.getUIContext().getHostContext();
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        if (params.crossEndPicture !== undefined) {
+            this.crossEndPicture = params.crossEndPicture;
+        }
+        if (params.uiContext !== undefined) {
+            this.uiContext = params.uiContext;
+        }
+        if (params.context !== undefined) {
+            this.context = params.context;
+        }
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__crossEndPicture.purgeDependencyOnElmtId(rmElmtId);
+        this.__uiContext.purgeDependencyOnElmtId(rmElmtId);
+        this.__recipient.purgeDependencyOnElmtId(rmElmtId);
+        this.__sender.purgeDependencyOnElmtId(rmElmtId);
+        this.__subject.purgeDependencyOnElmtId(rmElmtId);
+        this.__emailContent.purgeDependencyOnElmtId(rmElmtId);
+        this.__isContinuation.purgeDependencyOnElmtId(rmElmtId);
+        this.__appendix.purgeDependencyOnElmtId(rmElmtId);
+        this.__attachments.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__crossEndPicture.aboutToBeDeleted();
+        this.__uiContext.aboutToBeDeleted();
+        this.__recipient.aboutToBeDeleted();
+        this.__sender.aboutToBeDeleted();
+        this.__subject.aboutToBeDeleted();
+        this.__emailContent.aboutToBeDeleted();
+        this.__isContinuation.aboutToBeDeleted();
+        this.__appendix.aboutToBeDeleted();
+        this.__attachments.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get crossEndPicture() {
+        return this.__crossEndPicture.get();
+    }
+    set crossEndPicture(newValue) {
+        this.__crossEndPicture.set(newValue);
+    }
+    get uiContext() {
+        return this.__uiContext.get();
+    }
+    set uiContext(newValue) {
+        this.__uiContext.set(newValue);
+    }
+    get recipient() {
+        return this.__recipient.get();
+    }
+    set recipient(newValue) {
+        this.__recipient.set(newValue);
+    }
+    get sender() {
+        return this.__sender.get();
+    }
+    set sender(newValue) {
+        this.__sender.set(newValue);
+    }
+    get subject() {
+        return this.__subject.get();
+    }
+    set subject(newValue) {
+        this.__subject.set(newValue);
+    }
+    get emailContent() {
+        return this.__emailContent.get();
+    }
+    set emailContent(newValue) {
+        this.__emailContent.set(newValue);
+    }
+    get isContinuation() {
+        return this.__isContinuation.get();
+    }
+    set isContinuation(newValue) {
+        this.__isContinuation.set(newValue);
+    }
+    get appendix() {
+        return this.__appendix.get();
+    }
+    set appendix(newValue) {
+        this.__appendix.set(newValue);
+    }
+    get attachments() {
+        return this.__attachments.get();
+    }
+    set attachments(newValue) {
+        this.__attachments.set(newValue);
+    }
+    onPageShow() {
+        this.context.setMissionContinueState(AbilityConstant.ContinueState.ACTIVE, (result) => {
+            hilog.info(0x0000, 'hilog', 'setMissionContinueState ACTIVE result: ', JSON.stringify(result));
+        });
+    }
+    onBackPress() {
+        this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result) => {
+            hilog.info(0x0000, 'hilog', 'setMissionContinueState INACTIVE result: ', JSON.stringify(result));
+        });
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.width('100%');
+            Column.height('100%');
+            Column.padding({ left: 16, right: 16 });
+            Column.backgroundColor('#FFF1F3F5');
+            Column.expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]);
+        }, Column);
+        this.NavigationTitle.bind(this)();
+        this.EmailContent.bind(this)();
+        Column.pop();
+    }
+    /**
+     * Top navigation title bar.
+     */
+    NavigationTitle(parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Flex.create({ alignItems: ItemAlign.Center });
+            Flex.height(56);
+        }, Flex);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create({ "id": 16777229, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontSize(20);
+            Text.fontWeight(700);
+            Text.lineHeight(27);
+            Text.fontColor('rgba(0, 0, 0, 0.9)');
+            Text.flexGrow(1);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Row.create();
+            Row.alignItems(VerticalAlign.Center);
+            Row.justifyContent(FlexAlign.Center);
+            Row.width(40);
+            Row.height(40);
+            Row.backgroundColor('rgba(0, 0, 0, 0.05)');
+            Row.borderRadius(40);
+            Row.margin({ right: 8 });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            SymbolGlyph.create({ "id": 125831535, "type": 40000, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            SymbolGlyph.fontSize(24);
+            SymbolGlyph.fontWeight(400);
+        }, SymbolGlyph);
+        Row.pop();
+        Flex.pop();
+    }
+    EmailContent(parent = null) {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Column.create();
+            Column.width('100%');
+            Column.layoutWeight(1);
+            Column.padding({ left: 8, right: 8 });
+        }, Column);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // Recipient
+            Row.create();
+            // Recipient
+            Row.width('100%');
+            // Recipient
+            Row.height(56);
+            // Recipient
+            Row.border({
+                width: { bottom: 1 },
+                color: 'rgba(0, 0, 0, 0.2)'
+            });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create({ "id": 16777231, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontColor({ "id": 16777235, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontSize({ "id": 16777253, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.focusable(true);
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TextInput.create({ text: this.recipient });
+            TextInput.type(InputType.Email);
+            TextInput.width(CommonConstants.PERCENTAGE_MAX);
+            TextInput.backgroundColor({ "id": 16777236, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.caretColor({ "id": 16777238, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.onChange((recipientName) => {
+                this.recipient = recipientName;
+                AppStorage.set('recipient', recipientName);
+            });
+        }, TextInput);
+        // Recipient
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // Sender
+            Row.create();
+            // Sender
+            Row.width('100%');
+            // Sender
+            Row.height(56);
+            // Sender
+            Row.border({
+                width: { bottom: 1 },
+                color: 'rgba(0, 0, 0, 0.2)'
+            });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create({ "id": 16777232, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontColor({ "id": 16777235, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontSize({ "id": 16777253, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TextInput.create({ text: this.sender });
+            TextInput.type(InputType.Email);
+            TextInput.width(CommonConstants.PERCENTAGE_MAX);
+            TextInput.backgroundColor({ "id": 16777236, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.caretColor({ "id": 16777238, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.onChange((senderName) => {
+                this.sender = senderName;
+                AppStorage.set('sender', senderName);
+            });
+        }, TextInput);
+        // Sender
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // Subject
+            Row.create();
+            // Subject
+            Row.width('100%');
+            // Subject
+            Row.height(56);
+            // Subject
+            Row.border({
+                width: { bottom: 1 },
+                color: 'rgba(0, 0, 0, 0.2)'
+            });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Text.create({ "id": 16777233, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontColor({ "id": 16777235, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            Text.fontSize({ "id": 16777253, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+        }, Text);
+        Text.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TextInput.create({ text: this.subject });
+            TextInput.width(CommonConstants.PERCENTAGE_MAX);
+            TextInput.backgroundColor({ "id": 16777236, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.caretColor({ "id": 16777238, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextInput.onChange((subjectInfo) => {
+                this.subject = subjectInfo;
+                AppStorage.set('subject', subjectInfo);
+            });
+        }, TextInput);
+        // Subject
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            If.create();
+            // Appendix
+            if (this.appendix.length > 0) {
+                this.ifElseBranchUpdateFunction(0, () => {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        Row.create();
+                        Row.width('100%');
+                        Row.height(56);
+                        Row.border({
+                            width: { bottom: 1 },
+                            color: 'rgba(0, 0, 0, 0.2)'
+                        });
+                    }, Row);
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        Text.create({ "id": 16777225, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                        Text.fontColor({ "id": 16777235, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                        Text.fontSize({ "id": 16777253, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                    }, Text);
+                    Text.pop();
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        List.create({ space: CommonConstants.APPENDIX_LIST_SPACE });
+                        List.listDirection(Axis.Horizontal);
+                        List.alignListItem(ListItemAlign.Center);
+                        List.divider({
+                            strokeWidth: 1,
+                            color: Color.Grey,
+                            startMargin: CommonConstants.APPENDIX_LIST_START_MARGIN,
+                            endMargin: CommonConstants.APPENDIX_LIST_END_MARGIN
+                        });
+                        List.scrollBar(BarState.Off);
+                    }, List);
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        ForEach.create();
+                        const forEachItemGenFunction = _item => {
+                            const item = _item;
+                            {
+                                const itemCreation = (elmtId, isInitialRender) => {
+                                    ViewStackProcessor.StartGetAccessRecordingFor(elmtId);
+                                    ListItem.create(deepRenderFunction, true);
+                                    if (!isInitialRender) {
+                                        ListItem.pop();
+                                    }
+                                    ViewStackProcessor.StopGetAccessRecording();
+                                };
+                                const itemCreation2 = (elmtId, isInitialRender) => {
+                                    ListItem.create(deepRenderFunction, true);
+                                };
+                                const deepRenderFunction = (elmtId, isInitialRender) => {
+                                    itemCreation(elmtId, isInitialRender);
+                                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                                        Row.create();
+                                    }, Row);
+                                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                                        Image.create(imageIndex[item.iconIndex].icon);
+                                        Image.width({ "id": 16777241, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                                        Image.aspectRatio(1);
+                                        Image.margin({ right: { "id": 16777240, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" } });
+                                    }, Image);
+                                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                                        Text.create(item.fileName);
+                                        Text.fontSize({ "id": 16777239, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                                    }, Text);
+                                    Text.pop();
+                                    Row.pop();
+                                    ListItem.pop();
+                                };
+                                this.observeComponentCreation2(itemCreation2, ListItem);
+                                ListItem.pop();
+                            }
+                        };
+                        this.forEachUpdateFunction(elmtId, this.appendix, forEachItemGenFunction, (_item, index) => index.toString(), false, true);
+                    }, ForEach);
+                    ForEach.pop();
+                    List.pop();
+                    Row.pop();
+                });
+            }
+            // Message content area.
+            else {
+                this.ifElseBranchUpdateFunction(1, () => {
+                });
+            }
+        }, If);
+        If.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // Message content area.
+            Row.create();
+            // Message content area.
+            Row.layoutWeight(1);
+            // Message content area.
+            Row.alignItems(VerticalAlign.Top);
+            // Message content area.
+            Row.width(CommonConstants.PERCENTAGE_MAX);
+            // Message content area.
+            Row.margin({
+                top: { "id": 16777254, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" },
+                bottom: { "id": 16777248, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" }
+            });
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            TextArea.create({ text: this.emailContent });
+            TextArea.height(CommonConstants.PERCENTAGE_MAX);
+            TextArea.padding(0);
+            TextArea.backgroundColor({ "id": 16777236, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextArea.borderRadius(0);
+            TextArea.caretColor({ "id": 16777238, "type": 10001, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+            TextArea.onChange((emailContent) => {
+                this.emailContent = emailContent;
+                AppStorage.set('emailContent', emailContent);
+            });
+        }, TextArea);
+        // Message content area.
+        Row.pop();
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            // Image display area.
+            Row.create();
+            // Image display area.
+            Row.width(CommonConstants.PERCENTAGE_MAX);
+            // Image display area.
+            Row.justifyContent(FlexAlign.Start);
+        }, Row);
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            If.create();
+            if (this.crossEndPicture) {
+                this.ifElseBranchUpdateFunction(0, () => {
+                    this.observeComponentCreation2((elmtId, isInitialRender) => {
+                        Image.create(this.crossEndPicture);
+                        Image.height({ "id": 16777250, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                        Image.objectFit(ImageFit.ScaleDown);
+                        Image.borderRadius({ "id": 16777251, "type": 10002, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" });
+                    }, Image);
+                });
+            }
+            else {
+                this.ifElseBranchUpdateFunction(1, () => {
+                });
+            }
+        }, If);
+        If.pop();
+        // Image display area.
+        Row.pop();
+        Column.pop();
+    }
+    /**
+     * Rendering pictures.
+     *
+     * @param buffer Returned image stream of cross-end photographing.
+     */
+    createPicture(buffer) {
+        let imageSource = image.createImageSource(buffer);
+        imageSource.createPixelMap().then((pixelMap) => {
+            this.crossEndPicture = pixelMap;
+        });
+    }
+    aboutToDisappear() {
+        this.crossEndPicture?.release();
+    }
+    /**
+     * Add appendix from file manager.
+     *
+     * @param fileType
+     */
+    documentSelect(fileType) {
+        try {
+            let DocumentSelectOptions = new picker.DocumentSelectOptions();
+            let documentPicker = new picker.DocumentViewPicker();
+            documentPicker.select(DocumentSelectOptions).then((DocumentSelectResult) => {
+                for (let documentSelectResultElement of DocumentSelectResult) {
+                    let buf = new ArrayBuffer(CommonConstants.FILE_BUFFER_SIZE);
+                    let readSize = 0;
+                    let file = fileIo.openSync(documentSelectResultElement, fileIo.OpenMode.READ_ONLY);
+                    let readLen = fileIo.readSync(file.fd, buf, { offset: readSize });
+                    // File name is not supported chinese name.
+                    let fileName = file.name;
+                    if (!fileName.endsWith(imageIndex[fileType].fileType) ||
+                        new RegExp("\[\\u4E00-\\u9FA5]|[\\uFE30-\\uFFA0]", "gi").test(fileName)) {
+                        this.getUIContext().getPromptAction().showToast({
+                            message: { "id": 16777224, "type": 10003, params: [], "bundleName": "com.example.distributedmail", "moduleName": "entry" }
+                        });
+                        return;
+                    }
+                    let destination = fileIo.openSync(this.getUIContext().getHostContext()
+                        .filesDir + '/' + fileName, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                    let destinationDistribute = fileIo.openSync(this.getUIContext().getHostContext()
+                        .distributedFilesDir + '/' + fileName, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                    while (readLen > 0) {
+                        readSize += readLen;
+                        fileIo.writeSync(destination.fd, buf);
+                        fileIo.writeSync(destinationDistribute.fd, buf);
+                        readLen = fileIo.readSync(file.fd, buf, { offset: readSize });
+                    }
+                    fileIo.closeSync(file);
+                    fileIo.closeSync(destination);
+                    fileIo.closeSync(destinationDistribute);
+                    this.appendix.push({ iconIndex: fileType, fileName: fileName });
+                }
+                hilog.info(0x0000, 'hilog', `DocumentViewPicker.select successfully, DocumentSelectResult uri: ${JSON.stringify(DocumentSelectResult)}`);
+            }).catch((error) => {
+                hilog.error(0x0000, 'MailHomePage', `have error .Code:${error.code},message: ${error.message}`);
+            });
+        }
+        catch (error) {
+            hilog.error(0x0000, 'MailHomePage', `have error .Code:${error.code},message: ${error.message}`);
+        }
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "MailHomePage";
+    }
+}
+registerNamedRoute(() => new MailHomePage(undefined, {}), "", { bundleName: "com.example.distributedmail", moduleName: "entry", pagePath: "pages/MailHomePage", pageFullPath: "entry/src/main/ets/pages/MailHomePage", integratedHsp: "false", moduleType: "followWithHap" });
+//# sourceMappingURL=MailHomePage.js.mapÂ—Ùt hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsÙ` hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fs.d.tsÙd hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.picker.d.tsÙi hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.multimedia.image.d.tsÙ^ hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsÙoE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\common\CommonConstants.etsÙpE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\viewmodel\MailViewModel.etsÙkE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\pages\MailHomePage.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙGE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entryÙAE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail¥entry¥1.0.0Ô  ÙGE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entryÃÃÚ)Ü/*
+ *  Copyright (c) 2025 Huawei Device Co., Ltd.
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+import { BusinessError } from '@kit.BasicServicesKit';
+import { AbilityConstant, common } from '@kit.AbilityKit';
+import { fileIo, picker } from '@kit.CoreFileKit';
+import { image } from '@kit.ImageKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import CommonConstants from '../common/CommonConstants';
+import { AppendixBean, imageIndex } from '../viewmodel/MailViewModel';
+
+@Entry
+@Component
+struct MailHomePage {
+  @State crossEndPicture: PixelMap | undefined = undefined;
+  @State uiContext: UIContext | undefined = AppStorage.get('uiContext');
+  @StorageLink('recipient') recipient: string = '';
+  @StorageLink('sender') sender: string = '';
+  @StorageLink('subject') subject: string = '';
+  @StorageLink('emailContent') emailContent: string = '';
+  @StorageLink('isContinuation') isContinuation: string = CommonConstants.NO_CONTINUATION;
+  @StorageLink('appendix') appendix: Array<AppendixBean> = [];
+  @StorageLink('attachments') attachments: Object = [];
+  private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+
+  onPageShow(): void {
+    this.context.setMissionContinueState(AbilityConstant.ContinueState.ACTIVE, (result) => {
+      hilog.info(0x0000, 'hilog', 'setMissionContinueState ACTIVE result: ', JSON.stringify(result));
+    });
+  }
+
+  onBackPress(): void {
+    this.context.setMissionContinueState(AbilityConstant.ContinueState.INACTIVE, (result) => {
+      hilog.info(0x0000, 'hilog', 'setMissionContinueState INACTIVE result: ', JSON.stringify(result));
+    });
+  }
+
+  build() {
+    Column() {
+      this.NavigationTitle();
+      this.EmailContent();
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ left: 16, right: 16 })
+    .backgroundColor('#FFF1F3F5')
+    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])
+  }
+
+  /**
+   * Top navigation title bar.
+   */
+  @Builder
+  NavigationTitle() {
+    Flex({ alignItems: ItemAlign.Center }) {
+
+      Text($r('app.string.new_email_text'))
+        .fontSize(20)
+        .fontWeight(700)
+        .lineHeight(27)
+        .fontColor('rgba(0, 0, 0, 0.9)')
+        .flexGrow(1)
+
+      Row() {
+        SymbolGlyph($r('sys.symbol.paperplane'))
+          .fontSize(24)
+          .fontWeight(400)
+      }
+      .alignItems(VerticalAlign.Center)
+      .justifyContent(FlexAlign.Center)
+      .width(40)
+      .height(40)
+      .backgroundColor('rgba(0, 0, 0, 0.05)')
+      .borderRadius(40)
+      .margin({ right: 8 })
+
+    }
+    .height(56)
+  }
+
+  @Builder
+  EmailContent() {
+    Column() {
+      // Recipient
+      Row() {
+        Text($r('app.string.recipient_text'))
+          .fontColor($r('app.color.content_text_color'))
+          .fontSize($r('app.float.text_font_size'))
+          .focusable(true)
+        TextInput({ text: this.recipient })
+          .type(InputType.Email)
+          .width(CommonConstants.PERCENTAGE_MAX)
+          .backgroundColor($r('app.color.input_textarea_background'))
+          .caretColor($r('app.color.text_cursor_color'))
+          .onChange((recipientName: string) => {
+            this.recipient = recipientName;
+            AppStorage.set('recipient', recipientName);
+          })
+      }
+      .width('100%')
+      .height(56)
+      .border({
+        width: { bottom: 1 },
+        color: 'rgba(0, 0, 0, 0.2)'
+      })
+
+      // Sender
+      Row() {
+        Text($r('app.string.sender_text'))
+          .fontColor($r('app.color.content_text_color'))
+          .fontSize($r('app.float.text_font_size'))
+        TextInput({ text: this.sender })
+          .type(InputType.Email)
+          .width(CommonConstants.PERCENTAGE_MAX)
+          .backgroundColor($r('app.color.input_textarea_background'))
+          .caretColor($r('app.color.text_cursor_color'))
+          .onChange((senderName: string) => {
+            this.sender = senderName;
+            AppStorage.set('sender', senderName);
+          })
+      }
+      .width('100%')
+      .height(56)
+      .border({
+        width: { bottom: 1 },
+        color: 'rgba(0, 0, 0, 0.2)'
+      })
+
+      // Subject
+      Row() {
+        Text($r('app.string.subject_text'))
+          .fontColor($r('app.color.content_text_color'))
+          .fontSize($r('app.float.text_font_size'))
+        TextInput({ text: this.subject })
+          .width(CommonConstants.PERCENTAGE_MAX)
+          .backgroundColor($r('app.color.input_textarea_background'))
+          .caretColor($r('app.color.text_cursor_color'))
+          .onChange((subjectInfo: string) => {
+            this.subject = subjectInfo;
+            AppStorage.set('subject', subjectInfo);
+          })
+      }
+      .width('100%')
+      .height(56)
+      .border({
+        width: { bottom: 1 },
+        color: 'rgba(0, 0, 0, 0.2)'
+      })
+
+      // Appendix
+      if (this.appendix.length > 0) {
+        Row() {
+          Text($r('app.string.appendix_text'))
+            .fontColor($r('app.color.content_text_color'))
+            .fontSize($r('app.float.text_font_size'))
+          List({ space: CommonConstants.APPENDIX_LIST_SPACE }) {
+            ForEach(this.appendix, (item: AppendixBean) => {
+              ListItem() {
+                Row() {
+                  Image(imageIndex[item.iconIndex].icon)
+                    .width($r('app.float.appendix_list_item_width'))
+                    .aspectRatio(1)
+                    .margin({ right: $r('app.float.appendix_list_item_margin_right') })
+                  Text(item.fileName)
+                    .fontSize($r('app.float.appendix_file_name_font_size'))
+                }
+              }
+            }, (_item: AppendixBean, index: number) => index.toString())
+          }
+          .listDirection(Axis.Horizontal)
+          .alignListItem(ListItemAlign.Center)
+          .divider({
+            strokeWidth: 1,
+            color: Color.Grey,
+            startMargin: CommonConstants.APPENDIX_LIST_START_MARGIN,
+            endMargin: CommonConstants.APPENDIX_LIST_END_MARGIN
+          })
+          .scrollBar(BarState.Off)
+        }
+        .width('100%')
+        .height(56)
+        .border({
+          width: { bottom: 1 },
+          color: 'rgba(0, 0, 0, 0.2)'
+        })
+      }
+
+      // Message content area.
+      Row() {
+        TextArea({ text: this.emailContent })
+          .height(CommonConstants.PERCENTAGE_MAX)
+          .padding(0)
+          .backgroundColor($r('app.color.input_textarea_background'))
+          .borderRadius(0)
+          .caretColor($r('app.color.text_cursor_color'))
+          .onChange((emailContent: string) => {
+            this.emailContent = emailContent;
+            AppStorage.set('emailContent', emailContent);
+          })
+      }
+      .layoutWeight(1)
+      .alignItems(VerticalAlign.Top)
+      .width(CommonConstants.PERCENTAGE_MAX)
+      .margin({
+        top: $r('app.float.text_image_margin'),
+        bottom: $r('app.float.navigation_height')
+      })
+
+      // Image display area.
+      Row() {
+        if (this.crossEndPicture) {
+          Image(this.crossEndPicture)
+            .height($r('app.float.photo_picture_height'))
+            .objectFit(ImageFit.ScaleDown)
+            .borderRadius($r('app.float.photo_picture_radius'))
+        }
+      }
+      .width(CommonConstants.PERCENTAGE_MAX)
+      .justifyContent(FlexAlign.Start)
+    }
+    .width('100%')
+    .layoutWeight(1)
+    .padding({ left: 8, right: 8 })
+  }
+
+  /**
+   * Rendering pictures.
+   *
+   * @param buffer Returned image stream of cross-end photographing.
+   */
+  createPicture(buffer: ArrayBuffer): void {
+    let imageSource = image.createImageSource(buffer);
+    imageSource.createPixelMap().then((pixelMap) => {
+      this.crossEndPicture = pixelMap;
+    });
+  }
+
+  aboutToDisappear(): void {
+    this.crossEndPicture?.release();
+  }
+
+  /**
+   * Add appendix from file manager.
+   *
+   * @param fileType
+   */
+  documentSelect(fileType: number): void {
+    try {
+      let DocumentSelectOptions = new picker.DocumentSelectOptions();
+      let documentPicker = new picker.DocumentViewPicker();
+      documentPicker.select(DocumentSelectOptions).then((DocumentSelectResult: Array<string>) => {
+        for (let documentSelectResultElement of DocumentSelectResult) {
+          let buf = new ArrayBuffer(CommonConstants.FILE_BUFFER_SIZE);
+          let readSize = 0;
+          let file = fileIo.openSync(documentSelectResultElement, fileIo.OpenMode.READ_ONLY);
+          let readLen = fileIo.readSync(file.fd, buf, { offset: readSize });
+          // File name is not supported chinese name.
+          let fileName = file.name;
+          if (!fileName.endsWith(imageIndex[fileType].fileType) ||
+          new RegExp("\[\\u4E00-\\u9FA5]|[\\uFE30-\\uFFA0]", "gi").test(fileName)) {
+            this.getUIContext().getPromptAction().showToast({
+              message: $r('app.string.alert_message_chinese')
+            });
+            return;
+          }
+          let destination = fileIo.openSync(this.getUIContext().getHostContext()!
+            .filesDir + '/' + fileName, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+          let destinationDistribute = fileIo.openSync(this.getUIContext().getHostContext()!
+            .distributedFilesDir + '/' + fileName, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+          while (readLen > 0) {
+            readSize += readLen;
+            fileIo.writeSync(destination.fd, buf);
+            fileIo.writeSync(destinationDistribute.fd, buf);
+            readLen = fileIo.readSync(file.fd, buf, { offset: readSize });
+          }
+          fileIo.closeSync(file);
+          fileIo.closeSync(destination);
+          fileIo.closeSync(destinationDistribute);
+          this.appendix.push({ iconIndex: fileType, fileName: fileName });
+        }
+        hilog.info(0x0000, 'hilog',
+          `DocumentViewPicker.select successfully, DocumentSelectResult uri: ${JSON.stringify(DocumentSelectResult)}`);
+      }).catch((error: BusinessError) => {
+        hilog.error(0x0000, 'MailHomePage', `have error .Code:${error.code},message: ${error.message}`);
+      });
+    } catch (error) {
+      hilog.error(0x0000, 'MailHomePage', `have error .Code:${error.code},message: ${error.message}`);
+    }
+  }
+}ÀÔrC—Ù!@ohos.app.ability.AbilityConstant­@ohos.file.fs±@ohos.file.picker¶@ohos.multimedia.image«@ohos.hilog¹../common/CommonConstantsº../viewmodel/MailViewModelÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÃÙt hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.app.ability.AbilityConstant.d.tsAÃªoh-resolveÂDAÃÙ` hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.fs.d.tsAÃªoh-resolveÂDAÃÙd hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.file.picker.d.tsÔrE‘¯hostModulesInfo‘ÔrF’²hostDependencyName®hostModuleName±@ohos.file.picker¥entryÃªoh-resolveÂDAÃÙi hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.multimedia.image.d.tsE‘F¶@ohos.multimedia.image¥entryÃªoh-resolveÂDAÃÙ^ hvigor_ignore_E:_DevEco-Studio_DevEco Studio_sdk_default_openharmony_ets_api_@ohos.hilog.d.tsAÃªoh-resolveÂDAÂÙoE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\common\CommonConstants.etsAÃªoh-resolveÂDAÂÙpE:\for-more\2025late\real\codeLab\DistributedMail\DistributedMail\entry\src\main\ets\viewmodel\MailViewModel.etsAÃªoh-resolveÂ“ÔrG–§version¤fileªsourceRoot§sources¥names¨mappings¯MailHomePage.js ‘°MailHomePage.etsÜç–”   ” 	” ” (”? 9”Ì@ :–”   ” 	” ” ”" 1”# 2–”   ” ” ” ”& 1”' 2–”   ” 	” ” ”* %”+ &–”   ” 	” ” ” 3”  4–”   ” ” ” ”7 7”8 8˜”   ” ”	 ” !” #” )”7 ÌE”8 ÌF’” ” ‘”  ’”> 1”ÌG :—”8 ,”ÌB 6”ÌC 7”ÌF :”ÌG ;”ÌR ÌF”ÌS ÌG””2 ”= ”? 0”ÌA 2””/ ”7 ”9 *”; ,””0 ”9 ”; ,”= .””5 ”ÌC ”ÌE 6”ÌG 8–”7  ”ÌG  ”ÌI  :”ÌX  ÌI”ÌY  ÌJ”Ìh  ÌY””1 !”; !”= !;”? !=””4 "”ÌA "”ÌC "4”ÌE "6˜” #” #” #”( #%”* #'”+ #(”9 #6”; #ÌS‘” ÌF’” 	” ’” 	” ’” 	” ’” 	” ’” ” %’” ” %’” ” ’” ” ’” ” !’” ” !’” ” +’” ” +’”  !”  /’”  !”  /’” !” !#’” !” !#’” "” ")’” "” ")’” %” %Ü ” &” &” &	” &” &”, &(”- &)”< &8”= &9”ÌJ &ÌF”ÌK &ÌG”ÌQ &ÌM”ÌS &ÌO”ÌT &ÌP”ÌZ &ÌV”Ì\ &ÌX”Ì^ &ÌZÜ ” '” '” '” '” '” '” '”& ' ”( '"”ÌQ 'ÌK”ÌS 'ÌM”ÌW 'ÌQ”ÌX 'ÌR”Ìa 'Ì[”Ìb 'Ì\”Ìh 'Ìb”Ìi 'Ìc”Ìj 'Ìd”Ìk 'Ìe”” (”	 (”
+ (” (’” )” )’” +” +Ü ” ,” ,” ,	” ,” ,”, ,(”- ,)”< ,8”= ,9”ÌJ ,ÌF”ÌK ,ÌG”ÌS ,ÌO”ÌU ,ÌQ”ÌV ,ÌR”Ì\ ,ÌX”Ì^ ,ÌZ”Ì` ,Ì\Ü ” -” -” -” -” -” -” -”& - ”( -"”ÌS -ÌM”ÌU -ÌO”ÌY -ÌS”ÌZ -ÌT”Ìc -Ì]”Ìd -Ì^”Ìj -Ìd”Ìk -Ìe”Ìl -Ìf”Ìm -Ìg”” .”	 .”
+ .” .’” /” /‘” 1’” 2” 2
+–” 2” 2
+” 6” 6
+” 6” 6–” 2” 2
+” 7” 7” 7”  7” 2” 2
+” 8” 8” 8” 8”! 8”# 8”% 8”' 8”, 8”. 8 ”0 8"”2 8$–” 2” 2
+” 9”" 9”# 9”. 9 Ü ” 2” 2
+” :”! :”" :”# :”/ :!”0 :"”6 :(”7 :)”9 :+”: :,”ÌF :8”ÌG :9”ÌJ :<”ÌL :>”ÌX :ÌJ”ÌY :ÌK”Ì_ :ÌQ”Ì` :ÌR•” 3” 3
+” 3” 3”) 3•” 4” 4
+” 4” 4”& 4’” 2” 2
+‘” ;‘” =‘” ?’” ÌA” ÌAš” ÌB” ÌB” ÌB	” ÌB”$ ÌB”& ÌB”/ ÌB ”0 ÌB!”6 ÌB'”8 ÌB)–” ÌB” ÌB” ÌY” ÌY” ÌY” ÌY’” ÌD” ÌD
+–” ÌD” ÌD
+” ÌE	” ÌE” ÌE” ÌE–” ÌD” ÌD
+” ÌF	” ÌF” ÌF” ÌF–” ÌD” ÌD
+” ÌG	” ÌG” ÌG” ÌG–” ÌD” ÌD
+” ÌH	” ÌH” ÌH”/ ÌH'–” ÌD” ÌD
+” ÌI	” ÌI” ÌI” ÌI’” ÌD” ÌD
+’” ÌK” ÌK	˜” ÌK” ÌK	” ÌP” ÌP” ÌP”( ÌP”) ÌP ”/ ÌP&˜” ÌK” ÌK	” ÌQ” ÌQ” ÌQ”( ÌQ”) ÌQ ”/ ÌQ&–” ÌK” ÌK	” ÌR” ÌR” ÌR” ÌR–” ÌK” ÌK	” ÌS” ÌS” ÌS” ÌS–” ÌK” ÌK	” ÌT” ÌT”  ÌT”5 ÌT,–” ÌK” ÌK	” ÌU” ÌU” ÌU” ÌUš” ÌK” ÌK	” ÌV” ÌV” ÌV” ÌV” ÌV”  ÌV”! ÌV”# ÌV’” ÌL” ÌL–” ÌL” ÌL” ÌM”  ÌM”! ÌM”# ÌM–” ÌL” ÌL” ÌN”" ÌN”# ÌN”& ÌN’” ÌK” ÌK	’” ÌB” ÌB‘” ÌZ’” Ì]” Ì]’” Ì^” Ì^
+–” Ì^” Ì^
+” Ìè” Ìè
+” Ìè” Ìè–” Ì^” Ì^
+” Ìé” Ìé”  Ìé”! Ìé” Ì^” Ì^
+” Ìê” Ìê” Ìê” Ìê”! Ìê”# Ìê”$ Ìê”& Ìê”+ Ìê”- Ìê”. Ìê ”0 Ìê"’” Ì_” Ì_’” Ì`” Ì`	’” Ì_” Ì_–” Ì`” Ì`	” Ìo” Ìo” Ìo” Ìo’” Ì_” Ì_–” Ì`” Ì`	” Ìp” Ìp” Ìp” Ìp’” Ì_” Ì_•” Ì`” Ì`	” Ìq” Ìq” Ìq˜” Ìr” Ìr” Ìr” Ìr” Ìr”! Ìr”" Ìr”$ Ìr”” Ìs” Ìs” Ìs”+ Ìs#‘” Ìt’” Ìa” Ìa”” Ìa” Ìa” Ìb” Ìb”” Ìa” Ìa” Ìc” Ìc–” Ìa” Ìa” Ìd” Ìd” Ìd” Ìd’” Ìa” Ìaš” Ìe” Ìe” Ìe” Ìe”# Ìe”% Ìe”) Ìe”* Ìe”3 Ìe(”5 Ìe*˜” Ìe” Ìe” Ìf” Ìf” Ìf”$ Ìf”% Ìf”* Ìf˜” Ìe” Ìe” Ìg” Ìg” Ìg”+ Ìg ”, Ìg!”: Ìg/”” Ìe” Ìe” Ìh”% Ìh”” Ìe” Ìe” Ìi”  Ìi™” Ìe” Ìe” Ìj” Ìj” Ìj”  Ìj”- Ìj*”/ Ìj,”1 Ìj.—” Ìk” Ìk” Ìk” Ìk”! Ìk”. Ìk*”/ Ìk+š” Ìl” Ìl” Ìl” Ìl” Ìl”* Ìl&”, Ìl(”9 Ìl5”: Ìl6”; Ìl7’” Ìm
+” Ìm’” Ì_” Ì_’” Ì`” Ì`	’” Ìv” Ìv’” Ìw” Ìw	’” Ìv” Ìv–” Ìw” Ìw	” Ì…” Ì…” Ì…” Ì…’” Ìv” Ìv–” Ìw” Ìw	” Ì†” Ì†” Ì†” Ì†’” Ìv” Ìv•” Ìw” Ìw	” Ì‡” Ì‡” Ì‡˜” Ìˆ” Ìˆ” Ìˆ” Ìˆ” Ìˆ”! Ìˆ”" Ìˆ”$ Ìˆ”” Ì‰” Ì‰” Ì‰”+ Ì‰#‘” ÌŠ’” Ìx” Ìx”” Ìx” Ìx” Ìy” Ìy”” Ìx” Ìx” Ìz” Ìz’” Ìx” Ìxš” Ì{” Ì{” Ì{” Ì{”# Ì{”% Ì{”) Ì{”* Ì{”0 Ì{%”2 Ì{'˜” Ì{” Ì{” Ì|” Ì|” Ì|”$ Ì|”% Ì|”* Ì|˜” Ì{” Ì{” Ì}” Ì}” Ì}”+ Ì} ”, Ì}!”: Ì}/”” Ì{” Ì{” Ì~”% Ì~”” Ì{” Ì{” Ì”  Ì™” Ì{” Ì{” Ì€” Ì€” Ì€”  Ì€”* Ì€'”, Ì€)”. Ì€+—” Ì” Ì” Ì” Ì” Ì”( Ì$”) Ì%š” Ì‚” Ì‚” Ì‚” Ì‚” Ì‚”' Ì‚#”) Ì‚%”3 Ì‚/”4 Ì‚0”5 Ì‚1’” Ìƒ
+” Ìƒ’” Ìv” Ìv’” Ìw” Ìw	’” ÌŒ” ÌŒ’” Ì” Ì	’” ÌŒ” ÌŒ–” Ì” Ì	” Ìš” Ìš” Ìš” Ìš’” ÌŒ” ÌŒ–” Ì” Ì	” Ì›” Ì›” Ì›” Ì›’” ÌŒ” ÌŒ•” Ì” Ì	” Ìœ” Ìœ” Ìœ˜” Ì” Ì” Ì” Ì” Ì”! Ì”" Ì”$ Ì”” Ì” Ì” Ì”+ Ì#‘” ÌŸ’” Ì” Ì”” Ì” Ì” Ì” Ì”” Ì” Ì” Ì” Ì’” Ì” Ìš” Ì‘” Ì‘” Ì‘” Ì‘”# Ì‘”% Ì‘”) Ì‘”* Ì‘”1 Ì‘&”3 Ì‘(˜” Ì‘” Ì‘” Ì’” Ì’” Ì’”+ Ì’ ”, Ì’!”: Ì’/”” Ì‘” Ì‘” Ì“”% Ì“”” Ì‘” Ì‘” Ì””  Ì”™” Ì‘” Ì‘” Ì•” Ì•” Ì•”  Ì•”+ Ì•(”- Ì•*”/ Ì•,—” Ì–” Ì–” Ì–” Ì–” Ì–”* Ì–&”+ Ì–'š” Ì—” Ì—” Ì—” Ì—” Ì—”( Ì—$”* Ì—&”5 Ì—1”6 Ì—2”7 Ì—3’” Ì˜
+” Ì˜’” ÌŒ” ÌŒ’” Ì” Ì	’” Ì¡” Ì¡š” Ì¢” Ì¢
+” Ì¢” Ì¢” Ì¢” Ì¢”$ Ì¢”' Ì¢!”( Ì¢"”* Ì¢$’” Ì£” Ì£–” Ì£” Ì£” Ì¿	”! Ì¿”" Ì¿”( Ì¿–” Ì£” Ì£” ÌÀ	”" ÌÀ”# ÌÀ”% ÌÀ•” Ì£” Ì£” ÌÁ	”" ÌÁ”# ÌÁ˜” ÌÂ
+”! ÌÂ”# ÌÂ”% ÌÂ”+ ÌÂ”- ÌÂ”. ÌÂ”0 ÌÂ”” ÌÃ
+”! ÌÃ”# ÌÃ”7 ÌÃ%‘” ÌÄ	’” Ì¤
+” Ì¤”” Ì¤
+” Ì¤” Ì¥”& Ì¥”” Ì¤
+” Ì¤” Ì¦”% Ì¦’” Ì¤
+” Ì¤š” Ì§
+” Ì§”$ Ì§”& Ì§”+ Ì§”- Ì§”< Ì§'”= Ì§(”ÌP Ì§;”ÌR Ì§=˜” Ì§
+” Ì§” Ìµ”* Ìµ”+ Ìµ”/ Ìµ”0 Ìµ”: Ìµ(˜” Ì§
+” Ì§” Ì¶”* Ì¶”+ Ì¶”8 Ì¶&”9 Ì¶'”? Ì¶-•” Ì§
+” Ì§” Ì·”$ Ì·”% Ì·”” Ì¸”' Ì¸”) Ì¸”* Ì¸–” Ì¹”! Ì¹”# Ì¹”( Ì¹”) Ì¹”- Ì¹–” Ìº”' Ìº”) Ìº”8 Ìº(”9 Ìº)”ÌS ÌºÌC–” Ì»”% Ì»”' Ì»”6 Ì»&”7 Ì»'”ÌO Ì»?‘” Ì¼˜” Ì§
+” Ì§” Ì½”& Ì½”' Ì½”/ Ì½”0 Ì½”3 Ì½!’” Ì¨” Ì¨’”( Ì©”0 Ì©’”( Ìª”+ Ìª›”( Ì«”- Ì«”5 Ì«”? Ì«"”Ì@ Ì«#”ÌD Ì«'”ÌE Ì«(”ÌN Ì«1”ÌO Ì«2”ÌP Ì«3”ÌT Ì«7””( Ì«”- Ì«”. Ì¬”3 Ì¬–”( Ì«”- Ì«”. Ì­”9 Ì­ ”: Ì­!”; Ì­"™”( Ì«”- Ì«”. Ì®”4 Ì®”5 Ì®”7 Ì®”< Ì®#”Ì¯ Ì®ÌT”Ì± Ì®ÌV–”( Ì¯”, Ì¯”4 Ì¯”8 Ì¯”9 Ì¯”ÌA Ì¯$””( Ì¯”, Ì¯”- Ì°”5 Ì°’”$ Ì¯”( Ì¯’”$ Ìª”' Ìª’”$ Ì©”, Ì©’”  Ì©”( Ì©Ü ”; Ì¨”? Ì¨”Ì@ Ì¨”ÌH Ì¨!”Ìb Ì³”Ìc Ì³”Ìh Ì³#”Ìj Ì³%”Ìo Ì³2”Ìq Ì³4”Ìs Ì³6”Ìt Ì³7”Ìy Ì³<”Ìz Ì³=”Ì‚ Ì³ÌE”Ì„ Ì³ÌG’” Ì¨” Ì¨’” Ì§
+” Ì§’” Ì£” Ì£‘” ÌÅ’” ÌÇ”$ ÌÇ‘” ÌÅ’” ÌÇ”$ ÌÇ’” ÌÈ” ÌÈ	’” ÌÇ”$ ÌÇ–” ÌÈ” ÌÈ	” ÌÔ” ÌÔ” ÌÔ” ÌÔ’” ÌÇ”$ ÌÇ˜” ÌÈ” ÌÈ	” ÌÕ” ÌÕ” ÌÕ”( ÌÕ”) ÌÕ ”, ÌÕ#’” ÌÇ”$ ÌÇ˜” ÌÈ” ÌÈ	” ÌÖ” ÌÖ” ÌÖ”% ÌÖ”& ÌÖ”4 ÌÖ+’” ÌÇ”$ ÌÇ•” ÌÈ” ÌÈ	” Ì×” Ì×” Ì×“” ÌØ” ÌØ”Ì† ÌØ.“” ÌÙ” ÌÙ”Ì‰ ÌÙ1‘” ÌÚš” ÌÉ” ÌÉ” ÌÉ” ÌÉ”" ÌÉ”$ ÌÉ”( ÌÉ”) ÌÉ”5 ÌÉ*”7 ÌÉ,˜” ÌÉ” ÌÉ” ÌÊ” ÌÊ” ÌÊ”+ ÌÊ!”, ÌÊ"”: ÌÊ0–” ÌÉ” ÌÉ” ÌË” ÌË” ÌË” ÌË”” ÌÉ” ÌÉ” ÌÌ”$ ÌÌ–” ÌÉ” ÌÉ” ÌÍ”! ÌÍ”" ÌÍ”# ÌÍ”” ÌÉ” ÌÉ” ÌÎ” ÌÎ™” ÌÉ” ÌÉ” ÌÏ” ÌÏ” ÌÏ” ÌÏ”+ ÌÏ)”- ÌÏ+”/ ÌÏ-—” ÌĞ” ÌĞ” ÌĞ”! ÌĞ”$ ÌĞ ”0 ÌĞ,”1 ÌĞ-š” ÌÑ” ÌÑ” ÌÑ” ÌÑ” ÌÑ”- ÌÑ)”/ ÌÑ+”; ÌÑ7”< ÌÑ8”= ÌÑ9’” ÌÒ
+” ÌÒ’” ÌÇ”  ÌÇ’” ÌÈ” ÌÈ	’” ÌÜ”" ÌÜ’” Ìİ” Ìİ	’” ÌÜ”" ÌÜ˜” Ìİ” Ìİ	” Ìå” Ìå” Ìå”% Ìå”& Ìå”4 Ìå+’” ÌÜ”" ÌÜ˜” Ìİ” Ìİ	” Ìæ” Ìæ” Ìæ”( Ìæ”) Ìæ ”. Ìæ%–” ÌŞ” ÌŞ” ÌŞ” ÌŞ”$ ÌŞ ”& ÌŞ"–” Ìß
+” Ìß”% Ìß”) Ìß”* Ìß”9 Ìß$”” Ìß
+” Ìß” Ìà”$ Ìà˜” Ìß
+” Ìß” Ìá”' Ìá”( Ìá”0 Ìá”1 Ìá ”: Ìá)”” Ìß
+” Ìß” Ìâ”* Ìâ‘” Ìã	‘” Ìã	’” ÌÜ” ÌÜ’” Ìİ” Ìİ	’” Ì^” Ì^
+‘” Ìë‘” Ìí‘” Ìñ”” Ìò” Ìò” Ìò” Ìò#›” Ìó” Ìó” Ìó” Ìó” Ìó”  Ìó”1 Ìó-”2 Ìó.”8 Ìó4”9 Ìó5”: Ìó6œ” Ìô” Ìô” Ìô”" Ìô”$ Ìô ”% Ìô!”) Ìô%”* Ìô&”+ Ìô'”3 Ìô/”5 Ìô1”7 Ìô3—” Ìõ” Ìõ
+” Ìõ”  Ìõ”# Ìõ”+ Ìõ%”, Ìõ&”” Ìö”	 Ìö”
+ Ìö” Ìö’” Ì÷” Ì÷’” Ìù” Ìù˜” Ìú” Ìú” Ìú	” Ìú” Ìú”% Ìú!”' Ìú#”( Ìú$’” Ìû” Ìû‘” Ìı‘” Í”” Í” Í” Í” Í!’” Í” Íš” Í” Í
+”% Í”( Í"”, Í&”2 Í,”3 Í-”ÌH ÍÌB”ÌJ ÍÌD”ÌK ÍÌEš” Í” Í
+” Í”! Í”% Í”+ Í%”, Í&”> Í8”Ì@ Í:”ÌA Í;” Í” Í” Í”! Í”" Í”7 Í1”8 Í2”9 Í3”= Í7”> Í8”? Í9”ÌS ÍÌ\”ÌU ÍÌ^”ÌW ÍÌ`—” Í” Í” Í”4 Í,”8 Í0”ÌL ÍÌD”ÌN ÍÌFœ” Í
+” Í” Í” Í”" Í”- Í#”. Í$”= Í3”> Í4”ÌN ÍÌD”ÌO ÍÌE”ÌP ÍÌF–” Í	
+” Í	”  Í	”# Í	”$ Í	”% Í	Ü ” Í
+
+” Í
+” Í
+” Í
+”% Í
+”& Í
+”. Í
+$”/ Í
+%”ÌJ Í
+Ì@”ÌL Í
+ÌB”ÌR Í
+ÌH”ÌS Í
+ÌI”Ì[ Í
+ÌQ”Ì\ Í
+ÌR”Ìe Í
+Ì[”Ìf Í
+Ì\”Ìg Í
+Ì]Ü ” Í
+” Í” Í”" Í”( Í”) Í”1 Í'”2 Í(”6 Í,”7 Í-”9 Í/”; Í1”> Í4”Ì@ Í6”ÌB Í8”ÌH Í>”ÌJ ÍÌ@”ÌR ÍÌH”ÌT ÍÌJ”ÌU ÍÌK”ÌV ÍÌL’” Í
+”? Í5˜” Í
+” Í”  Í”# Í”' Í”( Í”, Í"”- Í#” Í
+” Í” Í”! Í”" Í”* Í ”+ Í!”5 Í+”6 Í,”> Í4”? Í5”Ì@ Í6”ÌH Í>”ÌI Í?” Í
+” Í”" Í”# Í”ÌI Í;”ÌK Í=”ÌO ÍÌA”ÌP ÍÌB”ÌQ ÍÌC”ÌU ÍÌG”ÌV ÍÌH”Ì^ ÍÌP”Ì_ ÍÌQ”Ìa ÍÌS›” Í” Í” Í”) Í”+ Í”, Í ”; Í/”= Í1”> Í2”ÌG Í;”ÌH Í<“” Í”# Í”Ì– Í=“” Í” Í” Í’” Í” Í‘” ÍŸ” Í
+” Í”# Í”& Í”, Í"”- Í#”5 Í+”6 Í,”: Í0”; Í1”ÌG Í=”ÌI Í?”ÌJ ÍÌ@”ÌX ÍÌN”ÌZ ÍÌQÜ ” Í”! Í”$ Í”' Í”* Í”2 Í&”4 Í(”: Í.”; Í/”ÌC Í7”ÌD Í8”ÌN ÍÌB”ÌQ ÍÌE”ÌW ÍÌK”ÌX ÍÌL”Ì` ÍÌT”Ìa ÍÌU”Ìg ÍÌ[”Ìh ÍÌ\”Ìi ÍÌ]Ÿ” Í
+” Í”- Í#”0 Í&”6 Í,”7 Í-”? Í5”Ì@ Í6”ÌD Í:”ÌE Í;”ÌQ ÍÌG”ÌS ÍÌI”ÌT ÍÌJ”Ìb ÍÌX”Ìd ÍÌ[Ü ” Í”, Í ”/ Í#”2 Í&”5 Í)”= Í1”? Í3”ÌE Í9”ÌF Í:”ÌN ÍÌB”ÌO ÍÌC”ÌY ÍÌM”Ì\ ÍÌP”Ìb ÍÌV”Ìc ÍÌW”Ìk ÍÌ_”Ìl ÍÌ`”Ìr ÍÌf”Ìs ÍÌg”Ìt ÍÌh–” Í
+” Í”" Í”% Í”& Í”( Í•” Í”  Í”$ Í”+ Í”, Í œ” Í” Í” Í”( Í”) Í”4 Í(”5 Í)”7 Í+”9 Í-”< Í0”= Í1”> Í2œ” Í” Í” Í”( Í”) Í”> Í2”? Í3”ÌA Í5”ÌC Í7”ÌF Í:”ÌG Í;”ÌH Í<Ü ” Í” Í”" Í”( Í”) Í”1 Í%”2 Í&”6 Í*”7 Í+”9 Í-”; Í/”> Í2”Ì@ Í4”ÌB Í6”ÌH Í<”ÌJ Í>”ÌR ÍÌF”ÌT ÍÌH”ÌU ÍÌI”ÌV ÍÌJ‘” Í˜” Í
+” Í” Í”$ Í”% Í”) Í”* Í ”+ Í!˜” Í 
+” Í ” Í ”$ Í ”% Í ”0 Í &”1 Í '”2 Í (˜” Í!
+” Í!” Í!”$ Í!”% Í!”: Í!0”; Í!1”< Í!2Ü ” Í"
+” Í"” Í"”! Í"”" Í"”& Í"”' Í"”) Í"”2 Í"(”4 Í"*”< Í"2”> Í"4”ÌF Í"<”ÌH Í">”ÌP Í"ÌF”ÌR Í"ÌH”ÌS Í"ÌI”ÌT Í"ÌJ‘” Í#	Ü ” Í$” Í$” Í$” Í$” Í$”! Í$”# Í$”* Í$"”, Í%
+”Ìq Í%ÌO”Ìu Í%ÌS”Ìv Í%ÌT”Ì Í%Ì]”Ì€ Í%Ì^”Ì” Í%Ìr”Ì• Í%Ìs”Ì— Í%Ìu”Ì˜ Í%Ìv”Ì™ Í%Ìwš” Í&” Í&” Í&” Í&	” Í&” Í&” Í&” Í&$” Í&&” Í&(Ü ” Í'” Í'” Í'” Í'” Í'”" Í'”$ Í'”2 Í'*”4 Í',”ÌH Í'Ì@”ÌM Í'ÌE”ÌN Í'ÌF”ÌR Í'ÌJ”Ì_ Í'ÌW”Ìd Í'Ì\”Ìe Í'Ì]”Ìl Í'Ìd”Ìn Í'Ìf”Ìo Í'Ìg”Ìp Í'Ìh”” Í(” Í(” Í(” Í(	‘”	 Í)”” Í)” Í)” Í)” Í)Ü ” Í*” Í*” Í*” Í*” Í*” Í*”  Í*”. Í*(”0 Í**”ÌD Í*>”ÌI Í*ÌC”ÌJ Í*ÌD”ÌN Í*ÌH”Ì[ Í*ÌU”Ì` Í*ÌZ”Ìa Í*Ì[”Ìh Í*Ìb”Ìj Í*Ìd”Ìk Í*Ìe”Ìl Í*Ìf‘”	 Í+’” Í,” Í,ÔrH–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜğ‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ‘”  Ì¾ ‘”  Ì¿ ‘”  ÌÀ ‘”  ÌÁ ‘”  ÌÂ ‘”  ÌÃ ‘”  ÌÄ ‘”  ÌÅ ‘”  ÌÆ ‘”  ÌÇ ‘”  ÌÈ ‘”  ÌÉ ‘”  ÌÊ ‘”  ÌË ‘”  ÌÌ ‘”  ÌÍ ‘”  ÌÎ ‘”  ÌÏ ‘”  ÌĞ ‘”  ÌÑ ‘”  ÌÒ ‘”  ÌÓ ‘”  ÌÔ ‘”  ÌÕ ‘”  ÌÖ ‘”  Ì× ‘”  ÌØ ‘”  ÌÙ ‘”  ÌÚ ‘”  ÌÛ ‘”  ÌÜ ‘”  Ìİ ‘”  ÌŞ ‘”  Ìß ‘”  Ìà ‘”  Ìá ‘”  Ìâ ‘”  Ìã ‘”  Ìä ‘”  Ìå ‘”  Ìæ ‘”  Ìç ‘”  Ìè ‘”  Ìé ‘”  Ìê ‘”  Ìë ‘”  Ìì ‘”  Ìí ‘”  Ìî ‘”  Ìï ‘”  Ìğ ‘”  Ìñ ‘”  Ìò ‘”  Ìó ‘”  Ìô ‘”  Ìõ ‘”  Ìö ‘”  Ì÷ ‘”  Ìø ‘”  Ìù ‘”  Ìú ‘”  Ìû ‘”  Ìü ‘”  Ìı ‘”  Ìş ‘”  Ìÿ ‘”  Í  ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í	 ‘”  Í
+ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í  ‘”  Í! ‘”  Í" ‘”  Í# ‘”  Í$ ‘”  Í% ‘”  Í& ‘”  Í' ‘”  Í( ‘”  Í) ‘”  Í* ‘”  Í+ ‘”  Í, ‘”  Í- ‘”  Í. ‘”  Í/ ‘”  Í0 ‘”  Í1 ‘”  Í2 ‘”  Í3 ‘”  Í4 ‘”  Í5 ‘”  Í6 ‘”  Í7 ‘”  Í8 ‘”  Í9 ‘”  Í: ‘”  Í; ‘”  Í< ‘”  Í= ‘”  Í> ‘”  Í? ‘”  Í@ ‘”  ÍA ‘”  ÍB ‘”  ÍC ‘”  ÍD ‘”  ÍE ‘”  ÍF ‘”  ÍG ‘”  ÍH ‘”  ÍI ‘”  ÍJ ‘”  ÍK ‘”  ÍL ‘”  ÍM ‘”  ÍN ‘”  ÍO ‘”  ÍP ‘”  ÍQ ‘”  ÍR ‘”  ÍS ‘”  ÍT ‘”  ÍU ‘”  ÍV ‘”  ÍW ‘”  ÍX ‘”  ÍY ‘”  ÍZ ‘”  Í[ ‘”  Í\ ‘”  Í] ‘”  Í^ ‘”  Í_ ‘”  Í` ‘”  Ía ‘”  Íb ‘”  Íc ‘”  Íd ‘”  Íe ‘”  Íf ‘”  Íg ‘”  Íh ‘”  Íi ‘”  Íj ‘”  Ík ‘”  Íl ‘”  Ím ‘”  Ín ‘”  Ío ‘”  Íp ‘”  Íq ‘”  Ír ‘”  Ís ‘”  Ít ‘”  Íu ‘”  Ív ‘”  Íw ‘”  Íx ‘”  Íy ‘”  Íz ‘”  Í{ ‘”  Í| ‘”  Í} ‘”  Í~ ‘”  Í ‘”  Í€ ‘”  Í ‘”  Í‚ ‘”  Íƒ ‘”  Í„ ‘”  Í… ‘”  Í† ‘”  Í‡ ‘”  Íˆ ‘”  Í‰ ‘”  ÍŠ ‘”  Í‹ ‘”  ÍŒ ‘”  Í ‘”  Í ‘”  Í ‘”  Í ‘”  Í‘ ‘”  Í’ ‘”  Í“ ‘”  Í” ‘”  Í• ‘”  Í– ‘”  Í— ‘”  Í˜ ‘”  Í™ ‘”  Íš ‘”  Í› ‘”  Íœ ‘”  Í ‘”  Í ‘”  ÍŸ ‘”  Í  ‘”  Í¡ ‘”  Í¢ ‘”  Í£ ‘”  Í¤ ‘”  Í¥ ‘”  Í¦ ‘”  Í§ ‘”  Í¨ ‘”  Í© ‘”  Íª ‘”  Í« ‘”  Í¬ ‘”  Í­ ‘”  Í® ‘”  Í¯ ‘”  Í° ‘”  Í± ‘”  Í² ‘”  Í³ ‘”  Í´ ‘”  Íµ ‘”  Í¶ ‘”  Í· ‘”  Í¸ ‘”  Í¹ ‘”  Íº ‘”  Í» ‘”  Í¼ ‘”  Í½ ‘”  Í¾ ‘”  Í¿ ‘”  ÍÀ ‘”  ÍÁ ‘”  ÍÂ ‘”  ÍÃ ‘”  ÍÄ ‘”  ÍÅ ‘”  ÍÆ ‘”  ÍÇ ‘”  ÍÈ ‘”  ÍÉ ‘”  ÍÊ ‘”  ÍË ‘”  ÍÌ ‘”  ÍÍ ‘”  ÍÎ ‘”  ÍÏ ‘”  ÍĞ ‘”  ÍÑ ‘”  ÍÒ ‘”  ÍÓ ‘”  ÍÔ ‘”  ÍÕ ‘”  ÍÖ ‘”  Í× ‘”  ÍØ ‘”  ÍÙ ‘”  ÍÚ ‘”  ÍÛ ‘”  ÍÜ ‘”  Íİ ‘”  ÍŞ ‘”  Íß ‘”  Íà ‘”  Íá ‘”  Íâ ‘”  Íã ‘”  Íä ‘”  Íå ‘”  Íæ ‘”  Íç ‘”  Íè ‘”  Íé ‘”  Íê ‘”  Íë ‘”  Íì ‘”  Íí ‘”  Íî ‘”  Íï ÔrI’§missing¦pluginÃ¦genAbcÂÔ  ÔrJ”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache—ÔrK•¤type¥start£endªspecifiers¦source±ImportDeclarationÌ€ÌÀ‘ÔrL”¤type¥start£end¥local¶ImportDefaultSpecifierÌ‡Ì–ÔrM”¤type¥start£end¤nameªIdentifierÌ‡Ì–¯AbilityConstantÔrN•¤type¥start£end¥value£raw§LiteralÌœÌ¿Ù!@ohos.app.ability.AbilityConstantÙ#"@ohos.app.ability.AbilityConstant"K±ImportDeclarationÌÂÌå‘L¶ImportDefaultSpecifierÌÉÌÏMªIdentifierÌÉÌÏ¦fileIoN§LiteralÌÕÌä­@ohos.file.fs¯"@ohos.file.fs"K±ImportDeclarationÌçÍ‘L¶ImportDefaultSpecifierÌîÌôMªIdentifierÌîÌô¦pickerN§LiteralÌúÍ±@ohos.file.picker³"@ohos.file.picker"K±ImportDeclarationÍÍ;‘L¶ImportDefaultSpecifierÍÍMªIdentifierÍÍ¥imageN§LiteralÍ"Í:¶@ohos.multimedia.image¸"@ohos.multimedia.image"K±ImportDeclarationÍ=Í]‘L¶ImportDefaultSpecifierÍDÍIMªIdentifierÍDÍI¥hilogN§LiteralÍOÍ\«@ohos.hilog­"@ohos.hilog"K±ImportDeclarationÍ_Í—‘L¶ImportDefaultSpecifierÍfÍuMªIdentifierÍfÍu¯CommonConstantsN§LiteralÍ{Í–¹../common/CommonConstants»'../common/CommonConstants'K±ImportDeclarationÍ™ÍÑ‘ÔrO•¤type¥start£end¨imported¥local¯ImportSpecifierÍ¢Í¬MªIdentifierÍ¢Í¬ªimageIndexMªIdentifierÍ¢Í¬ªimageIndexN§LiteralÍ´ÍĞº../viewmodel/MailViewModel¼'../viewmodel/MailViewModel'

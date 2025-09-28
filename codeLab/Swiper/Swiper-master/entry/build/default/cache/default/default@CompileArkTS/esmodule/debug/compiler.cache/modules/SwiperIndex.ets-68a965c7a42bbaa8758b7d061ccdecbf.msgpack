@@ -1,0 +1,245 @@
+Ôr@Ÿªassertions¤code´customTransformCache¬dependencies¢id¤meta±moduleSideEffects¬originalCode±originalSourcemap«resolvedIds®sourcemapChainµsyntheticNamedExportsµtransformDependencies®transformFiles¨cacheAstÔrAÚ!aif (!("finalizeConstruction" in ViewPU.prototype)) {
+    Reflect.set(ViewPU.prototype, "finalizeConstruction", () => { });
+}
+/*
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import { TopBar } from '../view/common/TopBar';
+import { PageAll } from '../view/tabcontent/PageAll';
+import { CommonConstants } from '../common/constants/CommonConstant';
+import { PageLive } from '../view/tabcontent/PageLive';
+import { PageGame } from '../view/tabcontent/PageGame';
+import { PageEntertainment } from '../view/tabcontent/PageEntertainment';
+import { PageTV } from '../view/tabcontent/PageTV';
+import { PageMovie } from '../view/tabcontent/PageMovie';
+class SwiperIndex extends ViewPU {
+    constructor(parent, params, __localStorage, elmtId = -1, paramsLambda = undefined, extraInfo) {
+        super(parent, __localStorage, elmtId, extraInfo);
+        if (typeof paramsLambda === "function") {
+            this.paramsGenerator_ = paramsLambda;
+        }
+        this.__index = new ObservedPropertySimplePU(0, this, "index");
+        this.setInitiallyProvidedValue(params);
+        this.finalizeConstruction();
+    }
+    setInitiallyProvidedValue(params) {
+        if (params.index !== undefined) {
+            this.index = params.index;
+        }
+    }
+    updateStateVars(params) {
+    }
+    purgeVariableDependenciesOnElmtId(rmElmtId) {
+        this.__index.purgeDependencyOnElmtId(rmElmtId);
+    }
+    aboutToBeDeleted() {
+        this.__index.aboutToBeDeleted();
+        SubscriberManager.Get().delete(this.id__());
+        this.aboutToBeDeletedInternal();
+    }
+    get index() {
+        return this.__index.get();
+    }
+    set index(newValue) {
+        this.__index.set(newValue);
+    }
+    initialRender() {
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Flex.create({ direction: FlexDirection.Column, alignItems: ItemAlign.Start });
+            Flex.backgroundColor({ "id": 16777243, "type": 10001, params: [], "bundleName": "com.example.swiperarkts", "moduleName": "entry" });
+        }, Flex);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new TopBar(this, { index: this.__index }, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 36, col: 7 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {
+                            index: this.index
+                        };
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "TopBar" });
+        }
+        this.observeComponentCreation2((elmtId, isInitialRender) => {
+            Swiper.create();
+            Swiper.index(this.index);
+            Swiper.indicator(false);
+            Swiper.loop(false);
+            Swiper.duration(CommonConstants.DURATION_PAGE);
+            Swiper.onChange((index) => {
+                this.index = index;
+            });
+        }, Swiper);
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageAll(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 38, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageAll" });
+        }
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageMovie(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 39, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageMovie" });
+        }
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageTV(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 40, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageTV" });
+        }
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageEntertainment(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 41, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageEntertainment" });
+        }
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageLive(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 42, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageLive" });
+        }
+        {
+            this.observeComponentCreation2((elmtId, isInitialRender) => {
+                if (isInitialRender) {
+                    let componentCall = new PageGame(this, {}, undefined, elmtId, () => { }, { page: "entry/src/main/ets/pages/SwiperIndex.ets", line: 43, col: 9 });
+                    ViewPU.create(componentCall);
+                    let paramsLambda = () => {
+                        return {};
+                    };
+                    componentCall.paramsGenerator_ = paramsLambda;
+                }
+                else {
+                    this.updateStateVarsOfChildByElmtId(elmtId, {});
+                }
+            }, { name: "PageGame" });
+        }
+        Swiper.pop();
+        Flex.pop();
+    }
+    rerender() {
+        this.updateDirtyElements();
+    }
+    static getEntryName() {
+        return "SwiperIndex";
+    }
+}
+registerNamedRoute(() => new SwiperIndex(undefined, {}), "", { bundleName: "com.example.swiperarkts", moduleName: "entry", pagePath: "pages/SwiperIndex", pageFullPath: "entry/src/main/ets/pages/SwiperIndex", integratedHsp: "false", moduleType: "followWithHap" });
+//# sourceMappingURL=SwiperIndex.js.mapÂ˜Ù`E:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\common\TopBar.etsÙeE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageAll.etsÙmE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\common\constants\CommonConstant.etsÙfE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageLive.etsÙfE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageGame.etsÙoE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageEntertainment.etsÙdE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageTV.etsÙgE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageMovie.etsÙ_E:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\pages\SwiperIndex.etsÔrBšªmoduleName±isLocalDependency¯isNodeEntryFile§pkgPath±belongProjectPath§pkgNameªpkgVersion±dependencyPkgInfo°belongModulePath¬shouldEmitJs¥entryÃÂÙ<E:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entryÙ6E:\for-more\2025late\real\codeLab\Swiper\Swiper-master¥entry¥1.0.0Ô  Ù<E:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entryÃÃÚì/*
+ * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { TopBar } from '../view/common/TopBar';
+import { PageAll } from '../view/tabcontent/PageAll';
+import { CommonConstants } from '../common/constants/CommonConstant';
+import { PageLive } from '../view/tabcontent/PageLive';
+import { PageGame } from '../view/tabcontent/PageGame';
+import { PageEntertainment } from '../view/tabcontent/PageEntertainment';
+import { PageTV } from '../view/tabcontent/PageTV';
+import { PageMovie } from '../view/tabcontent/PageMovie';
+
+/**
+ * Application home page.
+ */
+@Entry
+@Component
+struct SwiperIndex {
+  // Double binding of index values to achieve linkage effect.
+  @State index: number = 0;
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Start }) {
+      TopBar({ index: $index })
+      Swiper() {
+        PageAll()
+        PageMovie()
+        PageTV()
+        PageEntertainment()
+        PageLive()
+        PageGame()
+      }
+      .index(this.index)
+      .indicator(false)
+      .loop(false)
+      .duration(CommonConstants.DURATION_PAGE)
+      .onChange((index: number) => {
+        this.index = index;
+      })
+    }
+    .backgroundColor($r('app.color.start_window_background'))
+  }
+}ÀÔrC˜µ../view/common/TopBarÙ"../common/constants/CommonConstantº../view/tabcontent/PageAll»../view/tabcontent/PageLive»../view/tabcontent/PageGame¹../view/tabcontent/PageTVÙ$../view/tabcontent/PageEntertainment¼../view/tabcontent/PageMovieÔrD—ªassertions¨external¢id¤meta±moduleSideEffectsªresolvedByµsyntheticNamedExportsAÂÙ`E:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\common\TopBar.etsAÃªoh-resolveÂDAÂÙmE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\common\constants\CommonConstant.etsAÃªoh-resolveÂDAÂÙeE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageAll.etsAÃªoh-resolveÂDAÂÙfE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageLive.etsAÃªoh-resolveÂDAÂÙfE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageGame.etsAÃªoh-resolveÂDAÂÙdE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageTV.etsAÃªoh-resolveÂDAÂÙoE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageEntertainment.etsAÃªoh-resolveÂDAÂÙgE:\for-more\2025late\real\codeLab\Swiper\Swiper-master\entry\src\main\ets\view\tabcontent\PageMovie.etsAÃªoh-resolveÂ“ÔrE–§version¤fileªsourceRoot§sources¥names¨mappings®SwiperIndex.js ‘¯SwiperIndex.etsÜ µ‘”    ‘” ˜”   ” ”	 	” ” ” ”. .”/ /˜”   ” ”	 	” ” ” ”4 4”5 5˜”   ” ”	 	” ” ”   ”ÌD ÌD”ÌE ÌE˜”   ” ”	 	” ” ” ”6 6”7 7˜”   ” ”	 	” ” ” ”6 6”7 7˜”   ” ”	 	” ” ”" "”ÌH ÌH”ÌI ÌI˜”   ” ”	 	” ” ” ”2 2”3 3˜”   ” ”	 	” ” ” ”8 8”9 9’” ” ‘”  ’”4 ”5 ‘” 9’” 	” ’” 	” ‘” !Ü ” "” "” "	” "”# "”% "”2 "#”3 "$”9 "*”; ",”ÌE "6”ÌG "8”ÌP "ÌA”ÌQ "ÌB”ÌV "ÌG”ÌX "ÌI”” "” "” 4”  4—”, #”2 #”9 #”; #”Ì@ #”ÌN #”ÌP #’” #”! #’” $” $˜” $” $” ,” ,” ,” ,” ,”# ,–” $” $” -” -” -”" -–” $” $” .” .” .” .˜” $” $” /” /” /”+ /”, / ”9 /-™” $” $” 0” 0” 0” 0”" 0”$ 0 ”& 0"—” 1” 1” 1” 1” 1”" 1”# 1’” 2” 2’”, %”3 %’”, &”5 &’”, '”2 '’”, (”= (’”, )”4 )’”, *”4 *’” $” $’” "” "‘” 5ÔrF–§version¤file§sources®sourcesContent¥names¨mappingsÀ‘À‘ÀÜ ¾‘”    ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”  	 ‘”  
+ ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”   ‘”    ‘”  ! ‘”  " ‘”  # ‘”  $ ‘”  % ‘”  & ‘”  ' ‘”  ( ‘”  ) ‘”  * ‘”  + ‘”  , ‘”  - ‘”  . ‘”  / ‘”  0 ‘”  1 ‘”  2 ‘”  3 ‘”  4 ‘”  5 ‘”  6 ‘”  7 ‘”  8 ‘”  9 ‘”  : ‘”  ; ‘”  < ‘”  = ‘”  > ‘”  ? ‘”  Ì@ ‘”  ÌA ‘”  ÌB ‘”  ÌC ‘”  ÌD ‘”  ÌE ‘”  ÌF ‘”  ÌG ‘”  ÌH ‘”  ÌI ‘”  ÌJ ‘”  ÌK ‘”  ÌL ‘”  ÌM ‘”  ÌN ‘”  ÌO ‘”  ÌP ‘”  ÌQ ‘”  ÌR ‘”  ÌS ‘”  ÌT ‘”  ÌU ‘”  ÌV ‘”  ÌW ‘”  ÌX ‘”  ÌY ‘”  ÌZ ‘”  Ì[ ‘”  Ì\ ‘”  Ì] ‘”  Ì^ ‘”  Ì_ ‘”  Ì` ‘”  Ìa ‘”  Ìb ‘”  Ìc ‘”  Ìd ‘”  Ìe ‘”  Ìf ‘”  Ìg ‘”  Ìh ‘”  Ìi ‘”  Ìj ‘”  Ìk ‘”  Ìl ‘”  Ìm ‘”  Ìn ‘”  Ìo ‘”  Ìp ‘”  Ìq ‘”  Ìr ‘”  Ìs ‘”  Ìt ‘”  Ìu ‘”  Ìv ‘”  Ìw ‘”  Ìx ‘”  Ìy ‘”  Ìz ‘”  Ì{ ‘”  Ì| ‘”  Ì} ‘”  Ì~ ‘”  Ì ‘”  Ì€ ‘”  Ì ‘”  Ì‚ ‘”  Ìƒ ‘”  Ì„ ‘”  Ì… ‘”  Ì† ‘”  Ì‡ ‘”  Ìˆ ‘”  Ì‰ ‘”  ÌŠ ‘”  Ì‹ ‘”  ÌŒ ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì ‘”  Ì‘ ‘”  Ì’ ‘”  Ì“ ‘”  Ì” ‘”  Ì• ‘”  Ì– ‘”  Ì— ‘”  Ì˜ ‘”  Ì™ ‘”  Ìš ‘”  Ì› ‘”  Ìœ ‘”  Ì ‘”  Ì ‘”  ÌŸ ‘”  Ì  ‘”  Ì¡ ‘”  Ì¢ ‘”  Ì£ ‘”  Ì¤ ‘”  Ì¥ ‘”  Ì¦ ‘”  Ì§ ‘”  Ì¨ ‘”  Ì© ‘”  Ìª ‘”  Ì« ‘”  Ì¬ ‘”  Ì­ ‘”  Ì® ‘”  Ì¯ ‘”  Ì° ‘”  Ì± ‘”  Ì² ‘”  Ì³ ‘”  Ì´ ‘”  Ìµ ‘”  Ì¶ ‘”  Ì· ‘”  Ì¸ ‘”  Ì¹ ‘”  Ìº ‘”  Ì» ‘”  Ì¼ ‘”  Ì½ ÔrG’§missing¦pluginÃ¦genAbcÂÔ  ÔrH”²dynamicImportCache¹exportAllDeclarationCache»exportNamedDeclarationCache«importCache˜ÔrI•¤type¥start£endªspecifiers¦source±ImportDeclarationÍîÍ‘ÔrJ•¤type¥start£end¨imported¥local¯ImportSpecifierÍ÷ÍıÔrK”¤type¥start£end¤nameªIdentifierÍ÷Íı¦TopBarKªIdentifierÍ÷Íı¦TopBarÔrL•¤type¥start£end¥value£raw§LiteralÍÍµ../view/common/TopBar·'../view/common/TopBar'I±ImportDeclarationÍÍT‘J¯ImportSpecifierÍ(Í/KªIdentifierÍ(Í/§PageAllKªIdentifierÍ(Í/§PageAllL§LiteralÍ7ÍSº../view/tabcontent/PageAll¼'../view/tabcontent/PageAll'I±ImportDeclarationÍVÍ›‘J¯ImportSpecifierÍ_ÍnKªIdentifierÍ_Ín¯CommonConstantsKªIdentifierÍ_Ín¯CommonConstantsL§LiteralÍvÍšÙ"../common/constants/CommonConstantÙ$'../common/constants/CommonConstant'I±ImportDeclarationÍÍÔ‘J¯ImportSpecifierÍ¦Í®KªIdentifierÍ¦Í®¨PageLiveKªIdentifierÍ¦Í®¨PageLiveL§LiteralÍ¶ÍÓ»../view/tabcontent/PageLive½'../view/tabcontent/PageLive'I±ImportDeclarationÍÖÍ‘J¯ImportSpecifierÍßÍçKªIdentifierÍßÍç¨PageGameKªIdentifierÍßÍç¨PageGameL§LiteralÍïÍ»../view/tabcontent/PageGame½'../view/tabcontent/PageGame'I±ImportDeclarationÍÍX‘J¯ImportSpecifierÍÍ)KªIdentifierÍÍ)±PageEntertainmentKªIdentifierÍÍ)±PageEntertainmentL§LiteralÍ1ÍWÙ$../view/tabcontent/PageEntertainmentÙ&'../view/tabcontent/PageEntertainment'I±ImportDeclarationÍZÍ‘J¯ImportSpecifierÍcÍiKªIdentifierÍcÍi¦PageTVKªIdentifierÍcÍi¦PageTVL§LiteralÍqÍŒ¹../view/tabcontent/PageTV»'../view/tabcontent/PageTV'I±ImportDeclarationÍÍÈ‘J¯ImportSpecifierÍ˜Í¡KªIdentifierÍ˜Í¡©PageMovieKªIdentifierÍ˜Í¡©PageMovieL§LiteralÍ©ÍÇ¼../view/tabcontent/PageMovie¾'../view/tabcontent/PageMovie'
