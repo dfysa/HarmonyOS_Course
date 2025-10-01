@@ -1,0 +1,56 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\fly\\.ohos\\config\\default_SmartMemo_c_fQTYXALxVzAaqlAhH_rw3WMhXKSg1Bc-9jK9CGWKs=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B0AED9ED1802C5419DDA7DC4C0EFABCEC205975109C4AF539E0E412E3FB48DC32D1FFC5F4A2AE43",
+          "profile": "C:\\Users\\fly\\.ohos\\config\\default_SmartMemo_c_fQTYXALxVzAaqlAhH_rw3WMhXKSg1Bc-9jK9CGWKs=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\fly\\.ohos\\config\\default_SmartMemo_c_fQTYXALxVzAaqlAhH_rw3WMhXKSg1Bc-9jK9CGWKs=.p12",
+          "storePassword": "0000001BEF93E370C0FE3D4FCBA8C4E6C319EF0CBC7CE45F7754D4BA719D670FA535BF53DB94AB711DE013"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "targetSdkVersion": "6.0.0(20)",
+        "compatibleSdkVersion": "6.0.0(20)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
